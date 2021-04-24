@@ -13,7 +13,7 @@ export abstract class Performer {
 export class Musician extends Performer{
    birthDate:Date;
 
-  public constructor(name: String, image: String, description: String, birhDate:Date){
+  public constructor(name: String, image: String, description: String, birthDate:Date){
       super(name, image, description)
       this.birthDate =this.birthDate;
   }

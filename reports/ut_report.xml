@@ -1,22 +1,22 @@
 <testExecutions version="1">
-  <file path="src/app/components/home/home.component.spec.ts">
-    <testCase name="HomeComponent should create" duration="44"/>
+  <file path="src/app/performer/performer.component.spec.ts">
+    <testCase name="PerformerComponent should create" duration="74"/>
   </file>
   <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should have as title 'front'" duration="16"/>
-    <testCase name="AppComponent should render title" duration="10"/>
-    <testCase name="AppComponent should create the app" duration="5"/>
+    <testCase name="AppComponent should render title" duration="15"/>
+    <testCase name="AppComponent should have as title 'front'" duration="6"/>
+    <testCase name="AppComponent should create the app" duration="12"/>
   </file>
-  <file path="src/app/performer/band.service.spec.ts">
-    <testCase name="Service: Band Method getBands() should return 10 records" duration="8"/>
-  </file>
-  <file path="src/app/performer/musician.service.spec.ts">
-    <testCase name="Service: Musician should create service" duration="3"/>
-  </file>
-  <file path="src/app/performer/performer.component.spec.ts">
-    <testCase name="PerformerComponent should create" duration="19"/>
+  <file path="src/app/components/home/home.component.spec.ts">
+    <testCase name="HomeComponent should create" duration="13"/>
   </file>
   <file path="src/app/services/example.service.spec.ts">
-    <testCase name="Service: Post should create service" duration="2"/>
+    <testCase name="Service: Post should create service" duration="3"/>
+  </file>
+  <file path="src/app/performer/band.service.spec.ts">
+    <testCase name="Service: Band Method getBands() should return 10 records" duration="4"/>
+  </file>
+  <file path="src/app/performer/musician.service.spec.ts">
+    <testCase name="Service: Musician Method getMusicians() should return 10 records" duration="3"/>
   </file>
 </testExecutions>

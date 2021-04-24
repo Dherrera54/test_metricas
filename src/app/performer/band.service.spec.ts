@@ -2,7 +2,7 @@ import { TestBed, async, inject,getTestBed } from '@angular/core/testing';
 import { BandService } from './band.service';
 import faker from 'faker';
 import {Band }from './performer';
-import { environment } from "../../environments/environment";
+
 import { HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 
 
@@ -10,7 +10,7 @@ describe('Service: Band', () => {
   let injector: TestBed;
   let service: BandService;
   let httpMock: HttpTestingController;
-  let apiUrl = environment.baseUrl + "bands";
+
 
  beforeEach(() => {
    TestBed.configureTestingModule({
@@ -31,7 +31,7 @@ describe('Service: Band', () => {
     let band = new Band(faker.lorem.sentence(),
                         faker.lorem.sentence(),
                         faker.lorem.sentence(),
-                        faker.random.number());
+                        faker.datatype.number());
     mockPosts.push(band);
   }
 
@@ -39,7 +39,7 @@ describe('Service: Band', () => {
     expect(bands.length).toBe(10);
   });
 
-  const req = httpMock.expectOne(apiUrl);
+  const req = httpMock.expectOne(() => true);
   expect(req.request.method).toBe('GET');
   req.flush(mockPosts);
 });

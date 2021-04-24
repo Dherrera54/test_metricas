@@ -1,18 +1,48 @@
-/* tslint:disable:no-unused-variable */
-
-import { TestBed, async, inject } from '@angular/core/testing';
+import { TestBed, async, inject,getTestBed } from '@angular/core/testing';
 import { MusicianService } from './musician.service';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import faker from 'faker';
+import { Musician }from './performer';
+
+import { HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+
 
 describe('Service: Musician', () => {
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [MusicianService]
-    });
+  let injector: TestBed;
+  let service: MusicianService;
+  let httpMock: HttpTestingController;
+
+
+ beforeEach(() => {
+   TestBed.configureTestingModule({
+     imports: [HttpClientTestingModule],
+     providers: [MusicianService]
+   });
+   injector = getTestBed();
+   service = injector.get(MusicianService);
+   httpMock = injector.get(HttpTestingController);
+ });
+ afterEach(() => {
+  httpMock.verify({ ignoreCancelled: true });
+});
+
+ it('Method getMusicians() should return 10 records', () => {
+  let mockPosts: Musician[] = [];
+  for (let i = 0; i < 10; i++) {
+    let musician = new Musician(faker.lorem.sentence(),
+                        faker.lorem.sentence(),
+                        faker.lorem.sentence(),
+                        faker.datatype.number());
+
+    mockPosts.push(musician);
+  }
+
+  service.getMusicians().subscribe((musicians) => {
+    expect(musicians.length).toBe(10);
   });
 
-  it('should create service', inject([MusicianService], (service: MusicianService) => {
-    expect(service).toBeTruthy();
-  }));
+  const req = httpMock.expectOne(() => true);
+  expect(req.request.method).toBe('GET');
+  req.flush(mockPosts);
+});
+
 });
