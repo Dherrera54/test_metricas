@@ -29,9 +29,9 @@ describe('Service: Band', () => {
   let mockPosts: Band[] = [];
   for (let i = 0; i < 10; i++) {
     let band = new Band(faker.lorem.sentence(),
+                        faker.image.imageUrl(),
                         faker.lorem.sentence(),
-                        faker.lorem.sentence(),
-                        faker.datatype.number());
+                        faker.date.past());
     mockPosts.push(band);
   }
 

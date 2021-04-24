@@ -29,9 +29,9 @@ describe('Service: Musician', () => {
   let mockPosts: Musician[] = [];
   for (let i = 0; i < 10; i++) {
     let musician = new Musician(faker.lorem.sentence(),
-                        faker.lorem.sentence(),
-                        faker.lorem.sentence(),
-                        faker.datatype.number());
+                                faker.image.imageUrl(),
+                                faker.lorem.sentence(),
+                                faker.date.past());
 
     mockPosts.push(musician);
   }
