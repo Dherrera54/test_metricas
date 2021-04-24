@@ -1,16 +1,18 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, inject } from '@angular/core/testing';
 
 import { ExampleService } from './example.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-describe('AlbumsService', () => {
-  let service: ExampleService;
 
+describe('Service: Post', () => {
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(ExampleService);
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [ExampleService]
+    });
   });
 
-  it('should be created', () => {
+  it('should create service', inject([ExampleService], (service: ExampleService) => {
     expect(service).toBeTruthy();
-  });
-});
+  }));
+ });
