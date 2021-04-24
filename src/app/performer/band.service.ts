@@ -9,12 +9,12 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class BandService {
-  private apiUrl = environment.baseUrl + 'musician.json';
+  private apiUrl = environment.baseUrl + 'bands';
 
 constructor(private http: HttpClient) { }
 
 getBands(): Observable<Band[]> {
-  const headers = { 'content-type': 'application/json'};
-  return this.http.get<Band[]>('https://grupo-uniandes-03.herokuapp.com/bands',{headers});
+
+  return this.http.get<Band[]>(this.apiUrl);
 }
 }

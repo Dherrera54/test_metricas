@@ -9,12 +9,12 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class MusicianService {
-  private apiUrl = environment.baseUrl + 'musician.json';
+private apiUrl = environment.baseUrl + 'musicians';
 
 constructor(private http: HttpClient) { }
 
 getMusicians(): Observable<Musician[]> {
-  const headers = { 'content-type': 'application/json'};
-  return this.http.get<Musician[]>('https://grupo-uniandes-03.herokuapp.com/musicians',{headers});
+
+  return this.http.get<Musician[]>(this.apiUrl);
  }
 }

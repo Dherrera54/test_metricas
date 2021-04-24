@@ -13,9 +13,9 @@ import { MusicianService } from './musician.service';
 export class PerformerComponent implements OnInit {
 
   constructor(private bandService: BandService, private musicianService:MusicianService) { }
-  private performers: Array<Performer>;
-  private musicians: Array<Musician>;
-  private bands: Array<Band>;
+
+  public musicians: Array<Musician>;
+  public bands: Array<Band>;
 
   getBandList(){
     this.bandService.getBands().subscribe(result => {
