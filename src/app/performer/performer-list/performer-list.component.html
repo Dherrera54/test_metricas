@@ -1,31 +1,28 @@
-<p>
-  performer-list works!
-</p>
-<tr *ngFor="let c of bands">
-  <td>
-    <dd>{{c.name}}</dd>
-  </td>
-  <td>
-    <dd><img src="{{c.image}}" width="100" ></dd>
-  </td>
-  <td>
-    <dd>{{c.description}}</dd>
-  </td>
-  <td>
-    <dd>{{c.creationDate}}</dd>
-  </td>
-</tr>
-<tr *ngFor="let c of musicians">
-  <td>
-    <dd>{{c.name}}</dd>
-  </td>
-  <td>
-    <dd><img src="{{c.image}}" width="100" ></dd>
-  </td>
-  <td>
-    <dd>{{c.description}}</dd>
-  </td>
-  <td>
-    <dd>{{c.birthDate}}</dd>
-  </td>
-</tr>
+
+<div class="container-fluid">
+  <div class="row p-5">
+
+        <div class="col " *ngFor= "let band of bands">
+          <div class="card text-center" style="width: 18rem;">
+            <img  class="image-fluid " src='{{band.image}}' width="200"/>
+          <div class="card-body">
+            <h5 class="card-title">{{band.name}}</h5>
+            <p class="card-text">Band</p>
+            <a href="#" class="btn btn-primary">Favorite</a>
+           </div>
+          </div>
+       </div>
+       <div class="col " *ngFor= "let musician of musicians">
+        <div class="card text-center" style="width: 18rem;">
+          <img class="image-responsive" src='{{musician.image}}' width="200" />
+        <div class="card-body">
+          <h5 class="card-title">{{musician.name}}</h5>
+          <p class="card-text">Musician</p>
+          <a href="#" class="btn btn-primary">Favorite</a>
+         </div>
+        </div>
+  </div>
+</div>
+
+
+

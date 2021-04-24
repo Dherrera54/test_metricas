@@ -1,25 +1,23 @@
 <testExecutions version="1">
-  <file path="src/app/performer/musician.service.spec.ts">
-    <testCase name="Service: Musician Method getMusicians() should return 10 records" duration="18"/>
-  </file>
   <file path="src/app/performer/performer-list/performer-list.component.spec.ts">
-    <testCase name="PerformerListComponent should create" duration="28"/>
-  </file>
-  <file path="src/app/components/home/home.component.spec.ts">
-    <testCase name="HomeComponent should create" duration="15"/>
+    <testCase name="PerformerListComponent should create" duration="66"/>
+    <testCase name="PerformerListComponent Should have an header element band name" duration="13"/>
   </file>
   <file path="src/app/performer/band.service.spec.ts">
-    <testCase name="Service: Band Method getBands() should return 10 records" duration="3"/>
+    <testCase name="Service: Band Method getBands() should return 10 records" duration="5"/>
   </file>
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should render title" duration="15"/>
-    <testCase name="AppComponent should create the app" duration="42"/>
-    <testCase name="AppComponent should have as title 'front'" duration="5"/>
-  </file>
-  <file path="src/app/performer/performer.component.spec.ts">
-    <testCase name="PerformerComponent should create" duration="21"/>
+  <file path="src/app/components/home/home.component.spec.ts">
+    <testCase name="HomeComponent should create" duration="13"/>
   </file>
   <file path="src/app/services/example.service.spec.ts">
-    <testCase name="Service: Post should create service" duration="3"/>
+    <testCase name="Service: Post should create service" duration="2"/>
+  </file>
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should create the app" duration="11"/>
+    <testCase name="AppComponent should have as title 'front'" duration="8"/>
+    <testCase name="AppComponent should render title" duration="5"/>
+  </file>
+  <file path="src/app/performer/musician.service.spec.ts">
+    <testCase name="Service: Musician Method getMusicians() should return 10 records" duration="5"/>
   </file>
 </testExecutions>
