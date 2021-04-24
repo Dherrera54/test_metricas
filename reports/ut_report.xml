@@ -1,14 +1,14 @@
 <testExecutions version="1">
+  <file path="src/app/components/home/home.component.spec.ts">
+    <testCase name="HomeComponent should create" duration="44"/>
+  </file>
   <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should render title" duration="50"/>
-    <testCase name="AppComponent should have as title 'front'" duration="8"/>
-    <testCase name="AppComponent should create the app" duration="6"/>
+    <testCase name="AppComponent should have as title 'front'" duration="16"/>
+    <testCase name="AppComponent should render title" duration="10"/>
+    <testCase name="AppComponent should create the app" duration="5"/>
   </file>
   <file path="src/app/performer/band.service.spec.ts">
-    <testCase name="Service: Band should create service" duration="4"/>
-  </file>
-  <file path="src/app/components/home/home.component.spec.ts">
-    <testCase name="HomeComponent should create" duration="12"/>
+    <testCase name="Service: Band Method getBands() should return 10 records" duration="8"/>
   </file>
   <file path="src/app/performer/musician.service.spec.ts">
     <testCase name="Service: Musician should create service" duration="3"/>
