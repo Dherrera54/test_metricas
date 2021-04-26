@@ -9,7 +9,7 @@ import {Albumes} from '../../model/albumes';
   styleUrls: ['./albumes.component.scss']
 })
 export class AlbumesComponent implements OnInit {
-  albums: Array<AlbumesInformation>;
+  albums: Array<AlbumesInformation> = new Array<AlbumesInformation>();
 
   constructor(private albumesService: AlbumesService ) {
     this.albums = new Array<AlbumesInformation>();
@@ -17,12 +17,10 @@ export class AlbumesComponent implements OnInit {
 
   ngOnInit(): void {
     this.albumesService.getAlbumes().subscribe((result: Array<Albumes>) => {
-      console.log(result);
       result.forEach( (it: Albumes) => {
         this.albums.push(new AlbumesInformation(it.name,  it.recordLabel, it.genre, 'Vendido', it.cover));
       });
     });
-
    }
 
 }

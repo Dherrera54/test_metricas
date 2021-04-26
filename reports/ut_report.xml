@@ -4,35 +4,26 @@
       <skipped message="Skipped"/>
     </testCase>
   </file>
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should create the app" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AppComponent should have as title 'front'" duration="1">
+  <file path="src/app/services/albumes.service.spec.ts">
+    <testCase name="AlbumsService should be created" duration="1">
       <skipped message="Skipped"/>
     </testCase>
   </file>
   <file path="src/app/components/albumes/albumes.component.spec.ts">
-    <testCase name="AlbumesComponent check the services when the albums is not empty" duration="167">
-      <failure message="Error">Error: Expected 3 to equal 0.
-    at &lt;Jasmine&gt;
-    at UserContext.&lt;anonymous&gt; (http://localhost:9876/_karma_webpack_/src/app/components/albumes/albumes.component.spec.ts:33:37)
-    at ZoneDelegate.invoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:364:1)
-    at ProxyZoneSpec.onInvoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:292:1)
-</failure>
+    <testCase name="Get error in services Checking error in service" duration="1">
+      <skipped message="Skipped"/>
     </testCase>
+    <testCase name="AlbumesComponent Checking the image first name is https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg" duration="49"/>
+    <testCase name="AlbumesComponent check the albumes is not empty" duration="11"/>
     <testCase name="AlbumesComponent should create" duration="9"/>
-    <testCase name="AlbumesComponent check the albumes when is not empty" duration="8">
-      <failure message="Error">Error: Expected 3 to equal 0.
-    at &lt;Jasmine&gt;
-    at UserContext.&lt;anonymous&gt; (http://localhost:9876/_karma_webpack_/src/app/components/albumes/albumes.component.spec.ts:29:37)
-    at ZoneDelegate.invoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:364:1)
-    at ProxyZoneSpec.onInvoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:292:1)
-</failure>
-    </testCase>
+    <testCase name="AlbumesComponent Checking the albums first name is Buscando América" duration="11"/>
+    <testCase name="AlbumesComponent check the first album is Salsa" duration="9"/>
   </file>
-  <file path="src/app/services/albumes.service.spec.ts">
-    <testCase name="AlbumsService should be created" duration="1">
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should have as title 'front'" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AppComponent should create the app" duration="1">
       <skipped message="Skipped"/>
     </testCase>
   </file>
