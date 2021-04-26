@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {RutaInformation} from '../../models/rutaInformation';
+import {AlbumesInformation} from '../../models/albumesInformation';
 
 @Component({
   selector: 'app-card-albumes',
@@ -8,7 +8,7 @@ import {RutaInformation} from '../../models/rutaInformation';
 })
 export class CardAlbumesComponent implements OnInit {
 
-  @Input() rutaActive: Array<RutaInformation>;
+  @Input() albumes: Array<AlbumesInformation>;
   constructor() { }
 
   ngOnInit(): void {

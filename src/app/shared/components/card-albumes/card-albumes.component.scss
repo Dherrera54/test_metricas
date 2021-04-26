@@ -1,10 +1,10 @@
-.container-ruta {
+.container-album {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 
-  .container-card {
-    background: #325A73;
+  .detail-album {
+    background: white;
     width: 362px;
     margin-left: 143px;
     margin-top: 97px;
@@ -22,50 +22,51 @@
       }
     }
 
-    .container-information{
-      margin-left: 70px;
-      margin-right: 70px;
-      padding-bottom: 12px;
-      span {
-        font-family: Arial;
-        color: #FFFFFF;
-        font-size: 12px;
-      }
-
-      .container-detail{
-        display: flex;
-
-        .item-information{
-          width: 100%;
-          text-align: end;
+    .album-title {
+        text-align: center;
+        padding-top: 39px;
+        span {
+          font-weight: bold;
+          font-family: Arial;
+          font-size: 24px;
         }
-
-        .item{
-          width: 100%;
-          text-align: left;
-        }
-      }
     }
 
-    .title{
+
+    .album-group {
       text-align: center;
-      margin-bottom: 47px;
-      padding-top: 17px;
+      padding-top: 16px;
       span {
+        font-weight: bold;
+        color: black;
         font-family: Arial;
-        color: #FFFFFF;
-        font-size: 44px;
+        font-size: 16px;
       }
     }
 
-    .name{
+    .album-gender {
       text-align: center;
-      padding-bottom: 32px;
+      padding-top: 16px;
       span {
+        opacity: 100%;
+        color: #000000;
         font-family: Arial;
-        color: #FFFFFF;
-        font-size: 14px;
+        font-size: 16px;
       }
     }
+
+    .album-state {
+      text-align: center;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      span {
+        color: #007BFF;
+        font-family: Arial;
+        font-size: 24px;
+        opacity: 1;
+      }
+    }
+
+
   }
 }
