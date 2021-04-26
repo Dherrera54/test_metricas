@@ -1,0 +1,71 @@
+.container-ruta {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .container-card {
+    background: #325A73;
+    width: 362px;
+    margin-left: 143px;
+    margin-top: 97px;
+
+    .img-driver {
+      text-align: center;
+      width: 100%;
+      padding-top: 17px;
+      img {
+        border-radius:150px;
+        border: 1px solid #707070;
+        opacity: 1;
+        width: 98px;
+        height: 98px;
+      }
+    }
+
+    .container-information{
+      margin-left: 70px;
+      margin-right: 70px;
+      padding-bottom: 12px;
+      span {
+        font-family: Arial;
+        color: #FFFFFF;
+        font-size: 12px;
+      }
+
+      .container-detail{
+        display: flex;
+
+        .item-information{
+          width: 100%;
+          text-align: end;
+        }
+
+        .item{
+          width: 100%;
+          text-align: left;
+        }
+      }
+    }
+
+    .title{
+      text-align: center;
+      margin-bottom: 47px;
+      padding-top: 17px;
+      span {
+        font-family: Arial;
+        color: #FFFFFF;
+        font-size: 44px;
+      }
+    }
+
+    .name{
+      text-align: center;
+      padding-bottom: 32px;
+      span {
+        font-family: Arial;
+        color: #FFFFFF;
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<div class="container-ruta">
+  <div *ngFor="let item of rutaActive; let i = index" class="container-card">
+    <div class="img-driver" *ngIf="item.image.length>0">
+      <img src="{{item.image}}"  />
+    </div>
+    <div class="title">
+      <span>{{item.nameRuta}}</span>
+    </div>
+    <div class="name">
+      <span>{{item.name}}</span>
+    </div>
+    <div *ngFor="let names of item.fields; let j = index"  class="container-information">
+      <div class="container-detail">
+        <div class="item">
+          <span>{{names.description}}</span>
+        </div>
+        <div class="item-information">
+          <span>{{names.title}}</span>
+        </div>
+      </div>
+      <hr/>
+    </div>
+  </div>
+</div>
