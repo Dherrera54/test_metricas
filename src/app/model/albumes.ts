@@ -9,7 +9,8 @@ export class Albumes {
   genre: string;
   recordLabel: string;
 
-  constructor(id: string, name: string, cover: string, releaseDate: string, description: string, genre: string, recordLabel: string) {
+  constructor(id?: string, name?: string, cover?: string, releaseDate?: string,
+              description?: string, genre?: string, recordLabel?: string) {
     this.id = id;
     this.name = name;
     this.cover = cover;

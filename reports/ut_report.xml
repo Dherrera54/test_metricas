@@ -1,20 +1,18 @@
 <testExecutions version="1">
   <file path="src/app/shared/components/card-albumes/card-albumes.component.spec.ts">
-    <testCase name="CardAlbumesComponent should create" duration="47"/>
-  </file>
-  <file path="src/app/components/albumes/albumes.component.spec.ts">
-    <testCase name="Get error in services Checking error in service" duration="11"/>
+    <testCase name="CardAlbumesComponent should create" duration="49"/>
   </file>
   <file path="src/app/services/albumes.service.spec.ts">
-    <testCase name="AlbumsService check the services when is having error" duration="7"/>
-    <testCase name="AlbumsService check the success services" duration="3"/>
-    <testCase name="AlbumsService should be created" duration="4"/>
-  </file>
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should create the app" duration="9"/>
+    <testCase name="AlbumsService should be created" duration="7"/>
+    <testCase name="AlbumsService check the success services" duration="5"/>
+    <testCase name="AlbumsService check the services when is having error" duration="3"/>
   </file>
   <file path="src/app/components/albumes/albumes.component.spec.ts">
-    <testCase name="AlbumesComponent check the albumes is not empty" duration="7"/>
-    <testCase name="AlbumesComponent should create" duration="5"/>
+    <testCase name="AlbumesComponent should create" duration="11"/>
+    <testCase name="AlbumesComponent check the albumes is not empty" duration="12"/>
+    <testCase name="Get error in services Checking error in service" duration="7"/>
+  </file>
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should create the app" duration="10"/>
   </file>
 </testExecutions>
