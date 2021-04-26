@@ -47,47 +47,6 @@ describe('AlbumesComponent', () => {
   });
 });
 
-
-
-describe('check the first album is Salsa', () => {
-  let component: AlbumesComponent;
-  let fixture: ComponentFixture<AlbumesComponent>;
-  const albums = AlbumsMock.response.data;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [AlbumesComponent],
-      imports:  [
-        HttpClientModule,
-      ],
-      providers: [
-        HttpClient,
-        {
-          provide: AlbumesService,
-          useValue: {
-            getAlbumes(): Observable<any> {
-              return  of(albums);
-            },
-          },
-        },
-      ],
-    })
-      .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AlbumesComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-    console.log(albums);
-  });
-
-  it('check the first album is Salsa', () => {
-    expect(component.albums[0].genderAlbum).toEqual('Salsa');
-  });
-
-});
-
 describe('Get error in services', () => {
   let component: AlbumesComponent;
   let fixture: ComponentFixture<AlbumesComponent>;

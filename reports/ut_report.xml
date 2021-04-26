@@ -1,31 +1,20 @@
 <testExecutions version="1">
-  <file path="src/app/components/albumes/albumes.component.spec.ts">
-    <testCase name="check the first album is Salsa check the first album is Salsa" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AlbumesComponent should create" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AlbumesComponent check the albumes is not empty" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="Get error in services Checking error in service" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
+  <file path="src/app/shared/components/card-albumes/card-albumes.component.spec.ts">
+    <testCase name="CardAlbumesComponent should create" duration="47"/>
   </file>
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should create the app" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
+  <file path="src/app/components/albumes/albumes.component.spec.ts">
+    <testCase name="Get error in services Checking error in service" duration="11"/>
   </file>
   <file path="src/app/services/albumes.service.spec.ts">
-    <testCase name="AlbumsService should be created" duration="18"/>
-    <testCase name="AlbumsService check the success services" duration="8"/>
-    <testCase name="AlbumsService check the services when is having error" duration="3"/>
+    <testCase name="AlbumsService check the services when is having error" duration="7"/>
+    <testCase name="AlbumsService check the success services" duration="3"/>
+    <testCase name="AlbumsService should be created" duration="4"/>
   </file>
-  <file path="src/app/shared/components/card-albumes/card-albumes.component.spec.ts">
-    <testCase name="CardAlbumesComponent should create" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should create the app" duration="9"/>
+  </file>
+  <file path="src/app/components/albumes/albumes.component.spec.ts">
+    <testCase name="AlbumesComponent check the albumes is not empty" duration="7"/>
+    <testCase name="AlbumesComponent should create" duration="5"/>
   </file>
 </testExecutions>
