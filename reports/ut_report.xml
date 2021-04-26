@@ -4,19 +4,22 @@
       <skipped message="Skipped"/>
     </testCase>
   </file>
+  <file path="src/app/components/home/home.component.spec.ts">
+    <testCase name="HomeComponent should create" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
+  <file path="src/app/components/albumes/albumes.component.spec.ts">
+    <testCase name="AlbumesComponent should create" duration="39"/>
+  </file>
   <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should have as title 'front'" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
     <testCase name="AppComponent should create the app" duration="1">
       <skipped message="Skipped"/>
     </testCase>
     <testCase name="AppComponent should render title" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AppComponent should have as title 'front'" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-  </file>
-  <file path="src/app/components/home/home.component.spec.ts">
-    <testCase name="HomeComponent should create" duration="1">
       <skipped message="Skipped"/>
     </testCase>
   </file>
