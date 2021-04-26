@@ -38,6 +38,10 @@ describe('AlbumesComponent', () => {
     console.log(albums);
   });
 
+  afterEach(() => {
+    fixture.destroy();
+  });
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
