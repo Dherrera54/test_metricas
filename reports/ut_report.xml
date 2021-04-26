@@ -1,29 +1,30 @@
 <testExecutions version="1">
-  <file path="src/app/shared/components/card-albumes/card-albumes.component.spec.ts">
-    <testCase name="CardAlbumesComponent should create" duration="1">
+  <file path="src/app/components/albumes/albumes.component.spec.ts">
+    <testCase name="check the first album is Salsa check the first album is Salsa" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AlbumesComponent should create" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AlbumesComponent check the albumes is not empty" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="Get error in services Checking error in service" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should create the app" duration="1">
       <skipped message="Skipped"/>
     </testCase>
   </file>
   <file path="src/app/services/albumes.service.spec.ts">
-    <testCase name="AlbumsService should be created" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
+    <testCase name="AlbumsService should be created" duration="18"/>
+    <testCase name="AlbumsService check the success services" duration="8"/>
+    <testCase name="AlbumsService check the services when is having error" duration="3"/>
   </file>
-  <file path="src/app/components/albumes/albumes.component.spec.ts">
-    <testCase name="Get error in services Checking error in service" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AlbumesComponent Checking the image first name is https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg" duration="49"/>
-    <testCase name="AlbumesComponent check the albumes is not empty" duration="11"/>
-    <testCase name="AlbumesComponent should create" duration="9"/>
-    <testCase name="AlbumesComponent Checking the albums first name is Buscando América" duration="11"/>
-    <testCase name="AlbumesComponent check the first album is Salsa" duration="9"/>
-  </file>
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should have as title 'front'" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AppComponent should create the app" duration="1">
+  <file path="src/app/shared/components/card-albumes/card-albumes.component.spec.ts">
+    <testCase name="CardAlbumesComponent should create" duration="1">
       <skipped message="Skipped"/>
     </testCase>
   </file>
