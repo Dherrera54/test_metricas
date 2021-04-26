@@ -42,7 +42,7 @@ describe('CardAlbumesComponent', () => {
     component.albumes = CardsAlbumMock.response.data;
     fixture.detectChanges();
     const compile =  fixture.debugElement.nativeElement;
-    expect(compile.getElementsByClassName('album-title')[0].innerHTML).toEqual('<span _ngcontent-a-c16="" id="title">'
-      + component.albumes[0].titleAlbum + '</span>');
+    const html = compile.getElementsByClassName('album-title')[0].innerHTML;
+    expect(html.includes(component.albumes[0].titleAlbum)).toEqual(true);
   });
 });

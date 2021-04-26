@@ -1,39 +1,39 @@
 <testExecutions version="1">
-  <file path="src/app/shared/components/card-albumes/card-albumes.component.spec.ts">
-    <testCase name="CardAlbumesComponent check the view when it has data" duration="88"/>
-    <testCase name="CardAlbumesComponent check the view when is the data is not empty" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="CardAlbumesComponent check the view when is the data is empty" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="CardAlbumesComponent should create" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-  </file>
-  <file path="src/app/components/albumes/albumes.component.spec.ts">
-    <testCase name="AlbumesComponent check the albumes is not empty" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AlbumesComponent should create" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-  </file>
   <file path="src/app/app.component.spec.ts">
     <testCase name="AppComponent should create the app" duration="1">
       <skipped message="Skipped"/>
     </testCase>
   </file>
+  <file path="src/app/components/albumes/albumes.component.spec.ts">
+    <testCase name="AlbumesComponent should create" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AlbumesComponent check the albumes is not empty" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
   <file path="src/app/services/albumes.service.spec.ts">
-    <testCase name="AlbumsService check the services when is having error" duration="1">
+    <testCase name="AlbumsService should be created" duration="1">
       <skipped message="Skipped"/>
     </testCase>
     <testCase name="AlbumsService check the success services" duration="1">
       <skipped message="Skipped"/>
     </testCase>
-    <testCase name="AlbumsService should be created" duration="1">
+    <testCase name="AlbumsService check the services when is having error" duration="1">
       <skipped message="Skipped"/>
     </testCase>
+  </file>
+  <file path="src/app/shared/components/card-albumes/card-albumes.component.spec.ts">
+    <testCase name="CardAlbumesComponent check the view when is the data is empty" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="CardAlbumesComponent check the view when is the data is not empty" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="CardAlbumesComponent should create" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="CardAlbumesComponent check the view when it has data" duration="68"/>
   </file>
   <file path="src/app/components/albumes/albumes.component.spec.ts">
     <testCase name="Get error in services Checking error in service" duration="1">
