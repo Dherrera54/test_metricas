@@ -1,12 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CardAlbumesComponent } from './card-albumes.component';
-import {AlbumsMock} from '../../mocks/albums.mock';
+import {AlbumesInformation} from '../../models/albumesInformation';
+import {CardsAlbumMock} from '../../mocks/card-album.mock';
 
 describe('CardAlbumesComponent', () => {
   let component: CardAlbumesComponent;
   let fixture: ComponentFixture<CardAlbumesComponent>;
-  const albums = AlbumsMock.response.data;
+  let compiled: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -17,11 +17,32 @@ describe('CardAlbumesComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CardAlbumesComponent);
+    compiled = fixture.debugElement.nativeElement;
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('check the view when is the data is empty', () => {
+    component.albumes = new Array<AlbumesInformation>();
+    component = fixture.componentInstance;
+    expect(component.albumes.length).toEqual(0);
+  });
+
+  it('check the view when is the data is not empty', () => {
+    component.albumes = CardsAlbumMock.response.data;
+    component = fixture.componentInstance;
+    expect(component.albumes.length).toEqual(1);
+  });
+
+  it('check the view when it has data', () => {
+    component.albumes = CardsAlbumMock.response.data;
+    fixture.detectChanges();
+    const compile =  fixture.debugElement.nativeElement;
+    expect(compile.getElementsByClassName('album-title')[0].innerHTML).toEqual('<span _ngcontent-a-c16="" id="title">'
+      + component.albumes[0].titleAlbum + '</span>');
   });
 });
