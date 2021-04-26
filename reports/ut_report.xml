@@ -1,37 +1,39 @@
 <testExecutions version="1">
   <file path="src/app/shared/components/card-albumes/card-albumes.component.spec.ts">
-    <testCase name="CardAlbumesComponent should create" duration="47"/>
+    <testCase name="CardAlbumesComponent should create" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
   </file>
-  <file path="src/app/services/example.service.spec.ts">
-    <testCase name="AlbumsService should be created" duration="74">
-      <failure message="Error">NullInjectorError: R3InjectorError(DynamicTestModule)[ExampleService -&gt; HttpClient -&gt; HttpClient]: 
-  NullInjectorError: No provider for HttpClient!
-error properties: Object({ ngTempTokenPath: null, ngTokenPath: [ 'ExampleService', 'HttpClient', 'HttpClient' ] })
-    at &lt;Jasmine&gt;
-    at NullInjector.get (http://localhost:9877/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:915:1)
-    at R3Injector.get (http://localhost:9877/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at R3Injector.get (http://localhost:9877/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11082:1)
-    at injectInjectorOnly (http://localhost:9877/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:801:1)
-    at ɵɵinject (http://localhost:9877/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:805:1)
-    at Object.ExampleService_Factory [as factory] (ng:///ExampleService/ɵfac.js:5:42)
-    at R3Injector.hydrate (http://localhost:9877/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11249:1)
-    at R3Injector.get (http://localhost:9877/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:11071:1)
-    at NgModuleRef$1.get (http://localhost:9877/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:24199:1)
-    at TestBedRender3.inject (http://localhost:9877/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/testing.js:1930:1)
-
-Error: Expected undefined to be truthy.
-    at &lt;Jasmine&gt;
-    at UserContext.&lt;anonymous&gt; (http://localhost:9877/_karma_webpack_/src/app/services/example.service.spec.ts:14:21)
-    at ZoneDelegate.invoke (http://localhost:9877/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:364:1)
-    at ProxyZoneSpec.push../node_modules/zone.js/dist/zone-testing.js.ProxyZoneSpec.onInvoke (http://localhost:9877/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:292:1)
-</failure>
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should create the app" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AppComponent should have as title 'front'" duration="1">
+      <skipped message="Skipped"/>
     </testCase>
   </file>
   <file path="src/app/components/albumes/albumes.component.spec.ts">
+    <testCase name="AlbumesComponent check the services when the albums is not empty" duration="167">
+      <failure message="Error">Error: Expected 3 to equal 0.
+    at &lt;Jasmine&gt;
+    at UserContext.&lt;anonymous&gt; (http://localhost:9876/_karma_webpack_/src/app/components/albumes/albumes.component.spec.ts:33:37)
+    at ZoneDelegate.invoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:364:1)
+    at ProxyZoneSpec.onInvoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:292:1)
+</failure>
+    </testCase>
     <testCase name="AlbumesComponent should create" duration="9"/>
+    <testCase name="AlbumesComponent check the albumes when is not empty" duration="8">
+      <failure message="Error">Error: Expected 3 to equal 0.
+    at &lt;Jasmine&gt;
+    at UserContext.&lt;anonymous&gt; (http://localhost:9876/_karma_webpack_/src/app/components/albumes/albumes.component.spec.ts:29:37)
+    at ZoneDelegate.invoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:364:1)
+    at ProxyZoneSpec.onInvoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:292:1)
+</failure>
+    </testCase>
   </file>
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should have as title 'front'" duration="13"/>
-    <testCase name="AppComponent should create the app" duration="5"/>
+  <file path="src/app/services/albumes.service.spec.ts">
+    <testCase name="AlbumsService should be created" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
   </file>
 </testExecutions>

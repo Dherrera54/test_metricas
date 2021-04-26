@@ -24,4 +24,14 @@ describe('AlbumesComponent', () => {
     expect(component).toBeTruthy();
   });
 
+
+  it('check the albumes when is not empty', () => {
+    expect(component.albums.length).toEqual(0);
+  });
+
+  it('check the services when the albums is not empty', () => {
+    expect(component.albums.length).toEqual(0);
+  });
+
+
 });

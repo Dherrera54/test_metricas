@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlbumesInformation } from '../../shared/models/albumesInformation';
+import {AlbumesService} from '../../services/albumes..service';
+import {Albumes} from '../../model/albumes';
 
 @Component({
   selector: 'app-albumes',
@@ -9,14 +11,18 @@ import { AlbumesInformation } from '../../shared/models/albumesInformation';
 export class AlbumesComponent implements OnInit {
   albums: Array<AlbumesInformation>;
 
-  constructor() {
+  constructor(private albumesService: AlbumesService ) {
     this.albums = new Array<AlbumesInformation>();
   }
 
   ngOnInit(): void {
-    this.albums.push(new AlbumesInformation('MANUEL GONZALEZ A',  'MANUEL', 'MANUEL', 'Vendido', 'https://3.bp.blogspot.com/-z40PWZQxAXA/V4wWkciZR4I/AAAAAAAAAGA/3rh6zL3cjTIX8TLhVFO9BAhkZQ2Aoh3VQCLcB/s1600/grandes-exitos-mega.jpg'));
-    this.albums.push(new AlbumesInformation( 'MANUEL GONZALEZ B',  'MANUEL', 'MANUEL', 'Vendido', 'https://3.bp.blogspot.com/-z40PWZQxAXA/V4wWkciZR4I/AAAAAAAAAGA/3rh6zL3cjTIX8TLhVFO9BAhkZQ2Aoh3VQCLcB/s1600/grandes-exitos-mega.jpg'));
-    this.albums.push(new AlbumesInformation( 'MANUEL GONZALEZ C',  'MANUEL', 'MANUEL', 'Vendido', 'https://3.bp.blogspot.com/-z40PWZQxAXA/V4wWkciZR4I/AAAAAAAAAGA/3rh6zL3cjTIX8TLhVFO9BAhkZQ2Aoh3VQCLcB/s1600/grandes-exitos-mega.jpg'));
-  }
+    this.albumesService.getAlbumes().subscribe((result: Array<Albumes>) => {
+      console.log(result);
+      result.forEach( (it: Albumes) => {
+        this.albums.push(new AlbumesInformation(it.name,  it.recordLabel, it.genre, 'Vendido', it.cover));
+      });
+    });
+
+   }
 
 }
