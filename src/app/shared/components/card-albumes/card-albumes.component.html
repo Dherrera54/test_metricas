@@ -1,0 +1,19 @@
+<div class="container-album">
+  <div *ngFor="let item of albumes; let i = index" class="detail-album">
+      <div class="img-driver">
+        <img src="{{item.image}}" alt="">
+      </div>
+      <div class="album-title">
+        <span id="title">{{item.titleAlbum}}</span>
+      </div>
+      <div class="album-group">
+        <span>{{item.groupAlbum}}</span>
+      </div>
+      <div class="album-gender">
+         <span>{{item.genderAlbum}}</span>
+      </div>
+      <div class="album-state">
+        <span>{{item.stateAlbum}}</span>
+      </div>
+  </div>
+</div>
