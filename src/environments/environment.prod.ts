@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrl : 'https://grupo-uniandes-03.herokuapp.com/'
 };

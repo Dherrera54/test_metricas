@@ -1,0 +1,72 @@
+.container-album {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .detail-album {
+    background: white;
+    width: 362px;
+    margin-left: 143px;
+    margin-top: 97px;
+
+    .img-driver {
+      text-align: center;
+      width: 100%;
+      padding-top: 17px;
+      img {
+        border-radius:150px;
+        border: 1px solid #707070;
+        opacity: 1;
+        width: 98px;
+        height: 98px;
+      }
+    }
+
+    .album-title {
+        text-align: center;
+        padding-top: 39px;
+        span {
+          font-weight: bold;
+          font-family: Arial;
+          font-size: 24px;
+        }
+    }
+
+
+    .album-group {
+      text-align: center;
+      padding-top: 16px;
+      span {
+        font-weight: bold;
+        color: black;
+        font-family: Arial;
+        font-size: 16px;
+      }
+    }
+
+    .album-gender {
+      text-align: center;
+      padding-top: 16px;
+      span {
+        opacity: 100%;
+        color: #000000;
+        font-family: Arial;
+        font-size: 16px;
+      }
+    }
+
+    .album-state {
+      text-align: center;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      span {
+        color: #007BFF;
+        font-family: Arial;
+        font-size: 24px;
+        opacity: 1;
+      }
+    }
+
+
+  }
+}
