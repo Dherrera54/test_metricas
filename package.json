@@ -20,11 +20,8 @@
     "@angular/platform-browser": "~10.0.5",
     "@angular/platform-browser-dynamic": "~10.0.5",
     "@angular/router": "~10.0.5",
-<<<<<<< HEAD
     "bootstrap": "^4.6.0",
-=======
     "@types/jest": "^26.0.23",
->>>>>>> develop
     "exec-sh": "^0.3.4",
     "faker": "^5.5.3",
     "rxjs": "~6.5.5",
