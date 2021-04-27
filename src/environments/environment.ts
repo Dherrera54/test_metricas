@@ -7,6 +7,7 @@ import { TemplateBindingParseResult } from "@angular/compiler";
 export const environment = {
   production: false,
   baseUrl : 'https://grupo-uniandes-03.herokuapp.com/'
+
 };
 
 /*
