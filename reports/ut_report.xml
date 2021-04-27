@@ -1,0 +1,12 @@
+<testExecutions version="1">
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should create the app" duration="95"/>
+  </file>
+  <file path="src/app/collectors/collector-listar/collector-listar.component.spec.ts">
+    <testCase name="CollectorListarComponent should create" duration="77"/>
+  </file>
+  <file path="src/app/collectors/collector.service.spec.ts">
+    <testCase name="Service: Collector should create service" duration="8"/>
+    <testCase name="Service: Collector getCollectors() should return 10 records" duration="11"/>
+  </file>
+</testExecutions>
