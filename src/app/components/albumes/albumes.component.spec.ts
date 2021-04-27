@@ -4,6 +4,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {AlbumesService} from '../../services/albumes..service';
 import {observable, Observable, of, Subject, throwError} from 'rxjs';
 import {AlbumsMock} from '../../shared/mocks/albums.mock';
+import {CardAlbumesComponent} from '../../shared/components/card-albumes/card-albumes.component';
 
 describe('AlbumesComponent', () => {
   let component: AlbumesComponent;
@@ -12,7 +13,7 @@ describe('AlbumesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AlbumesComponent],
+      declarations: [AlbumesComponent, CardAlbumesComponent],
       imports:  [
         HttpClientModule,
       ],
@@ -49,43 +50,12 @@ describe('AlbumesComponent', () => {
   it('check the albumes is not empty', () => {
     expect(component.albums.length).toEqual(4);
   });
-});
 
-describe('Get error in services', () => {
-  let component: AlbumesComponent;
-  let fixture: ComponentFixture<AlbumesComponent>;
-  const error = new Subject();
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [AlbumesComponent],
-      imports:  [
-        HttpClientModule,
-      ],
-      providers: [
-        HttpClient,
-        {
-          provide: AlbumesService,
-          useValue: {
-            getAlbumes(): any {
-              return  error;
-            },
-          },
-        },
-      ],
-    })
-      .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AlbumesComponent);
-    error.error('');
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-
+  it('check the first album is Salsa', () => {
+    expect(component.albums[0].genderAlbum).toEqual('Salsa');
   });
 
-  it('Checking error in service', () => {
-    expect(component.albums.length).toEqual(0);
+  it('Checking the albums first name is Buscando América', () => {
+    expect(component.albums[0].titleAlbum).toEqual('Buscando América');
   });
 });
