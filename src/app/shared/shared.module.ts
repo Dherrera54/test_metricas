@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
-import {CardAlbumesComponent} from './components/card-albumes/card-albumes.component';
-import {BrowserModule} from '@angular/platform-browser';
+import { CardAlbumesComponent } from './components/card-albumes/card-albumes.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
-    CardAlbumesComponent
+    CardAlbumesComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -13,7 +15,8 @@ import {BrowserModule} from '@angular/platform-browser';
 
   ],
   exports: [
-    CardAlbumesComponent
+    CardAlbumesComponent,
+    HeaderComponent
   ],
 })
 export class SharedModule { }
