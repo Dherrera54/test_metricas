@@ -1,7 +1,7 @@
 
 export class Albumes {
 
-  id: string;
+  id: number;
   name: string;
   cover: string;
   releaseDate: string;
@@ -9,7 +9,7 @@ export class Albumes {
   genre: string;
   recordLabel: string;
 
-  constructor(id?: string, name?: string, cover?: string, releaseDate?: string,
+  constructor(id?: number, name?: string, cover?: string, releaseDate?: string,
               description?: string, genre?: string, recordLabel?: string) {
     this.id = id;
     this.name = name;

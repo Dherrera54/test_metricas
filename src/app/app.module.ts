@@ -8,13 +8,15 @@ import { SharedModule } from './shared/shared.module';
 import { CollectorListarComponent } from './components/collector-listar/collector-listar.component';
 import { CommonModule } from '@angular/common';
 import { PerformerListComponent } from './components/performer-list/performer-list.component';
+import { DetailAlbumComponent } from './components/detail-album/detail-album.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlbumesComponent,
     PerformerListComponent,
-    CollectorListarComponent
+    CollectorListarComponent,
+    DetailAlbumComponent
   ],
   imports: [
     CommonModule,

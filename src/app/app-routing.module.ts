@@ -10,6 +10,7 @@ const routes: any = [
   { path: 'albumes', component: AlbumesComponent },
   { path: 'performer', component: PerformerListComponent },
   { path: 'collector', component: CollectorListarComponent },
+  { path: 'detail-album', component: PerformerListComponent },
 ];
 
 

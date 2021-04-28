@@ -1,5 +1,5 @@
 <div class="container-album">
-  <div *ngFor="let item of albumes; let i = index" class="detail-album">
+  <div *ngFor="let item of albumes; let i = index" class="detail-album" (click)="clickItem(i)">
       <div class="img-driver">
         <img src="{{item.image}}" alt="">
       </div>

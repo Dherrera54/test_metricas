@@ -49,4 +49,11 @@ describe('CardAlbumesComponent', () => {
     const html = compile.getElementsByClassName('album-title')[0].innerHTML;
     expect(html.includes(component.albumes[0].titleAlbum)).toEqual(true);
   });
+
+  it('should emit index event clickItem', () => {
+    spyOn(component.index, 'emit');
+    component.clickItem(1);
+    expect(component.index.emit).toHaveBeenCalledWith(1);
+  });
+
 });

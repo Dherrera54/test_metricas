@@ -18,9 +18,14 @@ export class AlbumesComponent implements OnInit {
   ngOnInit(): void {
     this.albumesService.getAlbumes().subscribe((result: Array<Albumes>) => {
       result.forEach( (it: Albumes) => {
-        this.albums.push(new AlbumesInformation(it.name,  it.recordLabel, it.genre, 'Vendido', it.cover));
+        this.albums.push(new AlbumesInformation(it.id, it.name,  it.recordLabel, it.genre, 'Vendido', it.cover));
       });
     });
    }
+
+  showDetailAlbum(index: number): void{
+    const album = this.albums[index];
+    album.titleAlbum;
+  }
 
 }
