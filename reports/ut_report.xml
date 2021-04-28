@@ -1,39 +1,39 @@
 <testExecutions version="1">
+  <file path="src/app/components/collector-listar/collector-listar.component.spec.ts">
+    <testCase name="CollectorListarComponent should create" duration="47"/>
+  </file>
+  <file path="src/app/services/musician.service.spec.ts">
+    <testCase name="Service: Musician Method getMusicians() should return 10 records" duration="6"/>
+  </file>
   <file path="src/app/shared/components/card-albumes/card-albumes.component.spec.ts">
-    <testCase name="CardAlbumesComponent should create" duration="268"/>
-    <testCase name="CardAlbumesComponent check the view when is the data is not empty" duration="22"/>
-    <testCase name="CardAlbumesComponent check the view when is the data is empty" duration="14"/>
-    <testCase name="CardAlbumesComponent check the view when it has data" duration="19"/>
-  </file>
-  <file path="src/app/services/albumes.service.spec.ts">
-    <testCase name="AlbumsService should be created" duration="25"/>
-    <testCase name="AlbumsService check the success services" duration="9"/>
-    <testCase name="AlbumsService check the services when is having error" duration="10"/>
-  </file>
-  <file path="src/app/performer/performer-list/performer-list.component.spec.ts">
-    <testCase name="PerformerListComponent Should have an header element band name" duration="69"/>
-    <testCase name="PerformerListComponent should create" duration="16"/>
-  </file>
-  <file path="src/app/performer/musician.service.spec.ts">
-    <testCase name="Service: Musician Method getMusicians() should return 10 records" duration="11"/>
-  </file>
-  <file path="src/app/performer/band.service.spec.ts">
-    <testCase name="Service: Band Method getBands() should return 10 records" duration="8"/>
+    <testCase name="CardAlbumesComponent should create" duration="15"/>
+    <testCase name="CardAlbumesComponent check the view when it has data" duration="12"/>
+    <testCase name="CardAlbumesComponent check the view when is the data is empty" duration="6"/>
+    <testCase name="CardAlbumesComponent check the view when is the data is not empty" duration="5"/>
   </file>
   <file path="src/app/components/albumes/albumes.component.spec.ts">
-    <testCase name="AlbumesComponent check the albumes is not empty" duration="42"/>
-    <testCase name="AlbumesComponent check the first album is Salsa" duration="26"/>
-    <testCase name="AlbumesComponent Checking the albums first name is Buscando América" duration="17"/>
-    <testCase name="AlbumesComponent should create" duration="21"/>
-  </file>
-  <file path="src/app/collectors/collector-listar/collector-listar.component.spec.ts">
-    <testCase name="CollectorListarComponent should create" duration="41"/>
-  </file>
-  <file path="src/app/collectors/collector.service.spec.ts">
-    <testCase name="Service: Collector should create service" duration="4"/>
-    <testCase name="Service: Collector getCollectors() should return 10 records" duration="5"/>
+    <testCase name="AlbumesComponent check the first album is Salsa" duration="12"/>
+    <testCase name="AlbumesComponent check the albumes is not empty" duration="7"/>
+    <testCase name="AlbumesComponent should create" duration="8"/>
+    <testCase name="AlbumesComponent Checking the albums first name is Buscando América" duration="11"/>
   </file>
   <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should create the app" duration="26"/>
+    <testCase name="AppComponent should create the app" duration="28"/>
+  </file>
+  <file path="src/app/services/collector.service.spec.ts">
+    <testCase name="Service: Collector should create service" duration="2"/>
+    <testCase name="Service: Collector getCollectors() should return 10 records" duration="2"/>
+  </file>
+  <file path="src/app/components/performer-list/performer-list.component.spec.ts">
+    <testCase name="PerformerListComponent Should have an header element band name" duration="18"/>
+    <testCase name="PerformerListComponent should create" duration="7"/>
+  </file>
+  <file path="src/app/services/band.service.spec.ts">
+    <testCase name="Service: Band Method getBands() should return 10 records" duration="3"/>
+  </file>
+  <file path="src/app/services/albumes.service.spec.ts">
+    <testCase name="AlbumsService check the success services" duration="3"/>
+    <testCase name="AlbumsService should be created" duration="2"/>
+    <testCase name="AlbumsService check the services when is having error" duration="2"/>
   </file>
 </testExecutions>

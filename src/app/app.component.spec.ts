@@ -3,6 +3,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import {CardAlbumesComponent} from './shared/components/card-albumes/card-albumes.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {PerformerListComponent} from './components/performer-list/performer-list.component';
+import {CollectorListarComponent} from './components/collector-listar/collector-listar.component';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('AppComponent', () => {
 
@@ -14,8 +17,11 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         BrowserAnimationsModule,
+        HttpClientModule
       ],
       declarations: [
+        PerformerListComponent,
+        CollectorListarComponent,
         AppComponent,
         CardAlbumesComponent,
       ],

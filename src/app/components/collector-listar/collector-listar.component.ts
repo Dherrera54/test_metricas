@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Collector} from '../collector';
-import {CollectorService} from '../collector.service'
+import {Collector} from '../../model/collector';
+import {CollectorService} from '../../services/collector.service'
 
 @Component({
   selector: 'app-collector-listar',

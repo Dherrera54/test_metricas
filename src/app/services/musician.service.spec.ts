@@ -1,7 +1,7 @@
 import { TestBed, async, inject,getTestBed } from '@angular/core/testing';
 import { MusicianService } from './musician.service';
 import faker from 'faker';
-import { Musician }from './performer';
+import { Musician }from '../model/performer';
 
 import { HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 

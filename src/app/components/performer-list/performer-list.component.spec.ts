@@ -2,11 +2,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { Band, Musician } from '../performer';
+import { Band, Musician } from '../../model/performer';
 
 import { PerformerListComponent } from './performer-list.component';
-import { HttpClientTestingModule } from "@angular/common/http/testing";
-import faker from "faker";
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import faker from 'faker';
 
 describe('PerformerListComponent', () => {
   let component: PerformerListComponent;
@@ -30,7 +30,7 @@ describe('PerformerListComponent', () => {
         faker.image.imageUrl(),
         faker.lorem.sentence(),
         faker.date.past())];
-      component.musicians = [
+    component.musicians = [
         new Musician(
           faker.lorem.sentence(),
           faker.image.imageUrl(),
@@ -44,8 +44,8 @@ describe('PerformerListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it("Should have an header element band name", () => {
-    expect(debug.query(By.css("h5")).nativeElement.innerText).toContain(
+  it('Should have an header element band name', () => {
+    expect(debug.query(By.css('h5')).nativeElement.innerText).toContain(
       component.bands[0].name
     );
   });
