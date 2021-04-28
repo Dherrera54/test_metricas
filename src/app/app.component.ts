@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'front';
-  headers: Array<Header> = new Array();
+  private headers: Array<Header> = new Array();
 
   constructor(private headerService: HeaderService, private router: Router) {
     this.headers.push(new Header(0, 'Home', true));
