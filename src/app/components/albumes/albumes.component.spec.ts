@@ -77,4 +77,10 @@ describe('AlbumesComponent', () => {
   it('Checking the albums first name is Buscando América', () => {
     expect(component.albums[0].titleAlbum).toEqual('Buscando América');
   });
+
+  it('should trigger click option performer', () => {
+    const router = TestBed.get(Router);
+    component.showDetailAlbum(100);
+    expect(router.navigate).toHaveBeenCalledWith(['detail-album', 100]);
+  });
 });
