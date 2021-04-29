@@ -6,10 +6,10 @@
         <dt> Comments</dt>
         <dd>Esperar</dd>
         <dt> Favorite Performers</dt>
-        <dd *ngFor = "let p of collectorDetail.fPerformers">{{p.name}}</dd>
+        <dd *ngFor = "let p of collectorDetail.favoritePerformers">{{p.name}}</dd>
         <hr>
         <dt>Collector Albums</dt>
-        <dd *ngFor = "let a of collectorDetail.albumes">{{a.name}</dd>
+        <dd *ngFor = "let a of collectorDetail.collectorAlbums">{{a.id}}</dd>
       </dl>
     </div>
   </div>
