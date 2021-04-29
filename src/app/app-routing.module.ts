@@ -6,6 +6,7 @@ import {CollectorListarComponent} from './components/collector-listar/collector-
 import {DetailAlbumComponent} from './components/detail-album/detail-album.component';
 
 const routes: any = [
+  { path: '', component: AlbumesComponent },
   { path: 'albumes', component: AlbumesComponent },
   { path: 'performer', component: PerformerListComponent },
   { path: 'collector', component: CollectorListarComponent },
