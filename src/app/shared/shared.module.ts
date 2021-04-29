@@ -5,12 +5,14 @@ import { HeaderComponent } from './components/header/header.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TitleTableComponent} from './components/title-table/title-table.component';
+import {SearchComponent} from './components/search/search.component';
 
 @NgModule({
   declarations: [
     CardAlbumesComponent,
     HeaderComponent,
-    TitleTableComponent
+    TitleTableComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import {TitleTableComponent} from './components/title-table/title-table.componen
   exports: [
     CardAlbumesComponent,
     HeaderComponent,
-    TitleTableComponent
+    TitleTableComponent,
+    SearchComponent
   ],
 })
 export class SharedModule { }

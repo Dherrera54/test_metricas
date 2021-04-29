@@ -1,0 +1,17 @@
+.container-search {
+  display: flex;
+  padding-top: 16px;
+  margin-left: 143px;
+  margin-right: 143px;
+
+  .input-text {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #999494;
+  }
+
+  .logo{
+    background: #325A73;
+    padding: 16px;
+  }
+}
