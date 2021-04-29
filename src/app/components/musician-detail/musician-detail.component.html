@@ -17,15 +17,15 @@
         <span>Tipo de artista: Musico </span>
       </div>
     </div>
-   <!-- <div class="container-button">
+    <div class="container-button">
       <div>
-        <button type="button" class="design-button" (click)="goBack()">Regresar</button>
+        <button type="button" class="design-button" >Regresar</button>
       </div>
       <div class="show-comment">
-        <button type="button" class="design-button" (click)="goBack()">Ver comentarios</button>
+        <button type="button" class="design-button" >Ver premios</button>
       </div>
     </div>
-  </div> -->
+  </div>
 
   <div class="list-information">
     <hr/>
@@ -37,11 +37,9 @@
         <span>Nombre</span>
       </div>
       <div class="container-div">
-        <span>Fecha</span>
+        <span>Fecha Publicación</span>
       </div>
-      <div class="container-div">
-        <span>Descripcion</span>
-      </div>
+
       <div class="container-div">
         <span>Casa discografica</span>
       </div>
@@ -49,7 +47,7 @@
     <hr/>
   </div>
  <div class="row-information" *ngFor="let album of musicianDetail.albums; let i = index">
-    <div class="table-title">
+    <div class="table-body">
       <div class="container-div">
         <img class="album_cover" src="{{album.cover}}" alt="" width="50px" height="50px"/>
       </div>
@@ -58,9 +56,6 @@
       </div>
       <div class="container-div">
         <span>{{album.releaseDate}}</span>
-      </div>
-      <div class="container-div">
-        <span>{{album.description}} min</span>
       </div>
       <div class="container-div">
         <span>{{album.recordLabel}}</span>
