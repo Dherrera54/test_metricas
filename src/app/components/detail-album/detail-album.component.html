@@ -11,7 +11,7 @@
         <span>Artistas: {{album.recordLabel}}</span>
       </div>
       <div class="detail">
-        <span>Lanzamiento: {{album.releaseDate}} </span>
+        <span>Lanzamiento: {{album.releaseDate  | date: 'yyyy-MM-dd' }} </span>
       </div>
       <div class="detail">
         <span>Genero: {{album.genre}} </span>
