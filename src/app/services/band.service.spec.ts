@@ -1,7 +1,7 @@
 import { TestBed, async, inject,getTestBed } from '@angular/core/testing';
 import { BandService } from './band.service';
 import faker from 'faker';
-import {Band }from './performer';
+import {Band }from '../model/performer';
 
 import { HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlbumesInformation } from '../../shared/models/albumesInformation';
 import {AlbumesService} from '../../services/albumes..service';
 import {Albumes} from '../../model/albumes';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-albumes',
@@ -11,16 +12,21 @@ import {Albumes} from '../../model/albumes';
 export class AlbumesComponent implements OnInit {
   albums: Array<AlbumesInformation> = new Array<AlbumesInformation>();
 
-  constructor(private albumesService: AlbumesService ) {
-    this.albums = new Array<AlbumesInformation>();
+  constructor(private albumesService: AlbumesService, private router: Router ) {
   }
 
   ngOnInit(): void {
-    this.albumesService.getAlbumes().subscribe((result: Array<Albumes>) => {
+    this.albumesService.getAlbumesServices().subscribe((result: Array<Albumes>) => {
+      this.albumesService.setAlbumes(result);
       result.forEach( (it: Albumes) => {
-        this.albums.push(new AlbumesInformation(it.name,  it.recordLabel, it.genre, 'Vendido', it.cover));
+        this.albums.push(new AlbumesInformation(it.id, it.name,  it.recordLabel, it.genre, 'Vendido', it.cover));
       });
+      console.log(this.albums);
     });
    }
+
+  showDetailAlbum(index: number): void {
+    this.router.navigate(['detail-album', index],  );
+  }
 
 }

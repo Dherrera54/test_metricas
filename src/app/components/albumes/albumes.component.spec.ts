@@ -5,6 +5,12 @@ import {AlbumesService} from '../../services/albumes..service';
 import {observable, Observable, of, Subject, throwError} from 'rxjs';
 import {AlbumsMock} from '../../shared/mocks/albums.mock';
 import {CardAlbumesComponent} from '../../shared/components/card-albumes/card-albumes.component';
+import {RouterTestingModule} from '@angular/router/testing';
+import { Router } from '@angular/router';
+import {DetailAlbumComponent} from '../detail-album/detail-album.component';
+import {HeaderComponent} from '../../shared/components/header/header.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {Albumes} from '../../model/albumes';
 
 describe('AlbumesComponent', () => {
   let component: AlbumesComponent;
@@ -13,18 +19,32 @@ describe('AlbumesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AlbumesComponent, CardAlbumesComponent],
+      declarations: [
+        AlbumesComponent,
+        CardAlbumesComponent,
+        DetailAlbumComponent,
+        HeaderComponent
+      ],
       imports:  [
+        RouterTestingModule,
         HttpClientModule,
+        BrowserModule
       ],
       providers: [
         HttpClient,
         {
           provide: AlbumesService,
           useValue: {
-            getAlbumes(): Observable<any> {
+            getAlbumesServices(): Observable<Array<Albumes>> {
               return  of(albums);
             },
+            setAlbumes(): void {},
+          },
+        },
+        {
+          provide: Router,
+          useValue: {
+            navigate: jasmine.createSpy('navigate'),
           },
         },
       ],
@@ -36,7 +56,6 @@ describe('AlbumesComponent', () => {
     fixture = TestBed.createComponent(AlbumesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    console.log(albums);
   });
 
   afterEach(() => {

@@ -1,10 +1,10 @@
-/* tslint:disable:no-unused-variable */
+/* tslint:disable:no-unused-variables */
 
 import { TestBed, async, inject, getTestBed } from '@angular/core/testing';
 import { CollectorService } from './collector.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HttpTestingController } from '@angular/common/http/testing';
-import { Collector } from './collector';
+import { Collector } from '../model/collector';
 import faker from 'faker';
 
 describe('Service: Collector', () => {

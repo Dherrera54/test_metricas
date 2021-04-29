@@ -1,21 +1,24 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {AlbumesInformation} from '../../models/albumesInformation';
+import {Header} from '../../models/header';
 
 @Component({
-  selector: 'app-card-albumes',
-  templateUrl: './card-albumes.component.html',
-  styleUrls: ['./card-albumes.component.scss']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
-export class CardAlbumesComponent implements OnInit {
+export class HeaderComponent implements OnInit {
 
-  @Input() albumes: Array<AlbumesInformation>;
+  @Input() header: Array<Header>;
   @Output() index: EventEmitter<number> = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   clickItem(i: number): void {
-    this.index.emit(i);
+     this.index.emit(i);
   }
+
 }

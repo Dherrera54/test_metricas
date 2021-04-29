@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Performer, Musician, Band } from '../performer';
-import { BandService } from '../band.service';
-import { MusicianService } from '../musician.service';
+import { Performer, Musician, Band } from '../../model/performer';
+import { BandService } from '../../services/band.service';
+import { MusicianService } from '../../services/musician.service';
 
 @Component({
   selector: 'app-performer-list',
