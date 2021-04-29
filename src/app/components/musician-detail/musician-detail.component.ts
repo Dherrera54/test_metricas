@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Musician } from '../../model/performer';
 
 
+
 @Component({
   selector: 'app-musician-detail',
   templateUrl: './musician-detail.component.html',
@@ -14,7 +15,7 @@ export class MusicianDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.musicianDetail.id)
+    console.log(this.musicianDetail.id, )
   }
 
 }

@@ -48,17 +48,23 @@
     </div>
     <hr/>
   </div>
- <!-- <div class="row-information" *ngFor="let item of album.tracks; let i = index">
+ <div class="row-information" *ngFor="let album of musicianDetail.albums; let i = index">
     <div class="table-title">
       <div class="container-div">
-        <span>{{item.id}}</span>
+        <img class="album_cover" src="{{album.cover}}" alt="" width="50px" height="50px"/>
       </div>
       <div class="container-div">
-        <span>{{item.name}}</span>
+        <span>{{album.name}}</span>
       </div>
       <div class="container-div">
-        <span>{{item.duration}} min</span>
+        <span>{{album.releaseDate}}</span>
+      </div>
+      <div class="container-div">
+        <span>{{album.description}} min</span>
+      </div>
+      <div class="container-div">
+        <span>{{album.recordLabel}}</span>
       </div>
     </div>
   </div>
-</div> -->
+</div>
