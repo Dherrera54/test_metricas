@@ -9,6 +9,7 @@ import { CollectorListarComponent } from './components/collector-listar/collecto
 import { CommonModule } from '@angular/common';
 import { PerformerListComponent } from './components/performer-list/performer-list.component';
 import { DetailAlbumComponent } from './components/detail-album/detail-album.component';
+import { CollectorDetailComponent } from './components/collector-detail/collector-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DetailAlbumComponent } from './components/detail-album/detail-album.com
     AlbumesComponent,
     PerformerListComponent,
     CollectorListarComponent,
-    DetailAlbumComponent
+    DetailAlbumComponent,
+    CollectorDetailComponent
   ],
   imports: [
     CommonModule,

@@ -9,8 +9,15 @@ import {CollectorService} from '../../services/collector.service'
 })
 export class CollectorListarComponent implements OnInit {
 
+  selectedCollector:Collector;
+  selected = false;
   constructor(private collectorService: CollectorService) { }
   collectors:Array<Collector>;
+
+  onSelected(c:Collector):void{
+    this.selected=true;
+    this.selectedCollector = c ;
+  }
 
   getCollectors(): void {
     this.collectorService.getCollectors()
