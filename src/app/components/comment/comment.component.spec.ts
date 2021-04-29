@@ -1,6 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { DetailAlbumComponent } from './detail-album.component';
 import {ActivatedRoute, Router} from '@angular/router';
 import {RouterTestingModule} from '@angular/router/testing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -8,15 +6,16 @@ import {HttpClientModule} from '@angular/common/http';
 import {AlbumesService} from '../../services/albumes..service';
 import {AlbumsMock} from '../../shared/mocks/albums.mock';
 import {Albumes} from '../../model/albumes';
+import {CommentComponent} from './comment.component';
 import {TitleTableComponent} from '../../shared/components/title-table/title-table.component';
 
-describe('DetailAlbumComponent', () => {
-  let component: DetailAlbumComponent;
-  let fixture: ComponentFixture<DetailAlbumComponent>;
+describe('CommentComponent', () => {
+  let component: CommentComponent;
+  let fixture: ComponentFixture<CommentComponent>;
   const albums = AlbumsMock.response.data;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DetailAlbumComponent, TitleTableComponent ],
+      declarations: [ CommentComponent, TitleTableComponent],
       imports: [
         RouterTestingModule,
         BrowserAnimationsModule,
@@ -40,16 +39,16 @@ describe('DetailAlbumComponent', () => {
         {
           provide: ActivatedRoute,
           useValue: {
-            snapshot: {params: {id: 100}}
+            snapshot: {queryParams: {id: 100}}
           }
         },
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DetailAlbumComponent);
+    fixture = TestBed.createComponent(CommentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -69,7 +68,7 @@ describe('DetailAlbumComponent', () => {
   });
 
   it('check the getDetailAlbum', () => {
-    component.getDetailAlbum();
+    component.getComments();
     expect(component.album.recordLabel).toEqual(albums[0].recordLabel);
   });
 });

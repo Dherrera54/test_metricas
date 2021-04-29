@@ -11,7 +11,7 @@
         <span>Artistas: {{album.recordLabel}}</span>
       </div>
       <div class="detail">
-        <span>Lanzamiento: {{album.releaseDate}} </span>
+        <span>Lanzamiento: {{album.releaseDate  | date: 'yyyy-MM-dd' }} </span>
       </div>
       <div class="detail">
         <span>Genero: {{album.genre}} </span>
@@ -25,26 +25,12 @@
         <button type="button" class="design-button" (click)="goBack()">Regresar</button>
       </div>
       <div class="show-comment">
-        <button type="button" class="design-button" (click)="goBack()">Ver comentarios</button>
+        <button type="button" class="design-button" (click)="checkComment()">Ver comentarios</button>
       </div>
     </div>
   </div>
 
-  <div class="list-information">
-    <hr/>
-    <div class="table-title">
-      <div class="container-div">
-        <span>Track</span>
-      </div>
-      <div class="container-div">
-        <span>Nombre</span>
-      </div>
-      <div class="container-div">
-        <span>Duracion</span>
-      </div>
-    </div>
-    <hr/>
-  </div>
+  <app-title-table [titlesTable]="titlesTable"></app-title-table>
   <div class="row-information" *ngFor="let item of album.tracks; let i = index">
     <div class="table-title">
       <div class="container-div">
