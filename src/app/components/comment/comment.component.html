@@ -32,8 +32,8 @@
         <span>{{item.description}}</span>
       </div>
       <div class="container-div">
-        <div *ngFor="let j of [].constructor(5)">
-          <span><img src="assets/img/grade_white_24dp.svg" alt=""></span>
+        <div *ngFor="let j of [].constructor(item.rating)">
+          <span><img src="assets/img/calification.svg" alt=""></span>
         </div>
       </div>
     </div>
