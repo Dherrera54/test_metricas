@@ -9,6 +9,12 @@ import { CollectorListarComponent } from './components/collector-listar/collecto
 import { CommonModule } from '@angular/common';
 import { PerformerListComponent } from './components/performer-list/performer-list.component';
 import { DetailAlbumComponent } from './components/detail-album/detail-album.component';
+import { CommentComponent } from './components/comment/comment.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -16,14 +22,21 @@ import { DetailAlbumComponent } from './components/detail-album/detail-album.com
     AlbumesComponent,
     PerformerListComponent,
     CollectorListarComponent,
-    DetailAlbumComponent
+    DetailAlbumComponent,
+    CommentComponent
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
