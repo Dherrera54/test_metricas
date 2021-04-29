@@ -1,7 +1,7 @@
 <div class="main-container container-fluid">
   <div class="row">
-    <div class="container-bands col-12 col-md-6 col-lg-4">
-      <div class="co" *ngFor="let band of bands" class="detail-band" (click)="clickItem(band.id)">
+    <div class="container-bands col-12 col-md-6 col-lg-4 ">
+      <div class="col" *ngFor="let band of bands" class="detail-band" (click)="clickItem(band.id)">
           <div class="img-driver">
             <img src="{{band.image}}" alt="">
           </div>
@@ -18,7 +18,7 @@
     </div>
 
     <div class="container-musicians  col-12 col-md-6 col-lg-4">
-      <div class="col" *ngFor="let musician of musicians" class="detail-musician" (click)="clickItem(musician.id)">
+      <div class="col" *ngFor="let musician of musicians" class="detail-musician" (click)="onSelectedMusician(musician)">
           <div class="img-driver">
             <img src="{{musician.image}}" alt="">
           </div>
@@ -32,6 +32,9 @@
             <a href="#" class="btn btn-primary">Favorite</a>
           </div>
       </div>
+    </div>
+    <div *ngIf="selected">
+      <app-musician-detail [musicianDetail]="selectedMusician"></app-musician-detail>
     </div>
   </div>
 </div>

@@ -12,6 +12,9 @@ export class PerformerListComponent implements OnInit {
 
   constructor(private bandService: BandService, private musicianService:MusicianService) { }
 
+  selectedMusician: Musician;
+  selected: boolean = false;
+
   public musicians: Array<Musician>;
   public bands: Array<Band>;
 
@@ -33,5 +36,9 @@ export class PerformerListComponent implements OnInit {
     this.getBandList();
     this.getMusicianList();
   }
+  onSelectedMusician(musician: Musician):void{
+    this.selected=true;
+    this.selectedMusician=musician;
 
+  }
 }
