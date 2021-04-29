@@ -17,6 +17,4 @@ export class SearchComponent implements OnInit {
   keyup(text: string): void {
     this.text.emit(text);
   }
-
-
 }

@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {AlbumesInformation} from '../../models/albumesInformation';
 import {TitlesTables} from '../../models/titlesTables';
 
 @Component({

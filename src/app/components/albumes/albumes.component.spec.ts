@@ -11,11 +11,19 @@ import {DetailAlbumComponent} from '../detail-album/detail-album.component';
 import {HeaderComponent} from '../../shared/components/header/header.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {Albumes} from '../../model/albumes';
+import {SearchComponent} from '../../shared/components/search/search.component';
+import {HeaderService} from '../../shared/services/header.service';
+import {Header} from '../../shared/models/header';
 
 describe('AlbumesComponent', () => {
   let component: AlbumesComponent;
   let fixture: ComponentFixture<AlbumesComponent>;
   const albums = AlbumsMock.response.data;
+  const headers: Array<Header> = new Array();
+  headers.push(new Header(0, 'A', true));
+  headers.push(new Header(1, 'B', false));
+  headers.push(new Header(2, 'C', false));
+  headers.push(new Header(3, 'D', false));
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -23,7 +31,8 @@ describe('AlbumesComponent', () => {
         AlbumesComponent,
         CardAlbumesComponent,
         DetailAlbumComponent,
-        HeaderComponent
+        HeaderComponent,
+        SearchComponent
       ],
       imports:  [
         RouterTestingModule,
@@ -39,6 +48,14 @@ describe('AlbumesComponent', () => {
               return  of(albums);
             },
             setAlbumes(): void {},
+          },
+        },
+        {
+          provide: HeaderService,
+          useValue: {
+            getHeadersOptions(): Array<Header> {
+              return headers;
+            },
           },
         },
         {
@@ -82,5 +99,93 @@ describe('AlbumesComponent', () => {
     const router = TestBed.get(Router);
     component.showDetailAlbum(100);
     expect(router.navigate).toHaveBeenCalledWith(['detail-album', 100]);
+  });
+
+  it('should get headers when is not existe', () => {
+    expect(component.getHeader()).toEqual(false);
+  });
+
+  it('should show all data when the text is empty', () => {
+    component.searchText('');
+    expect(component.albums.length).toEqual(4);
+  });
+
+  it('should show all data when the text is not empty', () => {
+    component.searchText('Buscando');
+    expect(component.albums.length).toEqual(1);
+  });
+});
+
+
+describe('AlbumesComponent check the header exists', () => {
+  let component: AlbumesComponent;
+  let fixture: ComponentFixture<AlbumesComponent>;
+  const albums = AlbumsMock.response.data;
+  const headers: Array<Header> = new Array();
+  headers.push(new Header(0, 'A', false));
+  headers.push(new Header(1, 'B', false));
+  headers.push(new Header(2, 'C', false));
+  headers.push(new Header(3, 'Buscador', true));
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        AlbumesComponent,
+        CardAlbumesComponent,
+        DetailAlbumComponent,
+        HeaderComponent,
+        SearchComponent
+      ],
+      imports:  [
+        RouterTestingModule,
+        HttpClientModule,
+        BrowserModule
+      ],
+      providers: [
+        HttpClient,
+        {
+          provide: AlbumesService,
+          useValue: {
+            getAlbumesServices(): Observable<Array<Albumes>> {
+              return  of(albums);
+            },
+            setAlbumes(): void {},
+          },
+        },
+        {
+          provide: HeaderService,
+          useValue: {
+            getHeadersOptions(): Array<Header> {
+              return headers;
+            },
+          },
+        },
+        {
+          provide: Router,
+          useValue: {
+            navigate: jasmine.createSpy('navigate'),
+          },
+        },
+      ],
+    })
+      .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AlbumesComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  afterEach(() => {
+    fixture.destroy();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should get headers when it exists', () => {
+    expect(component.getHeader()).toEqual(true);
   });
 });

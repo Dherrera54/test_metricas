@@ -3,7 +3,9 @@ import {AlbumesInformation} from './albumesInformation';
 
 describe('Creacion del objecto Albumes', () => {
   it('should create an instance', () => {
-    expect(new AlbumesInformation(faker.lorem.sentence(), faker.lorem.sentence(), faker.lorem.sentence(), faker.lorem.sentence(),
+    expect(new AlbumesInformation(faker.random.number({min: 0, max: 3}) ,
+      faker.lorem.sentence(), faker.lorem.sentence(),
+      faker.lorem.sentence(), faker.lorem.sentence(),
       faker.lorem.sentence())).toBeTruthy();
   });
 });
@@ -11,7 +13,12 @@ describe('Creacion del objecto Albumes', () => {
 describe('Creacion del objecto Albumes with faker in shared', () => {
   it('should create an instance', () => {
     const image = faker.image.imageUrl();
-    const albumes = new AlbumesInformation(faker.lorem.sentence(), faker.lorem.sentence(), faker.lorem.sentence(), faker.lorem.sentence(),
+    const albumes = new AlbumesInformation(
+      faker.random.number({min: 0, max: 3}),
+      faker.lorem.sentence(),
+      faker.lorem.sentence(),
+      faker.lorem.sentence(),
+      faker.lorem.sentence(),
       image);
     expect(albumes.image).toEqual(image);
   });

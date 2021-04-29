@@ -4,7 +4,6 @@ import {AlbumesService} from '../../services/albumes..service';
 import {Albumes} from '../../model/albumes';
 import {Router} from '@angular/router';
 import {HeaderService} from '../../shared/services/header.service';
-import {Header} from '../../shared/models/header';
 
 @Component({
   selector: 'app-albumes',
@@ -32,7 +31,7 @@ export class AlbumesComponent implements OnInit {
   getHeader(): boolean {
     const headers = this.headerService.getHeadersOptions();
     const header = headers.find(t => t.title === 'Buscador');
-    return  header.enabled;
+    return header === undefined ? false :  header.enabled;
   }
 
   showDetailAlbum(index: number): void {
