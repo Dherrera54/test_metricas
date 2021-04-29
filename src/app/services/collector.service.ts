@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
 })
 export class CollectorService {
 
-  private apiUrl:string = environment.baseUrl + 'collectors';
+  private apiUrl: string = environment.baseUrl + 'collectors';
 
   constructor(private http: HttpClient) { }
 
