@@ -21,7 +21,6 @@ export class AlbumesComponent implements OnInit {
       result.forEach( (it: Albumes) => {
         this.albums.push(new AlbumesInformation(it.id, it.name,  it.recordLabel, it.genre, 'Vendido', it.cover));
       });
-      console.log(this.albums);
     });
    }
 
