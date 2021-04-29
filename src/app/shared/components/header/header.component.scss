@@ -1,0 +1,24 @@
+ .container-header {
+      background: #343A40;
+      display: flex;
+      padding-top: 29px;
+      padding-bottom: 33px;
+      padding-left: 206px;
+      opacity: 1;
+
+     .container-option-enabled{
+        padding-right: 71px;
+        span {
+          color: #FFFFFF;
+        }
+     }
+
+     .container-option-disabled {
+       padding-right: 71px;
+
+       span {
+         opacity: 100%;
+         color: #FFFFFF80;
+       }
+    }
+ }

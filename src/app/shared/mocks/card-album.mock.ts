@@ -3,6 +3,7 @@ export const CardsAlbumMock = {
   response: {
     data: [
       {
+        id: 1,
         titleAlbum: '100',
         groupAlbum: 'Buscando América',
         genderAlbum: 'Salsa',

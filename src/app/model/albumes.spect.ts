@@ -10,7 +10,9 @@ describe('Creacion del objecto Albumes', () => {
 describe('Creacion del objecto Albumes with faker', () => {
   it('should create an instance', () => {
     const image = faker.image.imageUrl();
-    const albumes = new Albumes(faker.lorem.sentence(), faker.lorem.sentence(), faker.lorem.sentence(),
+    const albumes = new Albumes(
+      faker.random.number({min: 0, max: 3}),
+      faker.lorem.sentence(), faker.lorem.sentence(),
       faker.lorem.sentence(), faker.lorem.sentence()
       , faker.lorem.sentence(), image);
     expect(albumes.cover).toEqual(image);

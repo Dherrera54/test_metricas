@@ -39,7 +39,7 @@ describe('AlbumsService', () => {
     service = TestBed.get(AlbumesService);
     const spyService = TestBed.get(HttpClient);
     spyOn(spyService, 'get').and.returnValue(of(albums));
-    service.getAlbumes().subscribe((resp: Array<AlbumesInformation>) => {
+    service.getAlbumesServices().subscribe((resp: Array<AlbumesInformation>) => {
       expect(resp.length).toEqual(4);
     });
   });
@@ -55,10 +55,15 @@ describe('AlbumsService', () => {
     };
     observable.error(error);
     spyOn(spyService, 'get').and.returnValue(observable);
-    service.getAlbumes().subscribe((resp: any) => {
+    service.getAlbumesServices().subscribe((resp: any) => {
 
     }, (resp: any) => {
       expect(resp.message).toEqual('Cannot GET /albumsa');
     });
+  });
+
+  it('check set and get ', () => {
+    service.setAlbumes(albums);
+    expect(service.getAlbumes()[0].genre).toEqual('Salsa');
   });
 });
