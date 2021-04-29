@@ -1,3 +1,4 @@
+import {Tracks} from './tracks';
 
 export class Albumes {
 
@@ -8,9 +9,10 @@ export class Albumes {
   description: string;
   genre: string;
   recordLabel: string;
+  tracks: Array<Tracks>;
 
-  constructor(id?: number, name?: string, cover?: string, releaseDate?: string,
-              description?: string, genre?: string, recordLabel?: string) {
+  constructor(id: number, name: string, cover: string, releaseDate: string,
+              description: string, genre: string, recordLabel: string, tracks: Array<Tracks>) {
     this.id = id;
     this.name = name;
     this.cover = cover;
@@ -18,5 +20,6 @@ export class Albumes {
     this.description = description;
     this.genre = genre;
     this.recordLabel = recordLabel;
+    this.tracks = tracks;
   }
 }

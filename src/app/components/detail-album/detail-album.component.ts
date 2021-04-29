@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {AlbumesService} from '../../services/albumes..service';
+import {Albumes} from '../../model/albumes';
 
 @Component({
   selector: 'app-detail-album',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailAlbumComponent implements OnInit {
 
-  constructor() { }
+  id: number;
+  album: Albumes;
+
+  constructor( private activatedRoute: ActivatedRoute, private albumesService: AlbumesService) { }
 
   ngOnInit(): void {
+    this.id = this.activatedRoute.snapshot.params.id;
+    this.getDetailAlbum();
   }
 
+  getDetailAlbum(): void {
+    const item: Array<Albumes> =  this.albumesService.getAlbumes();
+    this.album = item.find(t => t.id == this.id);
+  }
+
+  goBack(): void {
+    window.history.back();
+  }
 }
