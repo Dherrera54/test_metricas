@@ -1,0 +1,30 @@
+.table-content-title {
+  width: 100%;
+  padding-top: 34px;
+  padding-left: 141px;
+  padding-right: 88px;
+
+  span {
+    color: #FFFFFF;
+  }
+
+  hr {
+    width: 100%;
+    color: #FFFFFF;
+  }
+
+  .table-title {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+
+    .container-div {
+      width: 100%;
+      span {
+        font-size: 24px;
+      }
+
+    }
+  }
+}

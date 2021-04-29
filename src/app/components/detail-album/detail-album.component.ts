@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AlbumesService} from '../../services/albumes..service';
 import {Albumes} from '../../model/albumes';
+import {TitlesTables} from '../../shared/models/titlesTables';
 
 @Component({
   selector: 'app-detail-album',
@@ -12,8 +13,14 @@ export class DetailAlbumComponent implements OnInit {
 
   id: number;
   album: Albumes;
+  titlesTable: Array<TitlesTables>;
 
-  constructor( private activatedRoute: ActivatedRoute, private albumesService: AlbumesService,  private router: Router) { }
+  constructor( private activatedRoute: ActivatedRoute, private albumesService: AlbumesService,  private router: Router) {
+    this.titlesTable = new Array<TitlesTables>();
+    this.titlesTable.push(new TitlesTables('Track'));
+    this.titlesTable.push(new TitlesTables('Nombre'));
+    this.titlesTable.push(new TitlesTables('Duracion'));
+  }
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params.id;

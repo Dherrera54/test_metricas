@@ -25,18 +25,7 @@
     </div>
   </div>
 
-  <div class="list-comment">
-    <hr/>
-    <div class="table-title">
-      <div class="container-div">
-        <span>Contenido</span>
-      </div>
-      <div class="container-div">
-        <span>Calificacion</span>
-      </div>
-    </div>
-    <hr/>
-  </div>
+  <app-title-table [titlesTable]="titlesTable"></app-title-table>
   <div class="row-comment" *ngFor="let item of album.comments; let i = index">
     <div class="table-title">
       <div class="container-div">
