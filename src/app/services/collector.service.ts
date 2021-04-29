@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Collector} from '../model/collector';
 import { environment } from '../../environments/environment';
+import { CollectorDetail } from '../model/collectorDetail';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,8 @@ export class CollectorService {
 
   constructor(private http: HttpClient) { }
 
-  getCollectors(): Observable<Collector[]> {
-    return this.http.get<Collector[]>(this.apiUrl);
+  getCollectors(): Observable<Array<CollectorDetail>> {
+    return this.http.get<Array<CollectorDetail>>(this.apiUrl);
   }
 
 }

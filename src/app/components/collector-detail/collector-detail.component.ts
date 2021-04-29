@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Collector} from '../../model/collector';
 import {EventEmitter, Input, Output} from '@angular/core';
+import { CollectorDetail } from 'src/app/model/collectorDetail';
 
 @Component({
   selector: 'app-collector-detail',
@@ -9,7 +10,7 @@ import {EventEmitter, Input, Output} from '@angular/core';
 })
 export class CollectorDetailComponent implements OnInit {
 
-  @Input() collectorDetail: Collector;
+  @Input() collectorDetail: CollectorDetail;
 
   constructor() { }
 

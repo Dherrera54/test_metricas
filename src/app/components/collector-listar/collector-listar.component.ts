@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Collector} from '../../model/collector';
-import {CollectorService} from '../../services/collector.service'
+import {CollectorService} from '../../services/collector.service';
+import {CollectorDetail} from '../../model/collectorDetail';
 
 @Component({
   selector: 'app-collector-listar',
@@ -12,7 +13,7 @@ export class CollectorListarComponent implements OnInit {
   selectedCollector:Collector;
   selected = false;
   constructor(private collectorService: CollectorService) { }
-  collectors:Array<Collector>;
+  collectors:Array<CollectorDetail>;
 
   onSelected(c:Collector):void{
     this.selected=true;

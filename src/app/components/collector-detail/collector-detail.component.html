@@ -4,12 +4,12 @@
     <div class="col">
       <dl>
         <dt> Comments</dt>
-        <dd>No available information</dd>
+        <dd>Esperar</dd>
         <dt> Favorite Performers</dt>
-        <dd>No available information</dd>
+        <dd *ngFor = "let p of collectorDetail.fPerformers">{{p.name}}</dd>
         <hr>
         <dt>Collector Albums</dt>
-        <dd>No available information</dd>
+        <dd *ngFor = "let a of collectorDetail.albumes">{{a.name}</dd>
       </dl>
     </div>
   </div>
