@@ -4,7 +4,7 @@
 
         <div class="col " *ngFor= "let band of bands">
           <div class="card text-center" style="width: 18rem;">
-            <img  class="image-fluid " src='{{band.image}}' width="200"/>
+            <img  class="image-fluid " src='{{band.image}}' width="200" alt=""/>
           <div class="card-body">
             <h5 class="card-title">{{band.name}}</h5>
             <p class="card-text">Band</p>
@@ -14,7 +14,7 @@
        </div>
        <div class="col " *ngFor= "let musician of musicians">
         <div class="card text-center" style="width: 18rem;">
-          <img class="image-responsive" src='{{musician.image}}' width="200" />
+          <img class="image-responsive" src='{{musician.image}}' width="200" alt="" />
         <div class="card-body">
           <h5 class="card-title">{{musician.name}}</h5>
           <p class="card-text">Musician</p>
