@@ -10,12 +10,23 @@ import { CollectorDetail } from '../model/collectorDetail';
 })
 export class CollectorService {
 
+  listCollectors: Array<CollectorDetail>;
+
   private apiUrl: string = environment.baseUrl + 'collectors';
 
   constructor(private http: HttpClient) { }
 
   getCollectors(): Observable<Array<CollectorDetail>> {
+    const headers = {'content-type': 'application/json'};
     return this.http.get<Array<CollectorDetail>>(this.apiUrl);
+  }
+
+  getCollectorsDatos(): Array<CollectorDetail> {
+    return this.listCollectors;
+  }
+
+  setCollectors(collectors: Array<CollectorDetail>): void {
+    this.listCollectors = collectors;
   }
 
 }

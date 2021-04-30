@@ -3,11 +3,16 @@
   flex-direction: row;
   flex-wrap: wrap;
 
+
   .detail-album {
     background: white;
     width: 362px;
-    margin-left: 143px;
+    margin-left: 100px;
     margin-top: 97px;
+
+    .height-element{
+      height: 140px;
+    }
 
     .img-driver {
       text-align: center;

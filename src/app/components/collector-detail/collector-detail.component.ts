@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Collector} from '../../model/collector';
 import {EventEmitter, Input, Output} from '@angular/core';
 import { CollectorDetail } from 'src/app/model/collectorDetail';
+import { ActivatedRoute } from '@angular/router';
+import { CollectorService } from 'src/app/services/collector.service';
 
 @Component({
   selector: 'app-collector-detail',
@@ -10,12 +12,20 @@ import { CollectorDetail } from 'src/app/model/collectorDetail';
 })
 export class CollectorDetailComponent implements OnInit {
 
-  @Input() collectorDetail: CollectorDetail;
+  collectorDetail: CollectorDetail;
+  id:number;
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute, private collectorService: CollectorService) { }
 
   ngOnInit() {
-    console.log(this.collectorDetail.id);
+    this.id = this.activatedRoute.snapshot.params.id;
+    this.getDetailCollector();
+  }
+
+
+  getDetailCollector(): void {
+    const item: Array<CollectorDetail> =  this.collectorService.getCollectorsDatos();
+    this.collectorDetail = item.find(t => t.id == this.id);
   }
 
 }

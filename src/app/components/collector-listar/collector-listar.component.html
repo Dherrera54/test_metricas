@@ -1,11 +1,4 @@
-<div class="container-fluid">
-  <div class="row p-5">
-      <div class="col border" *ngFor= "let c of collectors" (click)="onSelected(c)">
-         {{c.name}}
-      </div>
-      <div *ngIf="selected">
-        <app-collector-detail [collectorDetail]="selectedCollector"></app-collector-detail>
-      </div>
-  </div>
 
+<div class="contenedor-principal">
+  <app-card-albumes [albumes]="albums" (index)="showDetailCollector($event)"></app-card-albumes>
 </div>

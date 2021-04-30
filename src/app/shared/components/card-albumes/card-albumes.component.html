@@ -1,18 +1,18 @@
 <div class="container-album">
-  <div *ngFor="let item of albumes; let i = index" class="detail-album" (click)="clickItem(item.id)">
-      <div class="img-driver">
+  <div *ngFor="let item of albumes; let i = index" class="detail-album" (click)="clickItem(item.id)" [ngClass]="{'height-element': item.height}">
+      <div class="img-driver" *ngIf="item.image !== '' ">
         <img src="{{item.image}}" alt="">
       </div>
-      <div class="album-title">
+      <div class="album-title" *ngIf="item.titleAlbum !== '' ">
         <span id="title">{{item.titleAlbum}}</span>
       </div>
-      <div class="album-group">
+      <div class="album-group" *ngIf="item.groupAlbum !== '' ">
         <span>{{item.groupAlbum}}</span>
       </div>
-      <div class="album-gender">
+      <div class="album-gender" *ngIf="item.genderAlbum !== '' ">
          <span>{{item.genderAlbum}}</span>
       </div>
-      <div class="album-state">
+      <div class="album-state" *ngIf="item.stateAlbum !== '' ">
         <span>{{item.stateAlbum}}</span>
       </div>
   </div>

@@ -18,4 +18,6 @@ export class BandService {
 
     return this.http.get<Band[]>(this.apiUrl);
   }
+
+
 }
