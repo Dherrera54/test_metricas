@@ -8,6 +8,8 @@ import {CollectorListarComponent} from './components/collector-listar/collector-
 import {HttpClientModule} from '@angular/common/http';
 import {HeaderComponent} from './shared/components/header/header.component';
 import {Router} from '@angular/router';
+import {TitleTableComponent} from './shared/components/title-table/title-table.component';
+import {SearchComponent} from './shared/components/search/search.component';
 
 describe('AppComponent', () => {
 
@@ -27,6 +29,8 @@ describe('AppComponent', () => {
         AppComponent,
         HeaderComponent,
         CardAlbumesComponent,
+        TitleTableComponent,
+        SearchComponent
       ],
       providers: [
         {
