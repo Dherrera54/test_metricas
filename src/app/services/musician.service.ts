@@ -10,6 +10,7 @@ import {environment} from '../../environments/environment';
 })
 export class MusicianService {
   private apiUrl = environment.baseUrl + 'musicians';
+  selected: boolean = false;
 
   constructor(private http: HttpClient) {
   }
@@ -17,5 +18,11 @@ export class MusicianService {
   getMusicians(): Observable<Musician[]> {
 
     return this.http.get<Musician[]>(this.apiUrl);
+  }
+  getSelected() : boolean {
+    return this.selected;
+  }
+  setSelected(n:boolean):void{
+    this.selected=n
   }
 }

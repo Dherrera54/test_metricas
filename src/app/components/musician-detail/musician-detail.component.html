@@ -11,7 +11,7 @@
         <span>{{musicianDetail.description}} </span>
       </div>
       <div class="detail">
-        <span>Nacimiento: {{musicianDetail.birthDate}} </span>
+        <span>Nacimiento: {{musicianDetail.birthDate | date: 'yyyy-MM-dd'}} </span>
       </div>
       <div class="detail">
         <span>Tipo de artista: Musico </span>
@@ -19,7 +19,7 @@
     </div>
     <div class="container-button">
       <div>
-        <button type="button" class="design-button" >Regresar</button>
+        <button type="button" class="design-button" (click)="goBack()">Regresar</button>
       </div>
       <div class="show-comment">
         <button type="button" class="design-button" >Ver premios</button>
@@ -31,7 +31,7 @@
     <hr/>
     <div class="table-title">
       <div class="container-div">
-        <span>Album</span>
+        <span>Álbum</span>
       </div>
       <div class="container-div">
         <span>Nombre</span>
@@ -41,7 +41,7 @@
       </div>
 
       <div class="container-div">
-        <span>Casa discografica</span>
+        <span>Casa Discografica</span>
       </div>
     </div>
     <hr/>
@@ -55,7 +55,7 @@
         <span>{{album.name}}</span>
       </div>
       <div class="container-div">
-        <span>{{album.releaseDate}}</span>
+        <span>{{album.releaseDate| date: 'yyyy-MM-dd' }}</span>
       </div>
       <div class="container-div">
         <span>{{album.recordLabel}}</span>

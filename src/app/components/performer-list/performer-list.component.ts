@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Performer, Musician, Band } from '../../model/performer';
 import { BandService } from '../../services/band.service';
 import { MusicianService } from '../../services/musician.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-performer-list',
@@ -10,7 +12,7 @@ import { MusicianService } from '../../services/musician.service';
 })
 export class PerformerListComponent implements OnInit {
 
-  constructor(private bandService: BandService, private musicianService:MusicianService) { }
+  constructor(private bandService: BandService, private musicianService:MusicianService, private router: Router) { }
 
   selectedMusician: Musician;
   selected: boolean = false;
@@ -33,12 +35,22 @@ export class PerformerListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.selected=this.musicianService.getSelected();
     this.getBandList();
     this.getMusicianList();
   }
   onSelectedMusician(musician: Musician):void{
     this.selected=true;
+    this.musicianService.setSelected(true);
     this.selectedMusician=musician;
 
+  }
+
+  showDetailMusician(index: number ):void{
+    this.router.navigate(['musician-detail', index],  );
+
+  }
+  getSelected():void{
+    this.selected=this.musicianService.getSelected();
   }
 }
