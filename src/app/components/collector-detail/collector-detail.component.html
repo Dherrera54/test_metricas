@@ -4,13 +4,17 @@
     <div class="col">
       <dl>
         <dt> Comments</dt>
+        <dd *ngFor = "let c of collectorDetail.comments">{{c.description}}</dd>
+        <dd *ngFor = "let alb of albumesOfComments">{{alb.name}}</dd>
         <hr>
-        <dd>Esperar</dd>
         <dt> Favorite Performers</dt>
         <dd *ngFor = "let p of collectorDetail.favoritePerformers">{{p.name}}</dd>
         <hr>
         <dt>Collector Albums</dt>
-        <dd *ngFor = "let a of albumsCollector">{{a.name}}</dd>
+        <dd *ngFor = "let a of albumsCollector">{{a.name}} </dd>
+        <div class="img-log" *ngFor = "let a of albumsCollector">
+          <img src="{{a.cover}}" alt="">
+        </div>
       </dl>
     </div>
   </div>
@@ -20,3 +24,10 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
