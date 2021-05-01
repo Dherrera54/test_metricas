@@ -43,4 +43,8 @@ export class CollectorDetailComponent implements OnInit {
 
   }
 
+  goBack(): void {
+    window.history.back();
+  }
+
 }
