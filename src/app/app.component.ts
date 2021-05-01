@@ -42,6 +42,10 @@ export class AppComponent implements OnInit {
         this.router.navigate(['performer']);
         break;
       }
+      case 3: {
+        this.router.navigate(['albumes']);
+        break;
+      }
     }
   }
 

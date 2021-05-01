@@ -5,6 +5,7 @@ import { PerformerListComponent } from './components/performer-list/performer-li
 import {CollectorListarComponent} from './components/collector-listar/collector-listar.component';
 import {DetailAlbumComponent} from './components/detail-album/detail-album.component';
 import { CollectorDetailComponent } from './components/collector-detail/collector-detail.component';
+import {CommentComponent} from './components/comment/comment.component';
 
 const routes: any = [
   { path: '', component: AlbumesComponent },
@@ -12,7 +13,8 @@ const routes: any = [
   { path: 'performer', component: PerformerListComponent },
   { path: 'collector', component: CollectorListarComponent },
   { path: 'detail-album/:id', component: DetailAlbumComponent },
-  { path: 'collector-detail/:id', component: CollectorDetailComponent}
+  { path: 'collector-detail/:id', component: CollectorDetailComponent},
+  { path: 'comment', component: CommentComponent },
 ];
 
 @NgModule({
