@@ -2,11 +2,33 @@
   <div *ngif="getSelected()"></div>
   <div class="row">
     <div *ngIf="selected; else elseBlock">
-      <app-musician-detail [musicianDetail]="selectedMusician"></app-musician-detail>
+
+        <app-musician-detail [musicianDetail]="selectedMusician"></app-musician-detail>
+
+      <!--<app-band-detail[bandDetail]="selectedBand></app-band-detail>-->
     </div>
     <ng-template #elseBlock>
-    <div class="container-bands col-12 col-md-6 col-lg-4 ">
-      <div class="col" *ngFor="let band of bands" class="detail-band" (click)="clickItem(band.id)">
+
+      <div class="container-musicians  col-12 col-md-6 col-lg-4">
+        <div class="col" *ngFor="let musician of musicians" class="detail-musician" (click)="onSelectedMusician(musician)">
+            <div class="img-driver">
+              <img src="{{musician.image}}" alt="">
+            </div>
+            <div class="musician-name">
+              <span id="name">{{musician.name}}</span>
+            </div>
+            <div class="artist-type">
+              <span>Musician</span>
+            </div>
+            <div class="fav-btn">
+              <a href="#" class="btn btn-primary">Favorite</a>
+            </div>
+        </div>
+      </div>
+
+
+      <div class="container-bands col-12 col-md-6 col-lg-4 ">
+      <div class="col" *ngFor="let band of bands" class="detail-band" (click)="onSelectedBand(band)">
           <div class="img-driver">
             <img src="{{band.image}}" alt="">
           </div>
@@ -22,22 +44,7 @@
       </div>
     </div>
 
-    <div class="container-musicians  col-12 col-md-6 col-lg-4">
-      <div class="col" *ngFor="let musician of musicians" class="detail-musician" (click)="onSelectedMusician(musician)">
-          <div class="img-driver">
-            <img src="{{musician.image}}" alt="">
-          </div>
-          <div class="musician-name">
-            <span id="name">{{musician.name}}</span>
-          </div>
-          <div class="artist-type">
-            <span>Musician</span>
-          </div>
-          <div class="fav-btn">
-            <a href="#" class="btn btn-primary">Favorite</a>
-          </div>
-      </div>
-    </div>
+
   </ng-template>
 
   </div>

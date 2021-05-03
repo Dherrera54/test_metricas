@@ -9,17 +9,15 @@ import { CollectorListarComponent } from './components/collector-listar/collecto
 import { CommonModule } from '@angular/common';
 import { PerformerListComponent } from './components/performer-list/performer-list.component';
 import { DetailAlbumComponent } from './components/detail-album/detail-album.component';
-<<<<<<< HEAD
 import { MusicianDetailComponent } from './components/musician-detail/musician-detail.component';
 
-=======
 import { CommentComponent } from './components/comment/comment.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
->>>>>>> develop
+import { BandDetailComponent } from './components/band-detail/band-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +26,9 @@ import {MatInputModule} from '@angular/material/input';
     PerformerListComponent,
     CollectorListarComponent,
     DetailAlbumComponent,
-<<<<<<< HEAD
-    MusicianDetailComponent
-=======
-    CommentComponent,
->>>>>>> develop
+    MusicianDetailComponent,
+    BandDetailComponent,
+    CommentComponent
   ],
   imports: [
     CommonModule,

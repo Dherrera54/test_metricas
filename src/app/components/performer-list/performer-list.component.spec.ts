@@ -5,8 +5,9 @@ import { DebugElement } from '@angular/core';
 import { Band, Musician } from '../../model/performer';
 
 import { PerformerListComponent } from './performer-list.component';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClientModule } from '@angular/common/http';
 import faker from 'faker';
+import { MusicianDetailComponent } from '../musician-detail/musician-detail.component';
 
 describe('PerformerListComponent', () => {
   let component: PerformerListComponent;
@@ -15,8 +16,9 @@ describe('PerformerListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PerformerListComponent ],
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientModule],
+      declarations: [ PerformerListComponent, MusicianDetailComponent ]
+
     }).compileComponents();
   }));
 
