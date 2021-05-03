@@ -15,7 +15,10 @@ export class PerformerListComponent implements OnInit {
   constructor(private bandService: BandService, private musicianService:MusicianService, private router: Router) { }
 
   selectedMusician: Musician;
+  selectedBand : Band;
   selected: boolean = false;
+  bandBool: boolean=false;
+  musicianBool: boolean=false;
 
   public musicians: Array<Musician>;
   public bands: Array<Band>;
@@ -42,7 +45,15 @@ export class PerformerListComponent implements OnInit {
   onSelectedMusician(musician: Musician):void{
     this.selected=true;
     this.musicianService.setSelected(true);
+    this.musicianBool=true;
     this.selectedMusician=musician;
+
+  }
+  onSelectedBand(band: Band):void{
+    this.selected=true;
+    this.bandService.setSelected(true);
+    this.bandBool=true;
+    this.selectedBand=band;
 
   }
 

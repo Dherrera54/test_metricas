@@ -2,10 +2,10 @@
   <div *ngif="getSelected()"></div>
   <div class="row">
     <div *ngIf="selected; else elseBlock">
-
-        <app-musician-detail [musicianDetail]="selectedMusician"></app-musician-detail>
-
-      <!--<app-band-detail[bandDetail]="selectedBand></app-band-detail>-->
+        <div *ngIf="musicianBool; else elseBlock2">
+          <app-musician-detail [musicianDetail]="selectedMusician"></app-musician-detail>
+        </div>
+        <ng-template #elseBlock2><app-band-detail [bandDetail]="selectedBand"></app-band-detail></ng-template>
     </div>
     <ng-template #elseBlock>
 
@@ -18,7 +18,8 @@
               <span id="name">{{musician.name}}</span>
             </div>
             <div class="artist-type">
-              <span>Musician</span>
+
+              <span>Músico</span>
             </div>
             <div class="fav-btn">
               <a href="#" class="btn btn-primary">Favorite</a>

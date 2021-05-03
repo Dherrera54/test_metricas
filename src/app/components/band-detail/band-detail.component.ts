@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Band } from '../../model/performer';
+import { BandService } from '../../services/band.service';
+
 
 @Component({
   selector: 'app-band-detail',
@@ -10,10 +12,14 @@ export class BandDetailComponent implements OnInit {
 
   @Input() bandDetail: Band;
 
-  constructor() { }
+  constructor(private bandService:BandService) { }
 
   ngOnInit() {
     console.log(this.bandDetail.id);
   }
 
+  goBack(){
+    this.bandService.setSelected(false);
+
+   }
 }
