@@ -1,0 +1,43 @@
+<div class="container-comment">
+  <div class="container-comment-detail">
+    <div class="img-log">
+      <div class="genre">
+        <span>Comentario</span>
+      </div>
+    </div>
+    <div class="container-comment-text">
+      <div>
+        <textarea class="input-comment">       </textarea>
+      </div>
+      <div class="container-options">
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Calificacion</option>
+          <option value="1">Bueno</option>
+          <option value="2">Regular</option>
+          <option value="3">Pesimo</option>
+        </select>
+      </div>
+    </div>
+    <div class="container-button">
+      <div>
+        <button type="button" class="design-button" (click)="goBack()">Regresar</button>
+      </div>
+    </div>
+  </div>
+
+  <app-title-table [titlesTable]="titlesTable"></app-title-table>
+  <div class="row-comment" *ngFor="let item of album.comments; let i = index">
+    <div class="table-title">
+      <div class="container-div">
+        <span>{{item.description}}</span>
+      </div>
+      <div class="container-div">
+        <div *ngFor="let j of [].constructor(item.rating)">
+          <span><img src="assets/img/calification.svg" alt=""></span>
+        </div>
+      </div>
+    </div>
+    <hr/>
+  </div>
+</div>
+
