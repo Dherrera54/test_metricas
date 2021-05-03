@@ -17,8 +17,7 @@ describe('PerformerListComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ PerformerListComponent ],
       imports: [HttpClientTestingModule],
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -26,26 +25,38 @@ describe('PerformerListComponent', () => {
     component = fixture.componentInstance;
     component.bands = [
       new Band(
+        faker.random.number(),
         faker.lorem.sentence(),
         faker.image.imageUrl(),
         faker.lorem.sentence(),
-        faker.date.past())];
+        [],
+        faker.date.past()
+        ),
+      ];
     component.musicians = [
         new Musician(
+          faker.random.number(),
           faker.lorem.sentence(),
           faker.image.imageUrl(),
           faker.lorem.sentence(),
-          faker.date.past())];
+          [],
+          faker.date.past()
+          ),
+        ];
 
     fixture.detectChanges();
     debug = fixture.debugElement;
   });
 
+
   it('should create', () => {
+
     expect(component).toBeTruthy();
+
   });
+
   it('Should have an header element band name', () => {
-    expect(debug.query(By.css('h5')).nativeElement.innerText).toContain(
+    expect(debug.query(By.css('span')).nativeElement.innerText).toContain(
       component.bands[0].name
     );
   });
