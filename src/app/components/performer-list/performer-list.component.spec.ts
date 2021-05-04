@@ -37,7 +37,7 @@ describe('PerformerListComponent', () => {
     component = fixture.componentInstance;
     component.bands = [
       new Band(
-        faker.random.number(),
+        faker.datatype.number(),
         faker.lorem.sentence(),
         faker.image.imageUrl(),
         faker.lorem.sentence(),
@@ -47,7 +47,7 @@ describe('PerformerListComponent', () => {
       ];
     component.musicians = [
         new Musician(
-          faker.random.number(),
+          faker.datatype.number(),
           faker.lorem.sentence(),
           faker.image.imageUrl(),
           faker.lorem.sentence(),
@@ -70,6 +70,11 @@ describe('PerformerListComponent', () => {
   it('Should have an  element band name', () => {
     expect(debug.query(By.css('#band-name')).nativeElement.innerText).toContain(
       component.bands[0].name
+    );
+  });
+  it('Should have an element musician name', () => {
+    expect(debug.query(By.css('#musician-name')).nativeElement.innerText).toContain(
+      component.musicians[0].name
     );
   });
 });

@@ -3,15 +3,15 @@
     <div class="img-log">
       <img src="{{bandDetail.image}}" alt="">
       <div class="name">
-        <span>{{bandDetail.name}}</span>
+        <span id="band-name">{{bandDetail.name}}</span>
       </div>
     </div>
     <div class="container-information-detail">
       <div class="detail">
-        <span>{{bandDetail.description}} </span>
+        <span id="band-description">{{bandDetail.description}} </span>
       </div>
       <div class="detail">
-        <span>Creación: {{bandDetail.creationDate }} </span>
+        <span>Creación: {{bandDetail.creationDate | date: 'yyyy-MM-dd' }} </span>
       </div>
       <div class="detail">
         <span>Tipo de artista: Musico </span>
@@ -22,7 +22,7 @@
         <button type="button" class="design-button" (click)="goBack()">Regresar</button>
       </div>
       <div class="show-comment">
-        <button type="button" class="design-button" >Ver premios</button>
+        <button type="button" class="design-button" (click)="goBack()">Ver premios</button>
       </div>
     </div>
   </div>

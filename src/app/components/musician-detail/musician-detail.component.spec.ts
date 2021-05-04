@@ -12,6 +12,7 @@ import { Band, Musician } from '../../model/performer';
 import {Observable, of} from 'rxjs';
 import {MusicianMock} from '../../shared/mocks/musician.mock';
 import { MusicianService } from '../../services/musician.service';
+import faker from 'faker';
 
 
 
@@ -50,13 +51,42 @@ describe('MusicianDetailComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MusicianDetailComponent);
     component = fixture.componentInstance;
-    component.musicianDetail = musician[0];
-    fixture.detectChanges();
-
+    component.musicianDetail= musician[0]
     debug = fixture.debugElement;
+    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('Should have an element musician name', () => {
+    component.musicianDetail = new Musician(
+      faker.datatype.number(),
+      faker.lorem.sentence(),
+      faker.image.imageUrl(),
+      faker.lorem.sentence(),
+      [],
+      faker.date.past()
+      );
+    fixture.detectChanges();
+    expect(debug.query(By.css('#musician-name')).nativeElement.innerText).toContain(
+      component.musicianDetail.name
+    );
+  });
+  it('Should have an element musician description', () => {
+    component.musicianDetail = new Musician(
+      faker.datatype.number(),
+      faker.lorem.sentence(),
+      faker.image.imageUrl(),
+      faker.lorem.sentence(),
+      [],
+      faker.date.past()
+      );
+    fixture.detectChanges();
+    expect(debug.query(By.css('#musician-description')).nativeElement.innerText).toContain(
+      component.musicianDetail.description
+    );
+
+  });
+
 });

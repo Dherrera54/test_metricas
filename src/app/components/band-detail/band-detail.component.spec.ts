@@ -2,7 +2,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-
+import faker from 'faker';
 import { BandDetailComponent } from './band-detail.component';
 import { HttpClientTestingModule } from "@angular/common/http/testing";
 import {RouterTestingModule} from '@angular/router/testing';
@@ -49,10 +49,41 @@ describe('BandDetailComponent', () => {
     fixture = TestBed.createComponent(BandDetailComponent);
     component = fixture.componentInstance;
     component.bandDetail = band[0];
+    debug = fixture.debugElement;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('Should have an element band name', () => {
+    component.bandDetail = new Band(
+      faker.datatype.number(),
+      faker.lorem.sentence(),
+      faker.image.imageUrl(),
+      faker.lorem.sentence(),
+      [],
+      faker.date.past()
+      );
+    fixture.detectChanges();
+    expect(debug.query(By.css('#band-name')).nativeElement.innerText).toContain(
+      component.bandDetail.name
+    );
+  });
+  it('Should have an element band description', () => {
+    component.bandDetail = new Band(
+      faker.datatype.number(),
+      faker.lorem.sentence(),
+      faker.image.imageUrl(),
+      faker.lorem.sentence(),
+      [],
+      faker.date.past()
+      );
+    fixture.detectChanges();
+    expect(debug.query(By.css('#band-description')).nativeElement.innerText).toContain(
+      component.bandDetail.description
+    );
+
+  });
+
 });
