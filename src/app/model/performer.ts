@@ -18,9 +18,9 @@ export abstract class Performer {
 }
 
 export class Musician extends Performer{
-   birthDate: Date;
+   birthDate: string;
 
-  public constructor(id?: number, name?: string, image?: string, description?: string, albums?: Array<Albumes>, birthDate?: Date){
+  public constructor(id?: number, name?: string, image?: string, description?: string, albums?: Array<Albumes>, birthDate?: string){
       super(id, name, image, description, albums);
       this.birthDate = this.birthDate;
   }
@@ -28,9 +28,9 @@ export class Musician extends Performer{
 
 
 export class Band extends Performer{
-  creationDate: Date;
+  creationDate: string;
 
- public constructor(id?: number, name?: string, image?: string, description?: string, albums?: Array<Albumes>,  creationDate?: Date){
+ public constructor(id?: number, name?: string, image?: string, description?: string, albums?: Array<Albumes>,  creationDate?: string){
      super(id, name, image, description, albums);
      this.creationDate = this.creationDate;
  }

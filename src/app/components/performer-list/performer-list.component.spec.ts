@@ -3,6 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { Band, Musician } from '../../model/performer';
+import {RouterTestingModule} from '@angular/router/testing';
+import { Router } from '@angular/router';
 
 import { PerformerListComponent } from './performer-list.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,7 +18,15 @@ describe('PerformerListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
+      imports: [HttpClientModule,
+              RouterTestingModule],
+      providers: [
+        {
+          provide: Router,
+          useValue: {
+            navigate: jasmine.createSpy('navigate'),
+          }}
+      ],
       declarations: [ PerformerListComponent, MusicianDetailComponent ]
 
     }).compileComponents();
@@ -57,8 +67,8 @@ describe('PerformerListComponent', () => {
 
   });
 
-  it('Should have an header element band name', () => {
-    expect(debug.query(By.css('span')).nativeElement.innerText).toContain(
+  it('Should have an  element band name', () => {
+    expect(debug.query(By.css('#band-name')).nativeElement.innerText).toContain(
       component.bands[0].name
     );
   });
