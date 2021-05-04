@@ -6,6 +6,8 @@ import { HttpTestingController } from '@angular/common/http/testing';
 import faker from 'faker';
 import { CollectorService } from 'src/app/services/collector.service';
 import { Collector } from 'src/app/model/collector';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Router } from '@angular/router';
 
 describe('Service: Collector', () => {
   let injector: TestBed;
@@ -14,8 +16,12 @@ describe('Service: Collector', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [CollectorService]
+      imports: [RouterTestingModule,HttpClientTestingModule],
+      providers: [CollectorService, {
+        provide: Router,
+        useValue: {
+          navigate: jasmine.createSpy('navigate'),
+        }}]
     });
     injector = getTestBed();
     service = injector.get(CollectorService);
