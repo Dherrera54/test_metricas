@@ -9,13 +9,16 @@
     padding-left: 141px;
 
     .img-log {
-      padding-top: 32px;
+      padding-top: 40px;
+      padding-bottom: 30px;
+      border-color: white;
+      border-style: solid;
 
       .name {
         text-align: center;
         span {
           color: #FFFFFF;
-          font-size: 44px;
+          font-size: 40px;
         }
       }
 
@@ -39,14 +42,24 @@
   .h4{
     color:white;
     font-size: 24px;
+
   }
 
   .container-fluid{
-    width: 80%;
-    padding-top: 34px;
-    padding-left: 400px;
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 100px;
     padding-right: 88px;
     margin-top: 10;
+  }
+
+  .container-fluid2{
+    width: 100%;
+    padding-top: 40px;
+    padding-left: 100px;
+    padding-right: 88px;
+    margin-top: 10;
+    text-align: center;
   }
 
   .contenido{
@@ -58,7 +71,7 @@
   .row{
 
     color:whitesmoke;
-    width: 80%;
+    width: 200%;
   }
 
   img {
@@ -72,7 +85,9 @@
 
   h1{
     color: #FFFFFF;
-    font-size: 44px;
+    font-size: 24px;
+    font-weight: bold;
+
   }
 
 }
