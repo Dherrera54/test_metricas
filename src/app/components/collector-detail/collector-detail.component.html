@@ -31,8 +31,8 @@
       <td>
         <dd>{{c.rating}}</dd>
       </td>
-      <td>
-        <dd>{{albumesOfComments}}</dd>
+      <td *ngFor="let alb of albumesOfComments" >
+        <dd>{{alb.name}}</dd>
       </td>
   </tr>
   </tbody>

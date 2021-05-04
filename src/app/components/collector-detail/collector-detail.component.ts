@@ -24,13 +24,15 @@ export class CollectorDetailComponent implements OnInit {
   titlesTable: Array<TitlesTables>;
 
 
-  constructor(private activatedRoute: ActivatedRoute, private collectorService: CollectorService, private albumesService:AlbumesService) { }
+  constructor(private activatedRoute: ActivatedRoute, private collectorService: CollectorService, private albumesService:AlbumesService) {
+    this.albumesOfComments = new  Array<Albumes>();
+  }
 
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.params.id;
     this.getDetailCollector();
     this.getCollectorAlbums();
-    //this.albumesOfComments =this.getCommentsAlbum(this.collectorDetail);
+    this.getCommentsAlbum(this.collectorDetail);
   }
 
 
@@ -51,7 +53,21 @@ export class CollectorDetailComponent implements OnInit {
   }
 
   getCommentsAlbum(collectorDetail:any):void{
-
+    const comments: Array<CommentDetail> = this.collectorDetail.comments;
+    const todosAlbumes: Array<Albumes> = this.albumesService.getAlbumes();
+    let p:number =0;
+    for (let e of comments){
+      for(let i of todosAlbumes){
+        for(let c of i.comments){
+          if(c.id == e.id) {
+            if(this.albumesOfComments.length <= p) {
+              this.albumesOfComments[p]=i;
+            }
+            p++;
+          }
+        }
+      }
+    }
 
   }
 
