@@ -24,10 +24,10 @@ export class DetailAlbumComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params.id;
-    this.getDetailCollector();
+    this.getDetailAlbum();
   }
 
-  getDetailCollector(): void {
+  getDetailAlbum(): void {
     const item: Array<Albumes> =  this.albumesService.getAlbumes();
     this.album = item.find(t => t.id == this.id);
   }
