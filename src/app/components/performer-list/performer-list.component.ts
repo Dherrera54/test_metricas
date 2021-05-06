@@ -43,24 +43,21 @@ export class PerformerListComponent implements OnInit {
     this.getMusicianList();
   }
   onSelectedMusician(musician: Musician):void{
-    this.selected=true;
-    this.musicianService.setSelected(true);
-    this.musicianBool=true;
     this.selectedMusician=musician;
+    this.router.navigate(['detail-musician', musician.id],  );
+    /*this.selected=true;
+
+   */
 
   }
   onSelectedBand(band: Band):void{
-    this.selected=true;
-    this.bandService.setSelected(true);
-    this.bandBool=true;
     this.selectedBand=band;
+    this.router.navigate(['detail-band', band.id],  );
 
   }
 
-  showDetailMusician(index: number ):void{
-    this.router.navigate(['musician-detail', index],  );
 
-  }
+
   getSelected():void{
     this.selected=this.musicianService.getSelected();
   }

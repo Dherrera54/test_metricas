@@ -6,6 +6,7 @@ import {CollectorListarComponent} from './components/collector-listar/collector-
 import {DetailAlbumComponent} from './components/detail-album/detail-album.component';
 import { MusicianDetailComponent } from './components/musician-detail/musician-detail.component';
 import {CommentComponent} from './components/comment/comment.component';
+import { BandDetailComponent } from './components/band-detail/band-detail.component';
 
 const routes: any = [
   { path: '', component: AlbumesComponent },
@@ -13,7 +14,8 @@ const routes: any = [
   { path: 'performer', component: PerformerListComponent },
   { path: 'collector', component: CollectorListarComponent },
   { path: 'detail-album/:id', component: DetailAlbumComponent },
-  { path: 'detail-musician', component: MusicianDetailComponent},
+  { path: 'detail-musician/:id', component: MusicianDetailComponent},
+  { path: 'detail-band/:id', component: BandDetailComponent},
   { path: 'comment', component: CommentComponent },
 ];
 

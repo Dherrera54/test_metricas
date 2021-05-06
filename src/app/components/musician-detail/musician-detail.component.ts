@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Musician } from '../../model/performer';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MusicianService } from '../../services/musician.service';
 
 
@@ -15,13 +15,29 @@ export class MusicianDetailComponent implements OnInit {
 
   @Input() musicianDetail: Musician;
 
-  constructor(private router: Router, private musicianService:MusicianService) { }
+
+  constructor(private route:ActivatedRoute, private router: Router, private musicianService:MusicianService) { }
+  id: number;
+
 
   ngOnInit() {
-    console.log(this.musicianDetail.id )
-  }
- goBack(){
-  this.musicianService.setSelected(false);
+    if (this.musicianDetail === undefined){
+      this.id = this.route.snapshot.params.id;
+      console.log(this.id)
 
- }
+
+      this.getMusicianDetail();
+
+    }
+
+  }
+  goBack(){
+    window.history.back();
+  }
+  getMusicianDetail():void{
+    this.musicianService.getMusicianDetail(this.id)
+    .subscribe(musicianDetail =>{this.musicianDetail=musicianDetail;
+      console.log(this.musicianDetail.name)
+    });
+  }
 }

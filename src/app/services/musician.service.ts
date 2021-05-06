@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import {Musician} from '../model/performer';
 import {environment} from '../../environments/environment';
+
 
 
 @Injectable({
@@ -24,5 +25,8 @@ export class MusicianService {
   }
   setSelected(n:boolean):void{
     this.selected=n
+  }
+  getMusicianDetail(musicianID):Observable<Musician>{
+    return this.http.get<Musician>(`${this.apiUrl}/${musicianID}`)
   }
 }

@@ -1,16 +1,7 @@
 <div class="main-container container-fluid">
-  <div *ngif="getSelected()"></div>
   <div class="row">
-    <div *ngIf="selected; else elseBlock">
-        <div *ngIf="musicianBool; else elseBlock2">
-          <app-musician-detail [musicianDetail]="selectedMusician"></app-musician-detail>
-        </div>
-        <ng-template #elseBlock2><app-band-detail [bandDetail]="selectedBand"></app-band-detail></ng-template>
-    </div>
-    <ng-template #elseBlock>
-
       <div class="container-musicians  col-12 col-md-6 col-lg-4">
-        <div class="col" *ngFor="let musician of musicians" class="detail-musician" (click)="onSelectedMusician(musician)">
+        <div class="col" *ngFor="let musician of musicians" class="detail-musician" (click)="onSelectedMusician(musician)" >
             <div class="img-driver">
               <img src="{{musician.image}}" alt="">
             </div>
@@ -46,7 +37,7 @@
     </div>
 
 
-  </ng-template>
+
 
   </div>
 </div>
