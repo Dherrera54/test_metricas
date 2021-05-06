@@ -13,7 +13,6 @@ export class ErrorInterceptorService implements HttpInterceptor{
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(catchError(err => {
-      console.log('Fuiee sto llamado');
       this.managerErrorService.setStatusCode(err.status);
       return throwError(err);
     }));
