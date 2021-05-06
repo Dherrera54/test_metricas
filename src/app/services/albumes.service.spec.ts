@@ -6,6 +6,7 @@ import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {AlbumsMock} from '../shared/mocks/albums.mock';
 import {of, Subject} from 'rxjs';
 import {AlbumesInformation} from '../shared/models/albumesInformation';
+import {CommunicatorService} from './communicator.service';
 
 describe('AlbumsService', () => {
   let service: AlbumesService;
@@ -17,6 +18,7 @@ describe('AlbumsService', () => {
         RouterTestingModule,
       ],
       providers: [
+        CommunicatorService,
         HttpClient,
         {
           provide: HttpClient

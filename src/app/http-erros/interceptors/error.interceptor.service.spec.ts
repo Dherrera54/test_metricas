@@ -44,7 +44,7 @@ describe('Error.InterceptorService', () => {
   it('should catch -1', done => {
     const router = TestBed.get(Router);
     httpClient.get('/error').subscribe(() => { console.log('-1'); }, () => done());
-    http.expectOne('/error').error(new ErrorEvent('Error -1'), { status: -1 });
+    http.expectOne('/error').error(new ErrorEvent('Error -1'), { status: 0 });
     expect(router.navigate).toHaveBeenCalledWith([Routes.ERROR_INTERNET]);
   });
 

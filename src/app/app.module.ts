@@ -16,6 +16,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {HttpErrosModule} from './http-erros/http-erros.module';
+import {CommunicatorService} from './services/communicator.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,9 @@ import {HttpErrosModule} from './http-erros/http-erros.module';
     MatInputModule,
     HttpErrosModule
   ],
-  providers: [],
+  providers: [
+    CommunicatorService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,13 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
 import { ManagerErrorService } from './manager-error.service';
-import {AlbumesService} from '../../services/albumes..service';
-import {AlbumsMock} from '../../shared/mocks/albums.mock';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {RouterTestingModule} from '@angular/router/testing';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {Router} from '@angular/router';
 import {Routes} from '../const/routes';
+import {CommunicatorService} from '../../services/communicator.service';
 
 describe('ManagerErrorService', () => {
   let service: ManagerErrorService;
@@ -19,6 +18,7 @@ describe('ManagerErrorService', () => {
       ],
       providers: [
         HttpClient,
+        CommunicatorService,
         {
           provide: HttpClient
         },
@@ -44,7 +44,7 @@ describe('ManagerErrorService', () => {
 
   it('should trigger click option internet', () => {
     const router = TestBed.get(Router);
-    service.setStatusCode(-1);
+    service.setStatusCode(0);
     expect(router.navigate).toHaveBeenCalledWith([Routes.ERROR_INTERNET]);
   });
 
