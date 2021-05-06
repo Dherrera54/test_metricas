@@ -3,7 +3,7 @@
     <div class="img-log">
       <img src="{{album.cover}}" alt="">
       <div class="genre">
-        <span>{{album.genre}}</span>
+        <h1>{{album.genre}}</h1>
       </div>
     </div>
     <div class="container-information-detail">
@@ -21,11 +21,11 @@
       </div>
     </div>
     <div class="container-button">
-      <div>
-        <button type="button" class="design-button" (click)="goBack()">Regresar</button>
+      <div class="show-comment">
+        <button  class="button-style" (click)="goBack()">Regresar</button>
       </div>
       <div class="show-comment">
-        <button type="button" class="design-button" (click)="checkComment()">Ver comentarios</button>
+        <button class="button-style" (click)="checkComment()">Ver comentarios</button>
       </div>
     </div>
   </div>

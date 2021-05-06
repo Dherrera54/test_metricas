@@ -15,7 +15,7 @@
       .genre {
         text-align: center;
 
-        span {
+        h1 {
           color: #FFFFFF;
           font-size: 34px;
         }
@@ -30,8 +30,17 @@
       padding-top: 32px;
 
       .container-options {
+
         width: calc(100% - 60%);
         padding-top: 32px;
+        background-color: black;
+
+        .form-select {
+
+          select {
+            color: #FFFFFF;
+          }
+        }
       }
 
       span {

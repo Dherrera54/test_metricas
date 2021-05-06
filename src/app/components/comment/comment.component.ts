@@ -15,6 +15,7 @@ export class CommentComponent implements OnInit {
   album: Albumes;
   titlesTable: Array<TitlesTables>;
   id: number;
+  textInput = '';
 
   constructor(private activatedRoute: ActivatedRoute, private albumesService: AlbumesService) {
     this.titlesTable = new Array<TitlesTables>();
