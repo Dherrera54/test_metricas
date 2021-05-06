@@ -1,10 +1,10 @@
 <div class="container-album">
-  <div *ngFor="let item of albumes; let i = index" class="detail-album" (click)="clickItem(item.id)">
+  <div *ngFor="let item of albumes; let i = index" class="detail-album" (click)="clickItem(item.id)" id="{{i}}">
       <div class="img-driver">
         <img src="{{item.image}}" alt="">
       </div>
       <div class="album-title">
-        <span id="title">{{item.titleAlbum}}</span>
+        <span id="title {{i}}">{{item.titleAlbum}}</span>
       </div>
       <div class="album-group">
         <span>{{item.groupAlbum}}</span>
