@@ -31,7 +31,6 @@ export class CommentComponent implements OnInit {
   getComments(): void {
     const item: Array<Albumes> =  this.albumesService.getAlbumes();
     this.album =  item.find(t => t.id == this.id);
-    console.log(this.album);
   }
 
   goBack(): void {

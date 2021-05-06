@@ -12,6 +12,10 @@ export class ManagerErrorService {
   setStatusCode(status: number): void  {
      if (status === 0 ) {
        this.router.navigate([Routes.ERROR_INTERNET]);
+     } else if (status === 500 ) {
+       this.router.navigate([Routes.ERROR_INTERNET]);
+    } else if (status === 4004 ) {
+       this.router.navigate([Routes.ERROR_INTERNET]);
      }
   }
 }
