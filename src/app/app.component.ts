@@ -13,12 +13,18 @@ export class AppComponent implements OnInit {
   private headers: Array<Header> = new Array();
 
   constructor(private headerService: HeaderService, private router: Router) {
+
+  }
+
+  initHeaders(): void  {
+    this.headers = new Array();
     this.headers.push(new Header(0, 'Home', true));
     this.headers.push(new Header(1, 'Coleccionistas', false));
     this.headers.push(new Header(2, 'Artistas', false));
     this.headers.push(new Header(3, 'Buscador', false));
     this.headerService.setHeaders(this.headers);
   }
+
 
   getHeader(): Array<Header> {
     return  this.headerService.getHeadersOptions();
@@ -50,5 +56,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.initHeaders();
+    this.showItem(0);
   }
 }
