@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {LOCALE_ID, NgModule} from '@angular/core';
+import { NgModule} from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
@@ -44,10 +44,6 @@ import {ErrorInterceptorService} from './http-erros/interceptors/error.intercept
   ],
   providers: [
     CommunicatorService,
-    {
-      provide: LOCALE_ID,
-      useValue: 'es-CO',
-    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptorService,
