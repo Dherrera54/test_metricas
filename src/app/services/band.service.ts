@@ -19,12 +19,6 @@ export class BandService {
 
     return this.http.get<Band[]>(this.apiUrl);
   }
-  getSelected() : boolean {
-    return this.selected;
-  }
-  setSelected(n:boolean):void{
-    this.selected=n
-  }
   getBandDetail(bandID):Observable<Band>{
     return this.http.get<Band>(`${this.apiUrl}/${bandID}`)
   }

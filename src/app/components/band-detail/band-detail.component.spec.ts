@@ -6,7 +6,7 @@ import faker from 'faker';
 import { BandDetailComponent } from './band-detail.component';
 import { HttpClientTestingModule } from "@angular/common/http/testing";
 import {RouterTestingModule} from '@angular/router/testing';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { BandService } from '../../services/band.service';
 import { Band, Musician } from '../../model/performer';
 import {Observable, of} from 'rxjs';
@@ -37,6 +37,12 @@ describe('BandDetailComponent', () => {
               },
               setAlbumes(): void {},
             },
+          },
+          {
+            provide: ActivatedRoute,
+            useValue: {
+              snapshot: {params: {id: 100}}
+            }
           },
 
       ]

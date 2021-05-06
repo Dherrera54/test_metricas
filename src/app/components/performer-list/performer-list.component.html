@@ -3,7 +3,7 @@
       <div class="container-musicians  col-12 col-md-6 col-lg-4">
         <div class="col" *ngFor="let musician of musicians" class="detail-musician" (click)="onSelectedMusician(musician)" >
             <div class="img-driver">
-              <img src="{{musician.image}}" alt="">
+              <img src="{{musician.image}}" alt="imagen del musico{{musician.name}}">
             </div>
             <div class="musician-name">
               <span id="musician-name">{{musician.name}}</span>
@@ -22,7 +22,7 @@
       <div class="container-bands col-12 col-md-6 col-lg-4 ">
       <div class="col" *ngFor="let band of bands" class="detail-band" (click)="onSelectedBand(band)">
           <div class="img-driver">
-            <img src="{{band.image}}" alt="">
+            <img src="{{band.image}}" alt="imagen de la banda {{band.name}}">
           </div>
           <div class="band-name">
             <span id="band-name">{{band.name}}</span>
@@ -35,7 +35,6 @@
           </div>
       </div>
     </div>
-
 
 
 

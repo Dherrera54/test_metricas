@@ -21,16 +21,16 @@ export class BandDetailComponent implements OnInit {
       this.id = this.route.snapshot.params.id;
       console.log(this.id)
 
-      this.getBandDetail();
+      this.getBandDetail(this.id);
     }
   }
 
   goBack(){
-    window.history.back();
+    this.router.navigate(['performer']);
 
    }
-   getBandDetail():void{
-    this.bandService.getBandDetail(this.id)
+   getBandDetail(id:number):void{
+    this.bandService.getBandDetail(id)
     .subscribe(bandDetail =>{this.bandDetail=bandDetail;
     });
   }

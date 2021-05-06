@@ -6,7 +6,7 @@ import { DebugElement } from '@angular/core';
 import { MusicianDetailComponent } from './musician-detail.component';
 import { HttpClientTestingModule } from "@angular/common/http/testing";
 import {RouterTestingModule} from '@angular/router/testing';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { BandService } from '../../services/band.service';
 import { Band, Musician } from '../../model/performer';
 import {Observable, of} from 'rxjs';
@@ -40,6 +40,12 @@ describe('MusicianDetailComponent', () => {
               },
               setAlbumes(): void {},
             },
+          },
+          {
+            provide: ActivatedRoute,
+            useValue: {
+              snapshot: {params: {id: 100}}
+            }
           },
 
       ]

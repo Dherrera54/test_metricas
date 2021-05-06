@@ -16,13 +16,14 @@ export class PerformerListComponent implements OnInit {
 
   selectedMusician: Musician;
   selectedBand : Band;
-  selected: boolean = false;
-  bandBool: boolean=false;
-  musicianBool: boolean=false;
 
   public musicians: Array<Musician>;
   public bands: Array<Band>;
 
+  ngOnInit() {
+    this.getBandList();
+    this.getMusicianList();
+  }
   getBandList(){
     this.bandService.getBands().subscribe(result => {
       this.bands = result;});
@@ -36,29 +37,14 @@ export class PerformerListComponent implements OnInit {
       this.musicianService.getMusicians().subscribe(result => {
         console.log(result);});
   }
-
-  ngOnInit() {
-    this.selected=this.musicianService.getSelected();
-    this.getBandList();
-    this.getMusicianList();
-  }
   onSelectedMusician(musician: Musician):void{
     this.selectedMusician=musician;
     this.router.navigate(['detail-musician', musician.id],  );
-    /*this.selected=true;
-
-   */
 
   }
   onSelectedBand(band: Band):void{
     this.selectedBand=band;
     this.router.navigate(['detail-band', band.id],  );
 
-  }
-
-
-
-  getSelected():void{
-    this.selected=this.musicianService.getSelected();
   }
 }

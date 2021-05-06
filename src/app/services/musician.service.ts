@@ -20,12 +20,6 @@ export class MusicianService {
 
     return this.http.get<Musician[]>(this.apiUrl);
   }
-  getSelected() : boolean {
-    return this.selected;
-  }
-  setSelected(n:boolean):void{
-    this.selected=n
-  }
   getMusicianDetail(musicianID):Observable<Musician>{
     return this.http.get<Musician>(`${this.apiUrl}/${musicianID}`)
   }

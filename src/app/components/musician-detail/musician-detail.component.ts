@@ -13,11 +13,11 @@ import { MusicianService } from '../../services/musician.service';
 })
 export class MusicianDetailComponent implements OnInit {
 
-  @Input() musicianDetail: Musician;
 
 
   constructor(private route:ActivatedRoute, private router: Router, private musicianService:MusicianService) { }
-  id: number;
+  public musicianDetail: Musician;
+  public id: number;
 
 
   ngOnInit() {
@@ -28,16 +28,17 @@ export class MusicianDetailComponent implements OnInit {
 
       this.getMusicianDetail();
 
+
     }
 
   }
   goBack(){
-    window.history.back();
+    this.router.navigate(['performer']);
+    //window.history.back();
   }
   getMusicianDetail():void{
     this.musicianService.getMusicianDetail(this.id)
     .subscribe(musicianDetail =>{this.musicianDetail=musicianDetail;
-      console.log(this.musicianDetail.name)
     });
   }
 }
