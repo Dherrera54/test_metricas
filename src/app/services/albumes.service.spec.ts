@@ -4,9 +4,10 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {RouterTestingModule} from '@angular/router/testing';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {AlbumsMock} from '../shared/mocks/albums.mock';
-import {of, Subject} from 'rxjs';
+import {Observable, of, Subject} from 'rxjs';
 import {AlbumesInformation} from '../shared/models/albumesInformation';
 import {CommunicatorService} from './communicator.service';
+import {Albumes} from '../model/albumes';
 
 describe('AlbumsService', () => {
   let service: AlbumesService;
@@ -18,7 +19,14 @@ describe('AlbumsService', () => {
         RouterTestingModule,
       ],
       providers: [
-        CommunicatorService,
+        {
+          provide: CommunicatorService,
+          useValue: {
+            http_get(): Observable<Array<Albumes>> {
+              return  of(albums);
+            }
+          },
+        },
         HttpClient,
         {
           provide: HttpClient
