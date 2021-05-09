@@ -6,19 +6,25 @@
   .container-information {
     display: flex;
     flex-direction: row;
-    padding-left: 141px;
+    padding-left: 100px;
 
     .img-log {
       padding-top: 40px;
       padding-bottom: 30px;
       border-color: white;
       border-style: solid;
+      padding-left: 40px;
+      padding-right: 30px;
 
       .name {
         text-align: center;
+        margin: auto;
         span {
           color: #FFFFFF;
           font-size: 40px;
+          font-weight: bold;
+          font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+
         }
       }
 
@@ -26,14 +32,14 @@
 
 
     .container-button {
-      padding-left: 129px;
+      padding-left: 900px;
       padding-right: 88px;
       padding-top: 32px;
       button {
         width: 190px;
         height: 44px;
         background: black;
-        border-color: #000000;
+        border-color: black;
         color: #FFFFFF;
       }
     }
@@ -89,5 +95,8 @@
     font-weight: bold;
 
   }
+
+
+
 
 }
