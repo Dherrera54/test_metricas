@@ -1,49 +1,64 @@
 /* tslint:disable:no-unused-variable */
-import { TestBed, async, inject, getTestBed } from '@angular/core/testing';
+import { TestBed, async, inject, getTestBed, ComponentFixture } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HttpTestingController } from '@angular/common/http/testing';
 import faker from 'faker';
 import { CollectorService } from 'src/app/services/collector.service';
-import { Collector } from 'src/app/model/collector';
 import {CollectorDetail} from 'src/app/model/collectorDetail'
-
-import { CollectorDetailComponent } from './collector-detail.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ActivatedRoute, Router } from '@angular/router';
+import {CollectorsMock} from '../../shared/mocks/collectors';
+import { AlbumesService } from 'src/app/services/albumes..service';
+import { Albumes } from 'src/app/model/albumes';
+import { AlbumsMock } from 'src/app/shared/mocks/albums.mock';
+import {CollectorDetailComponent} from './collector-detail.component'
 
 describe('CollectorDetailComponent', () => {
-  let injector: TestBed;
-  let service: CollectorService;
+  let component: CollectorDetailComponent;
+  let fixture: ComponentFixture<CollectorDetailComponent>;
   let httpMock: HttpTestingController;
+  const collectors : Array<CollectorDetail> = CollectorsMock.response.data;
+  const albums = AlbumsMock.response.data;
+
+  beforeEach(async(() =>  {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule,RouterTestingModule],
+      providers: [CollectorService,{
+        provide: Router,
+        useValue: {
+          navigate: jasmine.createSpy('navigate'),
+        }},{
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {params: {id: 100}}
+          }},
+          {
+            provide: CollectorService,
+            useValue: {
+              getCollectorsDatos(): Array<CollectorDetail> {
+                return  collectors;
+              },
+            },
+          },
+          {
+            provide: AlbumesService,
+            useValue: {
+              getAlbumes(): Array<Albumes> {
+                return  albums;
+              },
+            },
+          }]
+    }).compileComponents;
+  }));
+
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [CollectorService]
-    });
-    injector = getTestBed();
-    service = injector.get(CollectorService);
-    httpMock = injector.get(HttpTestingController);
+    fixture = TestBed.createComponent(CollectorDetailComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  it('collector detal should return ..', () => {
-
-    let mockCollectors: CollectorDetail[] = [];
-
-    for (let i = 1; i < 11; i++) {
-      let collector = new CollectorDetail(i, faker.lorem.sentence(), faker.lorem.sentence(), faker.lorem.sentence());
-      mockCollectors.push(collector);
-    }
-
-    service.getCollectors().subscribe((collectors) => {
-
-    });
-
-    const req = httpMock.expectOne(() => true);
-    expect(req.request.method).toBe('GET');
-    req.flush(mockCollectors);
-  });
-
-
-  afterEach(() => {
-    httpMock.verify();
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

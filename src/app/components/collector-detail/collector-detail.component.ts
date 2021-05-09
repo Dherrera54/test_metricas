@@ -9,6 +9,7 @@ import { AlbumesService } from 'src/app/services/albumes..service';
 import { CommentDetail } from 'src/app/model/commentDetail';
 import { TitlesTables } from 'src/app/shared/models/titlesTables';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
+import { CollectorAlbums } from 'src/app/model/collectorAlbums';
 
 @Component({
   selector: 'app-collector-detail',
@@ -46,7 +47,7 @@ export class CollectorDetailComponent implements OnInit {
 
   getCollectorAlbums():void{
 
-    const items: Array<Albumes> = this.collectorDetail.collectorAlbums;
+    const items: Array<CollectorAlbums> = this.collectorDetail.collectorAlbums;
     const listaAlbumes: Array<Albumes> = this.albumesService.getAlbumes();
     this.albumsCollector =listaAlbumes.filter(a => items.find(b => a.id === b.id));
 

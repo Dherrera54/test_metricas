@@ -50,6 +50,8 @@ describe('Service: Collector', () => {
     req.flush(mockCollectors);
   });
 
+  it('Should have an element collector name'), 
+
   afterEach(() => {
     httpMock.verify();
   });
