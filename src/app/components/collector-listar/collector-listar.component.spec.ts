@@ -50,7 +50,22 @@ describe('Service: Collector', () => {
     req.flush(mockCollectors);
   });
 
-  it('Should have an element collector name'), 
+  it('Should have a collector name', () => {
+    let mockCollectors: Collector[] = [];
+    for (let i = 1; i < 11; i++) {
+      let collector = new Collector(i, faker.lorem.sentence(), faker.lorem.sentence(), faker.lorem.sentence());
+      mockCollectors.push(collector);
+    }
+
+    service.getCollectors().subscribe((collectors) => {
+      expect(collectors[0].name).toBe(mockCollectors[0].name);
+    });
+
+    const req = httpMock.expectOne(() => true);
+    expect(req.request.method).toBe('GET');
+    req.flush(mockCollectors);
+
+  });
 
   afterEach(() => {
     httpMock.verify();

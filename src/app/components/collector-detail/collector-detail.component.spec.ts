@@ -61,4 +61,24 @@ describe('CollectorDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('check the email in data', () => {
+    expect(component.collectorDetail.email).toEqual(collectors[0].email);
+  });
+
+  it('check the navigation', () => {
+    spyOn(window.history, 'back');
+    component.goBack();
+    expect(window.history.back).toHaveBeenCalled();
+  });
+
+  it('check the getDetailCollector', () => {
+    component.getDetailCollector();
+    expect(component.collectorDetail.telephone).toEqual(collectors[0].telephone);
+  });
+
+  it('check the getCollectorAlbums', () => {
+    component.getCommentsAlbum(collectors[0]);
+    expect(component.albumesOfComments[0].comments).toEqual(collectors[0].comments);
+  });
 });
