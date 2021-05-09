@@ -104,4 +104,10 @@ describe('AppComponent', () => {
     expect(router.navigate).toHaveBeenCalledWith(['performer']);
   });
 
+  it('should check the header is the same', () => {
+    component.initHeaders();
+    expect(component.getHeader()[3].title).toEqual('Buscador');
+    expect(component.getHeader().length).toEqual(4);
+  });
+
 });

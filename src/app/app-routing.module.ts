@@ -6,9 +6,10 @@ import {CollectorListarComponent} from './components/collector-listar/collector-
 import {DetailAlbumComponent} from './components/detail-album/detail-album.component';
 import { CollectorDetailComponent } from './components/collector-detail/collector-detail.component';
 import {CommentComponent} from './components/comment/comment.component';
+import {AppComponent} from './app.component';
 
 const routes: any = [
-  { path: '', component: AlbumesComponent },
+  { path: '', component: AppComponent },
   { path: 'albumes', component: AlbumesComponent },
   { path: 'performer', component: PerformerListComponent },
   { path: 'collector', component: CollectorListarComponent },

@@ -14,6 +14,7 @@ import {Albumes} from '../../model/albumes';
 import {SearchComponent} from '../../shared/components/search/search.component';
 import {HeaderService} from '../../shared/services/header.service';
 import {Header} from '../../shared/models/header';
+import {CommunicatorService} from '../../services/communicator.service';
 
 describe('AlbumesComponent', () => {
   let component: AlbumesComponent;
@@ -41,6 +42,7 @@ describe('AlbumesComponent', () => {
       ],
       providers: [
         HttpClient,
+        CommunicatorService,
         {
           provide: AlbumesService,
           useValue: {
@@ -142,6 +144,7 @@ describe('AlbumesComponent check the header exists', () => {
         BrowserModule
       ],
       providers: [
+        CommunicatorService,
         HttpClient,
         {
           provide: AlbumesService,

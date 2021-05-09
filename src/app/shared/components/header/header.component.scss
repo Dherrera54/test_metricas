@@ -4,11 +4,12 @@
       padding-top: 29px;
       padding-bottom: 33px;
       padding-left: 206px;
-      opacity: 1;
+
 
      .container-option-enabled{
         padding-right: 71px;
         span {
+          font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
           color: #FFFFFF;
         }
      }
@@ -17,8 +18,9 @@
        padding-right: 71px;
 
        span {
+         font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
          opacity: 100%;
-         color: #FFFFFF80;
+         color: #ADADAD;
        }
     }
  }
