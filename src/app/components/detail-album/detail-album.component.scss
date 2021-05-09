@@ -22,7 +22,7 @@
 
       .genre {
         text-align: center;
-        span {
+        h1 {
           color: #FFFFFF;
           font-size: 44px;
         }
@@ -48,15 +48,16 @@
       padding-left: 129px;
       padding-right: 88px;
       padding-top: 32px;
-      button {
-        width: 190px;
-        height: 44px;
-        background: black;
-        border-color: #000000;
-        color: #FFFFFF;
-      }
 
       .show-comment {
+
+        .button-style {
+          width: 190px;
+          height: 44px;
+          background: black;
+          color: #FFFFFF;
+        }
+
         padding-top: 24px;
       }
     }
