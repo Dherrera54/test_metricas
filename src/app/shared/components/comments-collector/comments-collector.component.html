@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="h4" width="35%">Album</th>
+        <th class="h4" width="40%">Comentario</th>
+        <th class="h4">Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of collectorDetail.comments" class="contenido">
+        <td *ngFor="let alb of albumesOfComments">
+          <dd>{{alb.name}}</dd>
+        </td>
+        <td>
+          <dd>{{c.description}}</dd>
+        </td>
+        <td>
+          <dd>{{c.rating}}</dd>
+        </td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
