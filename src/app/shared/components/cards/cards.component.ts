@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {AlbumesInformation} from '../../models/albumesInformation';
+import {Card} from '../../models/card';
 
 @Component({
   selector: 'app-cards',
@@ -8,7 +8,7 @@ import {AlbumesInformation} from '../../models/albumesInformation';
 })
 export class CardsComponent implements OnInit {
 
-  @Input() albumes: Array<AlbumesInformation>;
+  @Input() albumes: Array<Card>;
   @Output() index: EventEmitter<number> = new EventEmitter<number>();
   constructor() { }
 

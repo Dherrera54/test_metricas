@@ -5,7 +5,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {AlbumsMock} from '../shared/mocks/albums.mock';
 import {Observable, of, Subject} from 'rxjs';
-import {AlbumesInformation} from '../shared/models/albumesInformation';
+import {Card} from '../shared/models/card';
 import {CommunicatorService} from './communicator.service';
 import {Albumes} from '../model/albumes';
 
@@ -49,7 +49,7 @@ describe('AlbumsService', () => {
     service = TestBed.get(AlbumesService);
     const spyService = TestBed.get(HttpClient);
     spyOn(spyService, 'get').and.returnValue(of(albums));
-    service.getAlbumesServices().subscribe((resp: Array<AlbumesInformation>) => {
+    service.getAlbumesServices().subscribe((resp: Array<Card>) => {
       expect(resp.length).toEqual(4);
     });
   });

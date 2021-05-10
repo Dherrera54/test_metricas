@@ -1,9 +1,9 @@
 import faker from 'faker';
-import {AlbumesInformation} from './albumesInformation';
+import {Card} from './card';
 
 describe('Creacion del objecto Albumes', () => {
   it('should create an instance', () => {
-    expect(new AlbumesInformation(faker.random.number({min: 0, max: 3}) ,
+    expect(new Card(faker.random.number({min: 0, max: 3}) ,
       faker.lorem.sentence(), faker.lorem.sentence(),
       faker.lorem.sentence(), faker.lorem.sentence(),
       faker.lorem.sentence())).toBeTruthy();
@@ -13,7 +13,7 @@ describe('Creacion del objecto Albumes', () => {
 describe('Creacion del objecto Albumes with faker in shared', () => {
   it('should create an instance', () => {
     const image = faker.image.imageUrl();
-    const albumes = new AlbumesInformation(
+    const albumes = new Card(
       faker.random.number({min: 0, max: 3}),
       faker.lorem.sentence(),
       faker.lorem.sentence(),

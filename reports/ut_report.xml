@@ -1,84 +1,12 @@
 <testExecutions version="1">
-  <file path="src/app/http-erros/components/internet/internet.component.spec.ts">
-    <testCase name="InternetComponent should create" duration="1">
+  <file path="src/app/shared/services/header.service.spec.ts">
+    <testCase name="HeaderService check the data when the user has menu" duration="1">
       <skipped message="Skipped"/>
     </testCase>
-  </file>
-  <file path="src/app/components/performer-list/performer-list.component.spec.ts">
-    <testCase name="PerformerListComponent Should have an header element band name" duration="1">
+    <testCase name="HeaderService check the method was been called" duration="1">
       <skipped message="Skipped"/>
     </testCase>
-    <testCase name="PerformerListComponent should create" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-  </file>
-  <file path="src/app/components/albumes/albumes.component.spec.ts">
-    <testCase name="AlbumesComponent check the header exists should get headers when it exists" duration="83"/>
-    <testCase name="AlbumesComponent check the header exists should create" duration="14"/>
-    <testCase name="AlbumesComponent should create" duration="12"/>
-    <testCase name="AlbumesComponent should show all data when the text is not empty" duration="12"/>
-    <testCase name="AlbumesComponent should show all data when the text is empty" duration="11"/>
-    <testCase name="AlbumesComponent should get headers when is not existe" duration="12"/>
-    <testCase name="AlbumesComponent should trigger click option performer" duration="12"/>
-    <testCase name="AlbumesComponent Checking the albums first name is Buscando América" duration="13"/>
-    <testCase name="AlbumesComponent check the first album is Salsa" duration="10"/>
-    <testCase name="AlbumesComponent check the albumes is not empty" duration="9"/>
-  </file>
-  <file path="src/app/shared/components/title-table/title-table.component.spec.ts">
-    <testCase name="TitleTableComponent should create" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="TitleTableComponent check the input" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-  </file>
-  <file path="src/app/components/detail-album/detail-album.component.spec.ts">
-    <testCase name="DetailAlbumComponent check the collection in data" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="DetailAlbumComponent check the navigation" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="DetailAlbumComponent should create" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="DetailAlbumComponent check the getDetailAlbum" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-  </file>
-  <file path="src/app/components/comment/comment.component.spec.ts">
-    <testCase name="CommentComponent check the collection in data" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="CommentComponent check the navigation" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="CommentComponent check the getDetailAlbum" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="CommentComponent should create" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-  </file>
-  <file path="src/app/services/albumes.service.spec.ts">
-    <testCase name="AlbumsService check the success services" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AlbumsService should be created" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AlbumsService check set and get " duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AlbumsService check the services when is having error" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-  </file>
-  <file path="src/app/services/collector.service.spec.ts">
-    <testCase name="Service: Collector getCollectors() should return 10 records" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="Service: Collector should create service" duration="1">
+    <testCase name="HeaderService should be created" duration="1">
       <skipped message="Skipped"/>
     </testCase>
   </file>
@@ -90,8 +18,52 @@
       <skipped message="Skipped"/>
     </testCase>
   </file>
-  <file path="src/app/services/band.service.spec.ts">
-    <testCase name="Service: Band Method getBands() should return 10 records" duration="1">
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent check the first fourth in header  " duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AppComponent should create the app" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AppComponent check the header size " duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AppComponent should trigger click option collector" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AppComponent should trigger click option albumes" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AppComponent should check the header is the same" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AppComponent should trigger click option performer" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AppComponent check the first second in header  " duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AppComponent check the first item in header  " duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="AppComponent check the first third in header  " duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
+  <file path="src/app/components/collector-detail/collector-detail.component.spec.ts">
+    <testCase name="CollectorDetailComponent check the navigation" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="CollectorDetailComponent check the getDetailCollector" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="CollectorDetailComponent check the email in data" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="CollectorDetailComponent check the getCollectorAlbums" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="CollectorDetailComponent should create" duration="1">
       <skipped message="Skipped"/>
     </testCase>
   </file>
@@ -103,98 +75,101 @@
       <skipped message="Skipped"/>
     </testCase>
   </file>
-  <file path="src/app/services/collector.service.spec.ts">
-    <testCase name="Service: Collector should create service" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="Service: Collector getCollectors() should return 10 records" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="Service: Collector Should have a collector name" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-  </file>
-  <file path="src/app/components/collector-detail/collector-detail.component.spec.ts">
-    <testCase name="CollectorDetailComponent should create" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="CollectorDetailComponent check the getCollectorAlbums" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="CollectorDetailComponent check the email in data" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="CollectorDetailComponent check the getDetailCollector" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="CollectorDetailComponent check the navigation" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-  </file>
   <file path="src/app/shared/components/search/search.component.spec.ts">
     <testCase name="SearchComponent should create" duration="1">
       <skipped message="Skipped"/>
     </testCase>
   </file>
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should trigger click option albumes" duration="1">
+  <file path="src/app/services/albumes.service.spec.ts">
+    <testCase name="AlbumsService should be created" duration="1">
       <skipped message="Skipped"/>
     </testCase>
-    <testCase name="AppComponent should trigger click option collector" duration="1">
+    <testCase name="AlbumsService check the services when is having error" duration="1">
       <skipped message="Skipped"/>
     </testCase>
-    <testCase name="AppComponent should trigger click option performer" duration="1">
+    <testCase name="AlbumsService check the success services" duration="1">
       <skipped message="Skipped"/>
     </testCase>
-    <testCase name="AppComponent check the header size " duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AppComponent should check the header is the same" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AppComponent check the first fourth in header  " duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AppComponent check the first item in header  " duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AppComponent should create the app" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AppComponent check the first second in header  " duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="AppComponent check the first third in header  " duration="1">
+    <testCase name="AlbumsService check set and get " duration="1">
       <skipped message="Skipped"/>
     </testCase>
   </file>
-  <file path="src/app/shared/components/header/header.component.spec.ts">
-    <testCase name="HeaderComponent Checking the view in header" duration="1">
+  <file path="src/app/components/albumes/albumes.component.spec.ts">
+    <testCase name="AlbumesComponent check the first album is Salsa" duration="86"/>
+    <testCase name="AlbumesComponent Checking the albums first name is Buscando América" duration="15"/>
+    <testCase name="AlbumesComponent should create" duration="10"/>
+    <testCase name="AlbumesComponent check the albumes is not empty" duration="12"/>
+    <testCase name="AlbumesComponent should get headers when is not existe" duration="10"/>
+    <testCase name="AlbumesComponent should trigger click option performer" duration="16"/>
+    <testCase name="AlbumesComponent should show all data when the text is not empty" duration="10"/>
+    <testCase name="AlbumesComponent should show all data when the text is empty" duration="12"/>
+  </file>
+  <file path="src/app/components/performer-list/performer-list.component.spec.ts">
+    <testCase name="PerformerListComponent should create" duration="1">
       <skipped message="Skipped"/>
     </testCase>
-    <testCase name="HeaderComponent should emit index event clickItem" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
-    <testCase name="HeaderComponent should create" duration="1">
+    <testCase name="PerformerListComponent Should have an header element band name" duration="1">
       <skipped message="Skipped"/>
     </testCase>
   </file>
-  <file path="src/app/shared/services/header.service.spec.ts">
-    <testCase name="HeaderService check the method was been called" duration="1">
+  <file path="src/app/services/collector.service.spec.ts">
+    <testCase name="Service: Collector getCollectors() should return 10 records" duration="1">
       <skipped message="Skipped"/>
     </testCase>
-    <testCase name="HeaderService check the data when the user has menu" duration="1">
+    <testCase name="Service: Collector should create service" duration="1">
       <skipped message="Skipped"/>
     </testCase>
-    <testCase name="HeaderService should be created" duration="1">
+  </file>
+  <file path="src/app/shared/components/title-table/title-table.component.spec.ts">
+    <testCase name="TitleTableComponent should create" duration="1">
       <skipped message="Skipped"/>
     </testCase>
+    <testCase name="TitleTableComponent check the input" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
+  <file path="src/app/services/collector.service.spec.ts">
+    <testCase name="Service: Collector Should have a collector name" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="Service: Collector getCollectors() should return 10 records" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="Service: Collector should create service" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
+  <file path="src/app/components/detail-album/detail-album.component.spec.ts">
+    <testCase name="DetailAlbumComponent check the navigation" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="DetailAlbumComponent check the getDetailAlbum" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="DetailAlbumComponent check the collection in data" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="DetailAlbumComponent should create" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
+  <file path="src/app/services/band.service.spec.ts">
+    <testCase name="Service: Band Method getBands() should return 10 records" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
+  <file path="src/app/components/albumes/albumes.component.spec.ts">
+    <testCase name="AlbumesComponent check the header exists should create" duration="12"/>
+    <testCase name="AlbumesComponent check the header exists should get headers when it exists" duration="12"/>
   </file>
   <file path="src/app/shared/components/card-albumes/card-albumes.component.spec.ts">
-    <testCase name="CardAlbumesComponent check the view when it has data" duration="1">
+    <testCase name="CardAlbumesComponent should emit index event clickItem" duration="1">
       <skipped message="Skipped"/>
     </testCase>
     <testCase name="CardAlbumesComponent check the view when is the data is not empty" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="CardAlbumesComponent check the view when it has data" duration="1">
       <skipped message="Skipped"/>
     </testCase>
     <testCase name="CardAlbumesComponent check the view when is the data is empty" duration="1">
@@ -203,12 +178,39 @@
     <testCase name="CardAlbumesComponent should create" duration="1">
       <skipped message="Skipped"/>
     </testCase>
-    <testCase name="CardAlbumesComponent should emit index event clickItem" duration="1">
+  </file>
+  <file path="src/app/components/comment/comment.component.spec.ts">
+    <testCase name="CommentComponent check the collection in data" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="CommentComponent check the navigation" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="CommentComponent should create" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="CommentComponent check the getDetailAlbum" duration="1">
       <skipped message="Skipped"/>
     </testCase>
   </file>
   <file path="src/app/services/musician.service.spec.ts">
     <testCase name="Service: Musician Method getMusicians() should return 10 records" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
+  <file path="src/app/shared/components/header/header.component.spec.ts">
+    <testCase name="HeaderComponent should emit index event clickItem" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="HeaderComponent should create" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+    <testCase name="HeaderComponent Checking the view in header" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
+  </file>
+  <file path="src/app/http-erros/components/internet/internet.component.spec.ts">
+    <testCase name="InternetComponent should create" duration="1">
       <skipped message="Skipped"/>
     </testCase>
   </file>

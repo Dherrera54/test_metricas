@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CardsComponent } from './cards.component';
-import {AlbumesInformation} from '../../models/albumesInformation';
+import {Card} from '../../models/card';
 import {CardsAlbumMock} from '../../mocks/card-album.mock';
 
 describe('CardAlbumesComponent', () => {
@@ -31,7 +31,7 @@ describe('CardAlbumesComponent', () => {
   });
 
   it('check the view when is the data is empty', () => {
-    component.albumes = new Array<AlbumesInformation>();
+    component.albumes = new Array<Card>();
     component = fixture.componentInstance;
     expect(component.albumes.length).toEqual(0);
   });

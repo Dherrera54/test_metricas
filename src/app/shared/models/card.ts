@@ -1,5 +1,5 @@
 
-export class AlbumesInformation {
+export class Card {
 
   id: number;
   titleAlbum: string;
@@ -7,7 +7,7 @@ export class AlbumesInformation {
   genderAlbum: string;
   stateAlbum: string;
   image: string;
-  height:boolean;
+  height: boolean;
 
   constructor(id: number, titleAlbum: string, groupAlbum: string, genderAlbum: string, stateAlbum: string, image: string, height?:boolean) {
     this.id = id;
