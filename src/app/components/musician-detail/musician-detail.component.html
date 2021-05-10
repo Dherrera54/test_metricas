@@ -4,7 +4,7 @@
     <div class="img-log">
       <img src="{{musicianDetail.image}}" alt="imagen del musico{{musicianDetail.name}}" *ngIf="musicianDetail" >
       <div class="name">
-        <span id="musician-name">{{musicianDetail.name}}</span>
+        <h1><span id="musician-name">{{musicianDetail.name}}</span></h1>
       </div>
     </div>
     <div class="container-information-detail">
@@ -50,16 +50,16 @@
  <div class="row-information" *ngFor="let album of musicianDetail.albums; let i = index">
     <div class="table-body">
       <div class="container-div">
-        <img class="album_cover" src="{{album.cover}}" alt="Imagen de portada del album {{album.name}} del musico {{musicianDetail.name}}" width="50px" height="50px"/>
+        <img class="album-cover-{{i}}" src="{{album.cover}}" alt="Imagen de portada del album {{album.name}} del musico {{musicianDetail.name}}" width="50px" height="50px"/>
       </div>
       <div class="container-div">
-        <span id="album-name">{{album.name}}</span>
+        <span id="album-name-{{i}}">{{album.name}}</span>
       </div>
       <div class="container-div">
-        <span id="album-release-date">{{album.releaseDate| date: 'yyyy-MM-dd' }}</span>
+        <span id="album-release-date-{{i}}">{{album.releaseDate| date: 'yyyy-MM-dd' }}</span>
       </div>
       <div class="container-div">
-        <span id="album-record-label">{{album.recordLabel}}</span>
+        <span id="album-record-label-{{i}}">{{album.recordLabel}}</span>
       </div>
     </div>
   </div>

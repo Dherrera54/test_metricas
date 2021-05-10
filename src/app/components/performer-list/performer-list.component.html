@@ -1,12 +1,12 @@
 <div class="main-container container-fluid">
   <div class="row">
       <div class="container-musicians  col-12 col-md-6 col-lg-4">
-        <div class="col" *ngFor="let musician of musicians" class="detail-musician" (click)="onSelectedMusician(musician)" >
+        <div class="col" *ngFor="let musician of musicians;let i=index" class="detail-musician" (click)="onSelectedMusician(musician)" >
             <div class="img-driver">
               <img src="{{musician.image}}" alt="imagen del musico{{musician.name}}">
             </div>
             <div class="musician-name">
-              <span id="musician-name">{{musician.name}}</span>
+              <h1><span class="musician-name" id="musician-name-{{i}}">{{musician.name}}</span></h1>
             </div>
             <div class="artist-type">
 
@@ -20,12 +20,12 @@
 
 
       <div class="container-bands col-12 col-md-6 col-lg-4 ">
-      <div class="col" *ngFor="let band of bands" class="detail-band" (click)="onSelectedBand(band)">
+      <div class="col" *ngFor="let band of bands, let i= index" class="detail-band" (click)="onSelectedBand(band)">
           <div class="img-driver">
             <img src="{{band.image}}" alt="imagen de la banda {{band.name}}">
           </div>
           <div class="band-name">
-            <span id="band-name">{{band.name}}</span>
+            <h1 class="band-name" id="band-name-{{i}}"><span id="band-name">{{band.name}}</span></h1>
           </div>
           <div class="artist-type">
             <span>Banda</span>
