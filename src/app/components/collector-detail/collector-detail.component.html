@@ -1,0 +1,125 @@
+
+<div class="container-detail-collector">
+  <div class="container-information">
+
+    <div class="img-log">
+      <div class="name">
+        <span>{{collectorDetail.name}}</span>
+      </div>
+    </div>
+    <div class="container-button">
+      <div>
+        <button  class="button-style" (click)="goBack()" name="Regresar a lista de albumes">Regresar</button>
+      </div>
+    </div>
+  </div>
+<div class="container-fluid2">
+  <h1> Comentarios hechos por {{collectorDetail.name}}</h1>
+</div>
+
+<div class="container-fluid">
+<table class="table">
+  <thead>
+    <tr>
+      <th class="h4" width="35%">Album</th>
+      <th class="h4" width="40%">Comentario</th>
+      <th class="h4">Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of collectorDetail.comments" class="contenido">
+      <td *ngFor="let alb of albumesOfComments">
+        <dd>{{alb.name}}</dd>
+      </td>
+      <td>
+        <dd>{{c.description}}</dd>
+      </td>
+      <td>
+        <dd>{{c.rating}}</dd>
+      </td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <hr>
+  </div>
+</div>
+
+<div class="container-fluid2">
+<h1> Artistas favoritos de {{collectorDetail.name}}</h1>
+</div>
+<div class="container-fluid">
+<table class="table">
+  <thead>
+    <tr>
+      <th class="h4" width="75%">Nombre</th>
+      <th class="h4" width="25%">Foto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of collectorDetail.favoritePerformers" class="contenido">
+      <td>
+        <dd>{{p.name}}</dd>
+      </td>
+      <td>
+        <img src="{{p.image}}" alt="Foto de {{p.name}}">
+      </td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <hr>
+  </div>
+</div>
+<div class="container-fluid2">
+<h1> Albumes de {{collectorDetail.name}}</h1>
+</div>
+<div class="container-fluid">
+<table class="table" >
+  <thead>
+    <tr>
+      <th class="h4" width="25%">Nombre</th>
+      <th class="h4" width="25%">Foto</th>
+      <th class="h4" width="25%">Precio</th>
+      <th class="h4" width="25%">Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let a of albumsCollector" class="contenido">
+      <td>
+        <dd>{{a.name}}</dd>
+      </td>
+      <td>
+        <img src="{{a.cover}}" alt="foto del album {{a.name}}">
+      </td>
+      <td *ngFor="let alb of collectorDetail.collectorAlbums">
+        <dd>{{alb.price}}</dd>
+      </td>
+      <td *ngFor="let alb of collectorDetail.collectorAlbums">
+        <dd>{{alb.status}}</dd>
+      </td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <hr>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

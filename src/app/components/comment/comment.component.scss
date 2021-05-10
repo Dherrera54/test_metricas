@@ -15,7 +15,7 @@
       .genre {
         text-align: center;
 
-        span {
+        h1 {
           color: #FFFFFF;
           font-size: 34px;
         }
@@ -30,8 +30,29 @@
       padding-top: 32px;
 
       .container-options {
+
         width: calc(100% - 60%);
         padding-top: 32px;
+        background-color: black;
+
+        .item {
+          display: block;
+          width: 100%;
+          padding: .375rem 2.25rem .375rem .75rem;
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 1.5;
+          color: #212529;
+          background-color: #fff;
+          background-repeat: no-repeat;
+          background-position: right .75rem center;
+          background-size: 16px 12px;
+          border: 1px solid #ced4da;
+          border-radius: .25rem;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        }
       }
 
       span {

@@ -1,29 +1,73 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { CollectorListarComponent } from './collector-listar.component';
 
-describe('CollectorListarComponent', () => {
-  let component: CollectorListarComponent;
-  let fixture: ComponentFixture<CollectorListarComponent>;
+import { TestBed, async, inject, getTestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpTestingController } from '@angular/common/http/testing';
+import faker from 'faker';
+import { CollectorService } from 'src/app/services/collector.service';
+import { Collector } from 'src/app/model/collector';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Router } from '@angular/router';
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientModule],
-      declarations: [ CollectorListarComponent ]
-    })
-    .compileComponents();
-  }));
+describe('Service: Collector', () => {
+  let injector: TestBed;
+  let service: CollectorService;
+  let httpMock: HttpTestingController;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CollectorListarComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    TestBed.configureTestingModule({
+      imports: [RouterTestingModule,HttpClientTestingModule],
+      providers: [CollectorService, {
+        provide: Router,
+        useValue: {
+          navigate: jasmine.createSpy('navigate'),
+        }}]
+    });
+    injector = getTestBed();
+    service = injector.get(CollectorService);
+    httpMock = injector.get(HttpTestingController);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create service', inject([CollectorService], (service: CollectorService) => {
+    expect(service).toBeTruthy();
+  }));
+
+  it('getCollectors() should return 10 records', () => {
+
+    let mockCollectors: Collector[] = [];
+
+    for (let i = 1; i < 11; i++) {
+      let collector = new Collector(i, faker.lorem.sentence(), faker.lorem.sentence(), faker.lorem.sentence());
+      mockCollectors.push(collector);
+    }
+
+    service.getCollectors().subscribe((collectors) => {
+      expect(collectors.length).toBe(10);
+    });
+
+    const req = httpMock.expectOne(() => true);
+    expect(req.request.method).toBe('GET');
+    req.flush(mockCollectors);
+  });
+
+  it('Should have a collector name', () => {
+    let mockCollectors: Collector[] = [];
+    for (let i = 1; i < 11; i++) {
+      let collector = new Collector(i, faker.lorem.sentence(), faker.lorem.sentence(), faker.lorem.sentence());
+      mockCollectors.push(collector);
+    }
+
+    service.getCollectors().subscribe((collectors) => {
+      expect(collectors[0].name).toBe(mockCollectors[0].name);
+    });
+
+    const req = httpMock.expectOne(() => true);
+    expect(req.request.method).toBe('GET');
+    req.flush(mockCollectors);
+
+  });
+
+  afterEach(() => {
+    httpMock.verify();
   });
 });

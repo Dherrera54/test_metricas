@@ -22,4 +22,6 @@ export class BandService {
   getBandDetail(bandID):Observable<Band>{
     return this.http.get<Band>(`${this.apiUrl}/${bandID}`)
   }
+
+
 }
