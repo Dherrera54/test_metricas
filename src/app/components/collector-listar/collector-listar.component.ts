@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Collector} from '../../model/collector';
 import {CollectorService} from '../../services/collector.service';
 import {CollectorDetail} from '../../model/collectorDetail';
-import { AlbumesInformation } from 'src/app/shared/models/albumesInformation';
+import { Card } from 'src/app/shared/models/card';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,7 +16,7 @@ export class CollectorListarComponent implements OnInit {
   }
 
   collectors:Array<CollectorDetail>;
-  albums: Array<AlbumesInformation> = new Array<AlbumesInformation>();
+  albums: Array<Card> = new Array<Card>();
 
   getCollectors(): void {
     this.collectorService.getCollectors()
@@ -24,7 +24,7 @@ export class CollectorListarComponent implements OnInit {
         this.collectors = collectors;
         this.collectorService.setCollectors(this.collectors);
         collectors.forEach( (it: CollectorDetail) => {
-          this.albums.push(new AlbumesInformation(it.id, it.name,  "", "", "", "",true));
+          this.albums.push(new Card(it.id, it.name,  "", "", "", "",true));
         });
       });
 

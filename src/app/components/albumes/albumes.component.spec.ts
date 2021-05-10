@@ -4,7 +4,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {AlbumesService} from '../../services/albumes..service';
 import {observable, Observable, of, Subject, throwError} from 'rxjs';
 import {AlbumsMock} from '../../shared/mocks/albums.mock';
-import {CardAlbumesComponent} from '../../shared/components/card-albumes/card-albumes.component';
+import {CardsComponent} from '../../shared/components/cards/cards.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import { Router } from '@angular/router';
 import {DetailAlbumComponent} from '../detail-album/detail-album.component';
@@ -30,7 +30,7 @@ describe('AlbumesComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AlbumesComponent,
-        CardAlbumesComponent,
+        CardsComponent,
         DetailAlbumComponent,
         HeaderComponent,
         SearchComponent
@@ -133,7 +133,7 @@ describe('AlbumesComponent check the header exists', () => {
     TestBed.configureTestingModule({
       declarations: [
         AlbumesComponent,
-        CardAlbumesComponent,
+        CardsComponent,
         DetailAlbumComponent,
         HeaderComponent,
         SearchComponent
