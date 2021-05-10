@@ -29,13 +29,13 @@
   <tbody>
     <tr *ngFor="let c of collectorDetail.comments" class="contenido">
       <td *ngFor="let alb of albumesOfComments">
-        <dd>{{alb.name}}</dd>
+        <span>{{alb.name}}</span>
       </td>
       <td>
-        <dd>{{c.description}}</dd>
+        <span>{{c.description}}</span>
       </td>
       <td>
-        <dd>{{c.rating}}</dd>
+        <span>{{c.rating}}</span>
       </td>
   </tr>
   </tbody>
@@ -62,7 +62,7 @@
   <tbody>
     <tr *ngFor="let p of collectorDetail.favoritePerformers" class="contenido">
       <td>
-        <dd>{{p.name}}</dd>
+        <span>{{p.name}}</span>
       </td>
       <td>
         <img src="{{p.image}}" alt="Foto de {{p.name}}">
@@ -84,25 +84,25 @@
 <table class="table" >
   <thead>
     <tr>
-      <th class="h4" width="25%">Nombre</th>
+      <th class="h4" width="27%">Nombre</th>
       <th class="h4" width="25%">Foto</th>
-      <th class="h4" width="25%">Precio</th>
+      <th class="h4" width="24%">Precio</th>
       <th class="h4" width="25%">Estado</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let a of albumsCollector" class="contenido">
       <td>
-        <dd>{{a.name}}</dd>
+        <span>{{a.name}}</span>
       </td>
       <td>
         <img src="{{a.cover}}" alt="foto del album {{a.name}}">
       </td>
       <td *ngFor="let alb of collectorDetail.collectorAlbums">
-        <dd>{{alb.price}}</dd>
+        <span>{{alb.price}}</span>
       </td>
       <td *ngFor="let alb of collectorDetail.collectorAlbums">
-        <dd>{{alb.status}}</dd>
+        <span>{{alb.status}}</span>
       </td>
   </tr>
   </tbody>
