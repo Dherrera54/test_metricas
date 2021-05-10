@@ -2,11 +2,11 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {AlbumesInformation} from '../../models/albumesInformation';
 
 @Component({
-  selector: 'app-card-albumes',
-  templateUrl: './card-albumes.component.html',
-  styleUrls: ['./card-albumes.component.scss']
+  selector: 'app-cards',
+  templateUrl: './cards.component.html',
+  styleUrls: ['./cards.component.scss']
 })
-export class CardAlbumesComponent implements OnInit {
+export class CardsComponent implements OnInit {
 
   @Input() albumes: Array<AlbumesInformation>;
   @Output() index: EventEmitter<number> = new EventEmitter<number>();
