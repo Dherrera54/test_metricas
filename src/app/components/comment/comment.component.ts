@@ -15,6 +15,7 @@ export class CommentComponent implements OnInit {
   album: Albumes;
   titlesTable: Array<TitlesTables>;
   id: number;
+  textInput = '';
 
   constructor(private activatedRoute: ActivatedRoute, private albumesService: AlbumesService) {
     this.titlesTable = new Array<TitlesTables>();
@@ -30,7 +31,6 @@ export class CommentComponent implements OnInit {
   getComments(): void {
     const item: Array<Albumes> =  this.albumesService.getAlbumes();
     this.album =  item.find(t => t.id == this.id);
-    console.log(this.album);
   }
 
   goBack(): void {

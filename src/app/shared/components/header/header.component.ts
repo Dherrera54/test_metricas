@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {AlbumesInformation} from '../../models/albumesInformation';
+import {Card} from '../../models/card';
 import {Header} from '../../models/header';
 
 @Component({

@@ -1,0 +1,67 @@
+<div class="container-detail-band">
+  <ng-container *ngIf="bandDetail">
+  <div class="container-information">
+    <div class="img-log">
+      <img src="{{bandDetail.image}}" alt="imagen de la banda {{bandDetail.name}}">
+      <div class="name">
+       <h1> <span id="band-name">{{bandDetail.name}}</span></h1>
+      </div>
+    </div>
+    <div class="container-information-detail">
+      <div class="detail">
+        <span id="band-description">{{bandDetail.description}} </span>
+      </div>
+      <div class="detail">
+        <span>Creación: {{bandDetail.creationDate | date: 'yyyy-MM-dd' }} </span>
+      </div>
+      <div class="detail">
+        <span>Tipo de artista: Banda </span>
+      </div>
+    </div>
+    <div class="container-button">
+      <div>
+        <button type="button" class="design-button" (click)="goBack()">Regresar</button>
+      </div>
+      <div class="show-comment">
+        <button type="button" class="design-button" (click)="goBack()">Ver premios</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="list-information">
+    <hr/>
+    <div class="table-title">
+      <div class="container-div">
+        <span>Álbum</span>
+      </div>
+      <div class="container-div">
+        <span>Nombre</span>
+      </div>
+      <div class="container-div">
+        <span>Fecha Publicación</span>
+      </div>
+
+      <div class="container-div">
+        <span>Casa Discografica</span>
+      </div>
+    </div>
+    <hr/>
+  </div>
+ <div class="row-information" *ngFor="let album of bandDetail.albums; let i = index">
+    <div class="table-body">
+      <div class="container-div">
+        <img class="album-cover" src="{{album.cover}}" alt="Imagen de portada del album {{album.name}} de la banda {{bandDetail.name}}" width="50px" height="50px"/>
+      </div>
+      <div class="container-div">
+        <span>{{album.name}}</span>
+      </div>
+      <div class="container-div">
+        <span>{{album.releaseDate| date: 'yyyy-MM-dd' }}</span>
+      </div>
+      <div class="container-div">
+        <span>{{album.recordLabel}}</span>
+      </div>
+    </div>
+  </div>
+</ng-container>
+</div>

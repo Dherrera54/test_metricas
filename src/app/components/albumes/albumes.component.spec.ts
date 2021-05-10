@@ -4,7 +4,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {AlbumesService} from '../../services/albumes..service';
 import {observable, Observable, of, Subject, throwError} from 'rxjs';
 import {AlbumsMock} from '../../shared/mocks/albums.mock';
-import {CardAlbumesComponent} from '../../shared/components/card-albumes/card-albumes.component';
+import {CardsComponent} from '../../shared/components/cards/cards.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import { Router } from '@angular/router';
 import {DetailAlbumComponent} from '../detail-album/detail-album.component';
@@ -14,6 +14,7 @@ import {Albumes} from '../../model/albumes';
 import {SearchComponent} from '../../shared/components/search/search.component';
 import {HeaderService} from '../../shared/services/header.service';
 import {Header} from '../../shared/models/header';
+import {CommunicatorService} from '../../services/communicator.service';
 
 describe('AlbumesComponent', () => {
   let component: AlbumesComponent;
@@ -29,7 +30,7 @@ describe('AlbumesComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AlbumesComponent,
-        CardAlbumesComponent,
+        CardsComponent,
         DetailAlbumComponent,
         HeaderComponent,
         SearchComponent
@@ -41,6 +42,7 @@ describe('AlbumesComponent', () => {
       ],
       providers: [
         HttpClient,
+        CommunicatorService,
         {
           provide: AlbumesService,
           useValue: {
@@ -131,7 +133,7 @@ describe('AlbumesComponent check the header exists', () => {
     TestBed.configureTestingModule({
       declarations: [
         AlbumesComponent,
-        CardAlbumesComponent,
+        CardsComponent,
         DetailAlbumComponent,
         HeaderComponent,
         SearchComponent
@@ -142,6 +144,7 @@ describe('AlbumesComponent check the header exists', () => {
         BrowserModule
       ],
       providers: [
+        CommunicatorService,
         HttpClient,
         {
           provide: AlbumesService,

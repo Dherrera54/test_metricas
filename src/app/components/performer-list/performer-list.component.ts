@@ -2,19 +2,29 @@ import { Component, OnInit } from '@angular/core';
 import { Performer, Musician, Band } from '../../model/performer';
 import { BandService } from '../../services/band.service';
 import { MusicianService } from '../../services/musician.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-performer-list',
   templateUrl: './performer-list.component.html',
-  styleUrls: ['./performer-list.component.css']
+  styleUrls: ['./performer-list.component.scss']
 })
 export class PerformerListComponent implements OnInit {
 
-  constructor(private bandService: BandService, private musicianService:MusicianService) { }
+  constructor(private bandService: BandService, private musicianService:MusicianService, private router: Router) { }
+
+  selectedMusician: Musician;
+  selectedBand : Band;
+  selected: boolean = false;
 
   public musicians: Array<Musician>;
   public bands: Array<Band>;
 
+  ngOnInit() {
+    this.getBandList();
+    this.getMusicianList();
+  }
   getBandList(){
     this.bandService.getBands().subscribe(result => {
       this.bands = result;});
@@ -28,10 +38,16 @@ export class PerformerListComponent implements OnInit {
       this.musicianService.getMusicians().subscribe(result => {
         console.log(result);});
   }
+  onSelectedMusician(musician: Musician):void{
+    this.selected=true;
+    this.selectedMusician=musician;
+    this.router.navigate(['detail-musician', musician.id],  );
 
-  ngOnInit() {
-    this.getBandList();
-    this.getMusicianList();
   }
+  onSelectedBand(band: Band):void{
+    this.selected=true;
+    this.selectedBand=band;
+    this.router.navigate(['detail-band', band.id],  );
 
+  }
 }

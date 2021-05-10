@@ -1,0 +1,19 @@
+<div class="container-album">
+  <div *ngFor="let item of albumes; let i = index" class="detail-album" (click)="clickItem(item.id)" [ngClass]="{'height-element': item.height}" id="{{i}}">
+      <div class="img-driver" *ngIf="item.image !== '' ">
+        <img src="{{item.image}}" alt="">
+      </div>
+      <div class="album-title" *ngIf="item.titleAlbum !== '' ">
+        <h1 id="title {{i}}">{{item.titleAlbum}}</h1>
+      </div>
+      <div class="album-group" *ngIf="item.groupAlbum !== '' ">
+        <span>{{item.groupAlbum}}</span>
+      </div>
+      <div class="album-gender" *ngIf="item.genderAlbum !== '' ">
+         <span>{{item.genderAlbum}}</span>
+      </div>
+      <div class="album-state" *ngIf="item.stateAlbum !== '' ">
+        <span>{{item.stateAlbum}}</span>
+      </div>
+  </div>
+</div>
