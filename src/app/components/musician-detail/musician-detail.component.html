@@ -1,7 +1,8 @@
 <div class="container-detail-musician">
+  <ng-container *ngIf="musicianDetail">
   <div class="container-information">
     <div class="img-log">
-      <img src="{{musicianDetail.image}}" alt="imagen del musico{{musicianDetail.name}}">
+      <img src="{{musicianDetail.image}}" alt="imagen del musico{{musicianDetail.name}}" *ngIf="musicianDetail" >
       <div class="name">
         <span id="musician-name">{{musicianDetail.name}}</span>
       </div>
@@ -62,4 +63,5 @@
       </div>
     </div>
   </div>
+</ng-container>
 </div>

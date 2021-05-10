@@ -13,22 +13,18 @@ import { MusicianService } from '../../services/musician.service';
 })
 export class MusicianDetailComponent implements OnInit {
 
+  musicianDetail: Musician;
 
 
   constructor(private route:ActivatedRoute, private router: Router, private musicianService:MusicianService) { }
-  public musicianDetail: Musician;
-  public id: number;
+  id: number;
 
 
   ngOnInit() {
     if (this.musicianDetail === undefined){
       this.id = this.route.snapshot.params.id;
       console.log(this.id)
-
-
       this.getMusicianDetail();
-
-
     }
 
   }

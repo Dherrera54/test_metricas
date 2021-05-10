@@ -1,4 +1,5 @@
 <div class="container-detail-band">
+  <ng-container *ngIf="bandDetail">
   <div class="container-information">
     <div class="img-log">
       <img src="{{bandDetail.image}}" alt="imagen de la banda {{bandDetail.name}}">
@@ -62,4 +63,5 @@
       </div>
     </div>
   </div>
+</ng-container>
 </div>

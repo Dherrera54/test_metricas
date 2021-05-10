@@ -16,6 +16,7 @@ export class PerformerListComponent implements OnInit {
 
   selectedMusician: Musician;
   selectedBand : Band;
+  selected: boolean = false;
 
   public musicians: Array<Musician>;
   public bands: Array<Band>;
@@ -38,11 +39,13 @@ export class PerformerListComponent implements OnInit {
         console.log(result);});
   }
   onSelectedMusician(musician: Musician):void{
+    this.selected=true;
     this.selectedMusician=musician;
     this.router.navigate(['detail-musician', musician.id],  );
 
   }
   onSelectedBand(band: Band):void{
+    this.selected=true;
     this.selectedBand=band;
     this.router.navigate(['detail-band', band.id],  );
 
