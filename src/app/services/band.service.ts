@@ -10,6 +10,7 @@ import {environment} from '../../environments/environment';
 })
 export class BandService {
   private apiUrl = environment.baseUrl + 'bands';
+  selected: boolean = false;
 
   constructor(private http: HttpClient) {
   }
@@ -17,6 +18,9 @@ export class BandService {
   getBands(): Observable<Band[]> {
 
     return this.http.get<Band[]>(this.apiUrl);
+  }
+  getBandDetail(bandID):Observable<Band>{
+    return this.http.get<Band>(`${this.apiUrl}/${bandID}`)
   }
 
 
