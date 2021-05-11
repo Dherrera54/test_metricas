@@ -32,6 +32,7 @@ export class CommunicatorService {
   }
 
   setErrorStatus(error: any): any {
+    console.log('Entro a eso');
     let newError: ErrorResponse;
     if (error.status === 0) {
       newError = new ErrorResponse({ codigo: error.statusCode});
