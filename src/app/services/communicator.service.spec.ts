@@ -77,6 +77,14 @@ describe('CommunicatorService', () => {
     expect(router.navigate).toHaveBeenCalledWith(['error404']);
   });
 
+
+  it('check the success services with different setErrorStatus', () => {
+    service = TestBed.get(CommunicatorService);
+    const router = TestBed.get(Router);
+    service.setErrorStatus({ status: 404 });
+    expect(router.navigate).toHaveBeenCalledWith(['error404']);
+  });
+
   it('post response 404', fakeAsync( () => {
     service = TestBed.get(CommunicatorService);
     const resMock = {
