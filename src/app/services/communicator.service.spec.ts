@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variables */
 
-import { TestBed, } from '@angular/core/testing';
+import {fakeAsync, TestBed, tick, } from '@angular/core/testing';
 import {AlbumsMock} from '../shared/mocks/albums.mock';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {RouterTestingModule} from '@angular/router/testing';
 import {CommunicatorService} from './communicator.service';
-import {Observable, of, Subject} from 'rxjs';
+import {Observable, of, Subject, throwError} from 'rxjs';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {Card} from '../shared/models/card';
 import {environment} from '../../environments/environment';
@@ -76,4 +76,36 @@ describe('CommunicatorService', () => {
     service.setErrorStatus({ status: 0 });
     expect(router.navigate).toHaveBeenCalledWith(['error404']);
   });
+
+  it('post response 404', fakeAsync( () => {
+    service = TestBed.get(CommunicatorService);
+    const resMock = {
+      codigo: '404',
+    };
+    const observable = new Subject();
+    observable.error(resMock);
+    spyOn(service, 'http_get').and.returnValue(observable);
+    service.http_get('', '').subscribe((resp: any) => {
+
+    }, (error => {
+      expect(error.codigo).toEqual(resMock.codigo);
+    }));
+  }));
+
+
+  it('post response 404 with post', fakeAsync( () => {
+    service = TestBed.get(CommunicatorService);
+    const resMock = {
+      codigo: '404',
+    };
+    const observable = new Subject();
+    observable.error(resMock);
+    spyOn(service, 'http_post').and.returnValue(observable);
+    service.http_post('', '').subscribe((resp: any) => {
+
+    }, (error => {
+      expect(error.codigo).toEqual(resMock.codigo);
+    }));
+  }));
+
 });

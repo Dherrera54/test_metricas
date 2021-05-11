@@ -36,6 +36,7 @@ export class CommunicatorService {
     if (error.status === 0) {
       newError = new ErrorResponse({codigo: error.statusCode});
     }
+    console.log('Fue ');
     this.managerErrorService.setStatusCode(Number(error.status));
     return throwError(newError);
   }
