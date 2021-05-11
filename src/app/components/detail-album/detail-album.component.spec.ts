@@ -72,4 +72,10 @@ describe('DetailAlbumComponent', () => {
     component.getDetailAlbum();
     expect(component.album.recordLabel).toEqual(albums[0].recordLabel);
   });
+
+  it('check the getDetailAlbum with navigation', () => {
+    const router = TestBed.get(Router);
+    component.checkComment();
+    expect(router.navigate).toHaveBeenCalledWith( [ 'comment' ], Object({ queryParams: Object({ id: 100 }) }));
+  });
 });

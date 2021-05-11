@@ -14,7 +14,7 @@ export class ManagerErrorService {
        this.router.navigate([Routes.ERROR_INTERNET]);
      } else if (status === 500 ) {
        this.router.navigate([Routes.ERROR_INTERNET]);
-    } else if (status === 4004 ) {
+    } else if (status === 404 ) {
        this.router.navigate([Routes.ERROR_INTERNET]);
      }
   }
