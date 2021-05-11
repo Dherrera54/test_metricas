@@ -2,5 +2,5 @@ projectKey=202112_Equipo_03:sonar
 serverUrl=http://157.253.238.75:8080/sonar-misovirtual
 serverVersion=8.3.1.34397
 dashboardUrl=http://157.253.238.75:8080/sonar-misovirtual/dashboard?id=202112_Equipo_03%3Asonar
-ceTaskId=AXlDUQQWDBktkls39kna
-ceTaskUrl=http://157.253.238.75:8080/sonar-misovirtual/api/ce/task?id=AXlDUQQWDBktkls39kna
+ceTaskId=AXlZV5A1DBktkls39kuQ
+ceTaskUrl=http://157.253.238.75:8080/sonar-misovirtual/api/ce/task?id=AXlZV5A1DBktkls39kuQ
