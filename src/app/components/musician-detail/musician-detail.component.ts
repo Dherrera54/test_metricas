@@ -30,7 +30,6 @@ export class MusicianDetailComponent implements OnInit {
   }
   goBack(){
     this.router.navigate(['performer']);
-    //window.history.back();
   }
   getMusicianDetail():void{
     this.musicianService.getMusicianDetail(this.id)

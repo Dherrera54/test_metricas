@@ -65,6 +65,11 @@ describe('MusicianDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('check the collection in data', () => {
+    expect(component.musicianDetail.name).toEqual(musician[0].name);
+  });
+
+
   it('Should have an element musician name', () => {
     fixture.detectChanges();
     expect(debug.query(By.css('#musician-name')).nativeElement.innerText).toContain(
