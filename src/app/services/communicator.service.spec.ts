@@ -54,8 +54,27 @@ describe('CommunicatorService', () => {
   it('check the success services', () => {
     service = TestBed.get(CommunicatorService);
     const spyService = TestBed.get(HttpClient);
-    spyOn(spyService, 'get').and.returnValue(of(albums));
+    spyOn(spyService, 'post').and.returnValue(of(albums));
     service.http_post(environment.baseUrl, '{}').subscribe((resp: Array<Card>) => {
+      expect(resp.length).toEqual(4);
+    });
+  });
+
+
+  it('check the success services with get', () => {
+    service = TestBed.get(CommunicatorService);
+    const spyService = TestBed.get(HttpClient);
+    spyOn(spyService, 'get').and.returnValue(of(albums));
+    service.http_get(environment.baseUrl, '{}').subscribe((resp: Array<Card>) => {
+      expect(resp.length).toEqual(4);
+    });
+  });
+
+  it('check the success services with get', () => {
+    service = TestBed.get(CommunicatorService);
+    const spyService = TestBed.get(HttpClient);
+    spyOn(spyService, 'get').and.returnValue(of(albums));
+    service.http_get(environment.baseUrl, '{}').subscribe((resp: Array<Card>) => {
       expect(resp.length).toEqual(4);
     });
   });
@@ -72,6 +91,24 @@ describe('CommunicatorService', () => {
     observable.error(error);
     spyOn(spyService, 'post').and.returnValue(observable);
     service.http_post('', '').subscribe((resp: any) => {
+
+    }, (resp: any) => {
+      expect(resp.message).toEqual('Cannot GET /albumsa');
+    });
+  });
+
+  it('check the services when is having error with get', () => {
+    service = TestBed.get(CommunicatorService);
+    const spyService = TestBed.get(HttpClient);
+    const observable = new Subject();
+    const error = {
+      statusCode: 404,
+      error: 'Not Found',
+      message: 'Cannot GET /albumsa'
+    };
+    observable.error(error);
+    spyOn(spyService, 'get').and.returnValue(observable);
+    service.http_get('', '').subscribe((resp: any) => {
 
     }, (resp: any) => {
       expect(resp.message).toEqual('Cannot GET /albumsa');
