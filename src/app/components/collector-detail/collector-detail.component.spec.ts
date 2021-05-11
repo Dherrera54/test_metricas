@@ -77,8 +77,13 @@ describe('CollectorDetailComponent', () => {
     expect(component.collectorDetail.telephone).toEqual(collectors[0].telephone);
   });
 
-  it('check the getCollectorAlbums', () => {
+  it('check the getCommentsAlbums', () => {
     component.getCommentsAlbum(collectors[0]);
     expect(component.albumesOfComments[0].comments).toEqual(collectors[0].comments);
+  });
+
+  it('check the getCollectorAlbums', () => {
+    component.getCollectorAlbums();
+    expect(component.albumsCollector[0].id).toEqual(collectors[0].collectorAlbums[0].id);
   });
 });
