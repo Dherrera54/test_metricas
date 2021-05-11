@@ -1,17 +1,16 @@
 /* tslint:disable:no-unused-variables */
 
 import { TestBed, } from '@angular/core/testing';
-import {AlbumesService} from './albumes..service';
 import {AlbumsMock} from '../shared/mocks/albums.mock';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {RouterTestingModule} from '@angular/router/testing';
 import {CommunicatorService} from './communicator.service';
 import {Observable, of, Subject} from 'rxjs';
-import {Albumes} from '../model/albumes';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {Card} from '../shared/models/card';
 import {environment} from '../../environments/environment';
 import {ManagerErrorService} from '../http-erros/services/manager-error.service';
+import {Albumes} from '../model/albumes';
 
 describe('CommunicatorService', () => {
   let service: CommunicatorService;
@@ -23,19 +22,13 @@ describe('CommunicatorService', () => {
         RouterTestingModule,
       ],
       providers: [
-        {
-          provide: CommunicatorService,
-          useValue: {
-            http_get(): Observable<Array<Albumes>> {
-              return  of(albums);
-            },
-            http_post(): Observable<Array<Albumes>> {
-              return  of(albums);
-            }
-          },
-        },
+        CommunicatorService,
         {
           provide: ManagerErrorService,
+          useValue: {
+            setStatusCode(): void {
+            }
+          },
         },
         HttpClient,
         {
@@ -52,6 +45,7 @@ describe('CommunicatorService', () => {
   });
 
   it('should be created', () => {
+    service = TestBed.get(CommunicatorService);
     expect(service).toBeTruthy();
   });
 
@@ -73,41 +67,4 @@ describe('CommunicatorService', () => {
       expect(resp.length).toEqual(4);
     });
   });
-
-  it('check the services when is having error', () => {
-    service = TestBed.get(CommunicatorService);
-    const spyService = TestBed.get(HttpClient);
-    const observable = new Subject();
-    const error = {
-      statusCode: 0,
-      error: 'Not Found',
-      message: 'Cannot GET /albumsa'
-    };
-    observable.error(error);
-    spyOn(spyService, 'post').and.returnValue(observable);
-    service.http_post('', '').subscribe((resp: any) => {
-
-    }, (resp: any) => {
-      expect(resp.message).toEqual('Cannot GET /albumsa');
-    });
-  });
-
-  it('check the services when is having error with get', () => {
-    service = TestBed.get(CommunicatorService);
-    const spyService = TestBed.get(HttpClient);
-    const observable = new Subject();
-    const error = {
-      statusCode: 404,
-      error: 'Not Found',
-      message: 'Cannot GET /albumsa'
-    };
-    observable.error(error);
-    spyOn(spyService, 'get').and.returnValue(observable);
-    service.http_get('', '').subscribe((resp: any) => {
-
-    }, (resp: any) => {
-      expect(resp.message).toEqual('Cannot GET /albumsa');
-    });
-  });
-
 });
