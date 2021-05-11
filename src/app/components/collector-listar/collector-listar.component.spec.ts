@@ -59,6 +59,8 @@ describe('Service: Collector', () => {
 
     service.getCollectors().subscribe((collectors) => {
       expect(collectors[0].name).toBe(mockCollectors[0].name);
+      expect(collectors[0].telephone).toBe(mockCollectors[0].telephone);
+      expect(collectors[0].email).toBe(mockCollectors[0].email);
     });
 
     const req = httpMock.expectOne(() => true);
