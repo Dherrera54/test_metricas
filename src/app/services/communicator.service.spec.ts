@@ -86,7 +86,7 @@ describe('CommunicatorService', () => {
   });
 });
 
-describe('CommunicatorService', () => {
+describe('CommunicatorService 404', () => {
   let service: CommunicatorService;
   const albums = AlbumsMock.response.data;
   beforeEach(() => {
@@ -124,6 +124,49 @@ describe('CommunicatorService', () => {
       err => {
         expect(err).toBeTruthy();
     });
+  });
+});
+
+
+
+describe('CommunicatorService 404 with get', () => {
+  let service: CommunicatorService;
+  const albums = AlbumsMock.response.data;
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule,
+        HttpClientModule,
+        RouterTestingModule,
+      ],
+      providers: [
+        CommunicatorService,
+        ManagerErrorService,
+        HttpClient,
+        {
+          provide: Router,
+          useValue: {
+            navigate: jasmine.createSpy('navigate'),
+          },
+        },
+      ],
+      schemas: [NO_ERRORS_SCHEMA],
+    });
+  });
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(CommunicatorService);
+  });
+
+  it('post response 404', () => {
+    service = TestBed.get(CommunicatorService);
+    const spyService = TestBed.get(HttpClient);
+    spyOn(spyService, 'get').and.returnValue(throwError({status: 0}));
+    service.http_get({} as any, {} as any).subscribe((res: any) => console.log(res),
+      err => {
+        expect(err).toBeTruthy();
+      });
   });
 });
 
