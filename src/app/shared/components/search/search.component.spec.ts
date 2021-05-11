@@ -22,4 +22,12 @@ describe('SearchComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should check the emit', () => {
+    spyOn(component.text, 'emit');
+    component.keyup('A');
+    fixture.detectChanges();
+    expect(component.text).toBeTruthy();
+    expect(component.text.emit).toHaveBeenCalled();
+  });
 });
