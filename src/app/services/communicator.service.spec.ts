@@ -11,6 +11,7 @@ import {Albumes} from '../model/albumes';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {Card} from '../shared/models/card';
 import {environment} from '../../environments/environment';
+import {ManagerErrorService} from '../http-erros/services/manager-error.service';
 
 describe('CommunicatorService', () => {
   let service: CommunicatorService;
@@ -32,6 +33,9 @@ describe('CommunicatorService', () => {
               return  of(albums);
             }
           },
+        },
+        {
+          provide: ManagerErrorService,
         },
         HttpClient,
         {
@@ -70,21 +74,12 @@ describe('CommunicatorService', () => {
     });
   });
 
-  it('check the success services with get', () => {
-    service = TestBed.get(CommunicatorService);
-    const spyService = TestBed.get(HttpClient);
-    spyOn(spyService, 'get').and.returnValue(of(albums));
-    service.http_get(environment.baseUrl, '{}').subscribe((resp: Array<Card>) => {
-      expect(resp.length).toEqual(4);
-    });
-  });
-
   it('check the services when is having error', () => {
     service = TestBed.get(CommunicatorService);
     const spyService = TestBed.get(HttpClient);
     const observable = new Subject();
     const error = {
-      statusCode: 404,
+      statusCode: 0,
       error: 'Not Found',
       message: 'Cannot GET /albumsa'
     };
