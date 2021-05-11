@@ -2,7 +2,7 @@
 
 import {fakeAsync, TestBed, tick, } from '@angular/core/testing';
 import {AlbumsMock} from '../shared/mocks/albums.mock';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule, HttpErrorResponse} from '@angular/common/http';
 import {RouterTestingModule} from '@angular/router/testing';
 import {CommunicatorService} from './communicator.service';
 import {Observable, of, Subject, throwError} from 'rxjs';
@@ -85,35 +85,37 @@ describe('CommunicatorService', () => {
     expect(router.navigate).toHaveBeenCalledWith(['error404']);
   });
 
-  it('post response 404', fakeAsync( () => {
+  it('post response 404', () => {
     service = TestBed.get(CommunicatorService);
-    const resMock = {
-      codigo: '404',
-    };
-    const observable = new Subject();
-    observable.error(resMock);
-    spyOn(service, 'http_get').and.returnValue(observable);
+    const errorResponse = new HttpErrorResponse({
+      error: { code: `some code`, message: `some message.` },
+      status: 400,
+      statusText: 'Bad Request',
+    });
+    const http1 = TestBed.get(HttpClient);
+    spyOn(http1, 'get').and.returnValue(throwError(errorResponse));
     service.http_get('', '').subscribe((resp: any) => {
 
     }, (error => {
-      expect(error.codigo).toEqual(resMock.codigo);
+      expect(400).toEqual(error.status);
     }));
-  }));
+  });
 
 
-  it('post response 404 with post', fakeAsync( () => {
+  it('post response 404 with post', () => {
     service = TestBed.get(CommunicatorService);
-    const resMock = {
-      codigo: '404',
-    };
-    const observable = new Subject();
-    observable.error(resMock);
-    spyOn(service, 'http_post').and.returnValue(observable);
+    const errorResponse = new HttpErrorResponse({
+      error: { code: `some code`, message: `some message.` },
+      status: 400,
+      statusText: 'Bad Request',
+    });
+    const http1 = TestBed.get(HttpClient);
+    spyOn(http1, 'post').and.returnValue(throwError(errorResponse));
     service.http_post('', '').subscribe((resp: any) => {
 
     }, (error => {
-      expect(error.codigo).toEqual(resMock.codigo);
+      expect(400).toEqual(error.status);
     }));
-  }));
+  });
 
 });

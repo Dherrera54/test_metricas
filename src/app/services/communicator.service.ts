@@ -34,7 +34,7 @@ export class CommunicatorService {
   setErrorStatus(error: any): any {
     let newError: ErrorResponse;
     if (error.status === 0) {
-      newError = new ErrorResponse({codigo: error.statusCode});
+      newError = new ErrorResponse({ codigo: error.statusCode});
     }
     this.managerErrorService.setStatusCode(Number(error.status));
     return throwError(newError);
