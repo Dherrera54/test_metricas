@@ -11,6 +11,7 @@ import {Card} from '../shared/models/card';
 import {environment} from '../../environments/environment';
 import {ManagerErrorService} from '../http-erros/services/manager-error.service';
 import {Albumes} from '../model/albumes';
+import {Router} from '@angular/router';
 
 describe('CommunicatorService', () => {
   let service: CommunicatorService;
@@ -18,21 +19,22 @@ describe('CommunicatorService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
+        RouterTestingModule,
         HttpClientModule,
         RouterTestingModule,
       ],
       providers: [
         CommunicatorService,
-        {
-          provide: ManagerErrorService,
-          useValue: {
-            setStatusCode(): void {
-            }
-          },
-        },
+        ManagerErrorService,
         HttpClient,
         {
           provide: HttpClient
+        },
+        {
+          provide: Router,
+          useValue: {
+            navigate: jasmine.createSpy('navigate'),
+          },
         },
       ],
       schemas: [NO_ERRORS_SCHEMA],
@@ -66,5 +68,12 @@ describe('CommunicatorService', () => {
     service.http_get(environment.baseUrl, '{}').subscribe((resp: Array<Card>) => {
       expect(resp.length).toEqual(4);
     });
+  });
+
+  it('check the success services with setErrorStatus', () => {
+    service = TestBed.get(CommunicatorService);
+    const router = TestBed.get(Router);
+    service.setErrorStatus({ status: 0 });
+    expect(router.navigate).toHaveBeenCalledWith(['error404']);
   });
 });
