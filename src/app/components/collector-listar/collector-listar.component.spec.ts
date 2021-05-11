@@ -69,6 +69,40 @@ describe('Service: Collector', () => {
 
   });
 
+  it('Should have a collector telephone', () => {
+    let mockCollectors: Collector[] = [];
+    for (let i = 1; i < 11; i++) {
+      let collector = new Collector(i, faker.lorem.sentence(), faker.lorem.sentence(), faker.lorem.sentence());
+      mockCollectors.push(collector);
+    }
+
+    service.getCollectors().subscribe((collectors) => {
+      expect(collectors[0].telephone).toBe(mockCollectors[0].telephone);
+    });
+
+    const req = httpMock.expectOne(() => true);
+    expect(req.request.method).toBe('GET');
+    req.flush(mockCollectors);
+
+  });
+
+  it('Should have a collector email', () => {
+    let mockCollectors: Collector[] = [];
+    for (let i = 1; i < 11; i++) {
+      let collector = new Collector(i, faker.lorem.sentence(), faker.lorem.sentence(), faker.lorem.sentence());
+      mockCollectors.push(collector);
+    }
+
+    service.getCollectors().subscribe((collectors) => {
+      expect(collectors[0].email).toBe(mockCollectors[0].email);
+    });
+
+    const req = httpMock.expectOne(() => true);
+    expect(req.request.method).toBe('GET');
+    req.flush(mockCollectors);
+
+  });
+
   afterEach(() => {
     httpMock.verify();
   });
