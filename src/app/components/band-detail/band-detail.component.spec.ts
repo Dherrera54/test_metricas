@@ -62,6 +62,10 @@ describe('BandDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('check the collection in data', () => {
+    expect(component.bandDetail.name).toEqual(band[0].name);
+  });
+
   it('Should have an element band name', () => {
 
     fixture.detectChanges();
