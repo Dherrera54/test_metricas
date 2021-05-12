@@ -22,6 +22,7 @@ import { BandDetailComponent } from './components/band-detail/band-detail.compon
 import {HttpErrosModule} from './http-erros/http-erros.module';
 import {CommunicatorService} from './services/communicator.service';
 import {ErrorInterceptorService} from './http-erros/interceptors/error.interceptor.service';
+import { MusicianCreateComponent } from './components/musician-create/musician-create.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import {ErrorInterceptorService} from './http-erros/interceptors/error.intercept
     BandDetailComponent,
     CollectorDetailComponent,
     CommentComponent,
+    MusicianCreateComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +49,11 @@ import {ErrorInterceptorService} from './http-erros/interceptors/error.intercept
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpErrosModule
+    HttpErrosModule,
+    ReactiveFormsModule
+  ],
+  exports:[
+    MusicianCreateComponent
   ],
   providers: [
     CommunicatorService,

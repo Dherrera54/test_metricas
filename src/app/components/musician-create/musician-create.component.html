@@ -1,0 +1,60 @@
+<form [formGroup]="musicianForm" (ngSubmit)="!musicianForm.invalid && createMusician(musicianForm.value)">
+
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="name">
+        Nombre
+    </label>
+    <input novalidate id="name" class="form-control" formControlName="name" placeholder="Nombre del musico">
+    <div class="alert alert-danger alert-dismissible fade show"
+        *ngIf="musicianForm.get('name').hasError('required') && musicianForm.get('name').touched">
+        Nombre requerido
+    </div>
+    <div class="alert alert-danger alert-dismissible fade show"
+        *ngIf="musicianForm.get('name').hasError('minlength')">
+        Nombre muy corto
+  </div>
+  </div>
+  <div class="form-group mx-sm-3 mb-2">
+      <label for="image">
+          Imagen
+      </label>
+      <input novalidate id="image" class="form-control" formControlName="image" placeholder="Imagen del musico">
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="musicianForm.get('image').hasError('required') && musicianForm.get('image').touched">
+          Imagen requerida
+      </div>
+
+  </div>
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="description">
+        Descripción
+    </label>
+    <input novalidate id="description" class="form-control" formControlName="description" placeholder="Nombre del musico">
+    <div class="alert alert-danger alert-dismissible fade show"
+        *ngIf="musicianForm.get('description').hasError('required') && musicianForm.get('description').touched">
+        Descripción requerida
+    </div>
+    <div class="alert alert-danger alert-dismissible fade show"
+        *ngIf="musicianForm.get('description').hasError('minlength')">
+        Descripcion muy corta
+    </div>
+  </div>
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="birthDate">
+        Fecha de nacimiento
+    </label>
+    <input novalidate id="birthDate" class="form-control" formControlName="birthDate" placeholder="Fecha de nacimiento del musico">
+    <div class="alert alert-danger alert-dismissible fade show"
+        *ngIf="musicianForm.get('birthdate').hasError('required') && musicianForm.get('birthdate').touched">
+        Fecha de nacimiento requerida
+    </div>
+
+  </div>
+
+
+
+  <div class="form-group mx-sm-3 mb-2">
+    <button type="submit" class="btn btn-primary" [disabled]="!musicianForm.valid">Create</button>
+    <button type="button" class="btn btn-danger ml-3" (click)="cancelCreation()">Cancel</button>
+  </div>
+</form>
