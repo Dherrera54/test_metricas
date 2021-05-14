@@ -46,8 +46,7 @@ export class MusicianCreateComponent implements OnInit {
   };
   createMusician(newMusician: Musician){
     this.musicianService.createMusician(newMusician).subscribe(musician => {
-        if (this.musicians!== undefined){
-      this.musicians.push(musician);}
+      this.musicians.push(musician);
       console.warn("el musico fue creado", newMusician);
       this.addMusicianToBand(newMusician);
     });
@@ -59,11 +58,10 @@ export class MusicianCreateComponent implements OnInit {
   addMusicianToBand(newMusician: Musician){
     this.musicianService.getMusicians().subscribe(result => {
     this.musicians = result;})
-    console.log(this.musicians);
     var musicianDetail = this.musicians.find(item => item.name == newMusician.name);
-    console.log(musicianDetail)
     this.bandService.addMusicianToBand(musicianDetail, musicianDetail.id,this.id).subscribe(musician => {
     this.musicians.push(musician);})
+    console.warn(`el musico fue añadidoa banda con id ${this.id}`, musicianDetail);
     }
   showSuccess(musician:Musician) {
 
