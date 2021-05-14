@@ -9,6 +9,7 @@ import { BandDetailComponent } from './components/band-detail/band-detail.compon
 import { CollectorDetailComponent } from './components/collector-detail/collector-detail.component';
 import {CommentComponent} from './components/comment/comment.component';
 import {AppComponent} from './app.component';
+import { MusicianCreateComponent } from './components/musician-create/musician-create.component';
 
 const routes: any = [
   { path: '', component: AppComponent },
@@ -19,7 +20,9 @@ const routes: any = [
   { path: 'detail-musician/:id', component: MusicianDetailComponent},
   { path: 'detail-band/:id', component: BandDetailComponent},
   { path: 'collector-detail/:id', component: CollectorDetailComponent},
+  { path: 'create-musician', component: MusicianCreateComponent },
   { path: 'comment', component: CommentComponent },
+
 ];
 
 @NgModule({

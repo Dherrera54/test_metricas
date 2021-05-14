@@ -34,4 +34,7 @@ export class BandDetailComponent implements OnInit {
     .subscribe(bandDetail =>{this.bandDetail=bandDetail;
     });
   }
+  addMusician(bandDetail){
+    this.router.navigate(['create-musician']  );
+  }
 }

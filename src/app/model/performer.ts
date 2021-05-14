@@ -29,9 +29,12 @@ export class Musician extends Performer{
 
 export class Band extends Performer{
   creationDate: string;
+  musicians: Array<Musician>;
 
- public constructor(id?: number, name?: string, image?: string, description?: string, albums?: Array<Albumes>,  creationDate?: string){
+
+ public constructor(id?: number, name?: string, image?: string, description?: string, albums?: Array<Albumes>,  creationDate?: string, musicians?: Array<Musician>){
      super(id, name, image, description, albums);
      this.creationDate = this.creationDate;
+     this.musicians =this.musicians;
  }
 }

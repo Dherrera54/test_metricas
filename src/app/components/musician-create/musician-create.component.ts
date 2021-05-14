@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Musician } from '../../model/performer';
+import { Router, ActivatedRoute } from '@angular/router';
+import { MusicianService } from '../../services/musician.service';
+import { Observable } from 'rxjs';
+
 
 
 
@@ -11,10 +15,14 @@ import { Musician } from '../../model/performer';
 })
 export class MusicianCreateComponent implements OnInit {
   musicianForm:FormGroup;
-  formBuilder:FormBuilder;
-  musician:Musician= new Musician()
+  musicians : Musician[];
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder,
+              private route:ActivatedRoute,
+              private router: Router,
+              private musicianService:MusicianService) { }
+
+
 
   ngOnInit() {
     this.musicianForm = this.formBuilder.group({
@@ -25,11 +33,21 @@ export class MusicianCreateComponent implements OnInit {
 
     });
   };
-  createMusician(musicianForm){
+  createMusician(newMusician: Musician){
+    console.warn("el musico fue creado", newMusician);
+    this.musicianService.createMusician(newMusician).subscribe(musician => {
+    this.musicians.push(musician);
+    });
+
+    this.showSuccess(newMusician);
 
   };
-  cancelCreation(){
+  showSuccess(musician:Musician) {
 
+  }
+
+  cancelCreation(){
+    window.history.back();
   };
 
 }

@@ -23,4 +23,8 @@ export class MusicianService {
   getMusicianDetail(musicianID):Observable<Musician>{
     return this.http.get<Musician>(`${this.apiUrl}/${musicianID}`)
   }
+  createMusician(musician:Musician):Observable<Musician>{
+    return this.http.post<Musician>(this.apiUrl, musician);
+  }
+
 }

@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common';
 import { PerformerListComponent } from './components/performer-list/performer-list.component';
 import { DetailAlbumComponent } from './components/detail-album/detail-album.component';
 import { MusicianDetailComponent } from './components/musician-detail/musician-detail.component';
-
 import { CollectorDetailComponent } from './components/collector-detail/collector-detail.component';
 import { CommentComponent } from './components/comment/comment.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -49,8 +48,8 @@ import { MusicianCreateComponent } from './components/musician-create/musician-c
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpErrosModule,
-    ReactiveFormsModule
+    HttpErrosModule
+
   ],
   exports:[
     MusicianCreateComponent
