@@ -35,6 +35,6 @@ export class BandDetailComponent implements OnInit {
     });
   }
   addMusician(bandDetail){
-    this.router.navigate(['create-musician']  );
+    this.router.navigate(['create-musician/band/', bandDetail.id]  );
   }
 }

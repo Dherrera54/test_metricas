@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Band} from '../model/performer';
+import {Band, Musician} from '../model/performer';
 import {environment} from '../../environments/environment';
 
 
@@ -22,6 +22,12 @@ export class BandService {
   getBandDetail(bandID):Observable<Band>{
     return this.http.get<Band>(`${this.apiUrl}/${bandID}`)
   }
+  addMusicianToBand(newMusician:Musician, musicianID:number, bandID:number):Observable<Musician>{
+    console.warn("el musico fue agregado a banda", newMusician);
+    return this.http.post<Musician>(`${this.apiUrl}/${bandID}/musicians/${musicianID}`,newMusician);
+
+  }
+
 
 
 }

@@ -20,7 +20,7 @@ const routes: any = [
   { path: 'detail-musician/:id', component: MusicianDetailComponent},
   { path: 'detail-band/:id', component: BandDetailComponent},
   { path: 'collector-detail/:id', component: CollectorDetailComponent},
-  { path: 'create-musician', component: MusicianCreateComponent },
+  { path: 'create-musician/band/:id', component: MusicianCreateComponent },
   { path: 'comment', component: CommentComponent },
 
 ];
