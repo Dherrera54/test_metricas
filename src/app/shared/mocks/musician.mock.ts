@@ -32,6 +32,8 @@ export const MusicianMock = {
               }
           ],
 
+          "performerPrizes":[]
+
       }
 
     ]}};

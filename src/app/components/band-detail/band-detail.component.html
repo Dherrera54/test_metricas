@@ -27,7 +27,7 @@
       </div>
     </div>
   </div>
-
+   <!--Tabla albums-->
   <div class="list-information">
     <hr/>
     <div class="table-title">
@@ -63,6 +63,7 @@
       </div>
     </div>
   </div>
+   <!--Tabla musicos-->
   <div class="list-information">
     <hr/>
     <div class="table-title">
@@ -88,6 +89,35 @@
       </div>
       <div class="container-div">
         <span id ='musician-birth-date-{{i}}'>{{ musician.birthDate | date: 'yyyy-MM-dd' }}</span>
+      </div>
+    </div>
+  </div>
+  <!--Tabla premios-->
+  <div class="list-information">
+    <hr/>
+    <div class="table-title">
+      <div class="container-div">
+        <span>Premio</span>
+      </div>
+      <div class="container-div">
+        <span>Otorga</span>
+      </div>
+      <div class="container-div">
+        <span>Fecha de premiación</span>
+      </div>
+    </div>
+    <hr/>
+  </div>
+ <div class="row-information" *ngFor="let premio of prizes; let i = index">
+    <div class="table-body">
+      <div class="container-div">
+        <span id ='prize-name-{{i}}'>{{premio.name}}</span>
+      </div>
+      <div class="container-div">
+        <span id ='prize-organization-{{i}}'>{{premio.organization}}</span>
+      </div>
+      <div class="container-div">
+        <span id ='band-premiation-date-{{i}}'>{{ bandDetail.performerPrizes[i].premiationDate | date: 'yyyy-MM-dd' }}</span>
       </div>
     </div>
   </div>

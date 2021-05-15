@@ -10,7 +10,6 @@ import {environment} from '../../environments/environment';
 })
 export class BandService {
   private apiUrl = environment.baseUrl + 'bands';
-  selected: boolean = false;
 
   constructor(private http: HttpClient) {
   }
