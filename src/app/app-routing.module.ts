@@ -10,6 +10,7 @@ import { CollectorDetailComponent } from './components/collector-detail/collecto
 import {CommentComponent} from './components/comment/comment.component';
 import {AppComponent} from './app.component';
 import { MusicianCreateComponent } from './components/musician-create/musician-create.component';
+import { PrizeCreateComponent } from './components/prize-create/prize-create.component';
 
 const routes: any = [
   { path: '', component: AppComponent },
@@ -21,6 +22,7 @@ const routes: any = [
   { path: 'detail-band/:id', component: BandDetailComponent},
   { path: 'collector-detail/:id', component: CollectorDetailComponent},
   { path: 'create-musician/band/:id', component: MusicianCreateComponent },
+  { path: 'create-prize/band/:id', component: PrizeCreateComponent },
   { path: 'comment', component: CommentComponent },
 
 ];

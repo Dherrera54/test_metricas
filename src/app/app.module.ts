@@ -22,6 +22,7 @@ import {HttpErrosModule} from './http-erros/http-erros.module';
 import {CommunicatorService} from './services/communicator.service';
 import {ErrorInterceptorService} from './http-erros/interceptors/error.interceptor.service';
 import { MusicianCreateComponent } from './components/musician-create/musician-create.component';
+import { PrizeCreateComponent } from './components/prize-create/prize-create.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MusicianCreateComponent } from './components/musician-create/musician-c
     BandDetailComponent,
     CollectorDetailComponent,
     CommentComponent,
-    MusicianCreateComponent
+    MusicianCreateComponent,
+    PrizeCreateComponent
   ],
   imports: [
     CommonModule,

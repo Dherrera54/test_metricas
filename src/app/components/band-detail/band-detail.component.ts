@@ -49,22 +49,25 @@ export class BandDetailComponent implements OnInit {
   getBandPrizes(bandDetail):void{
     this.prizesService.getPrizes()
     .subscribe(prizes =>{
-    console.log(prizes, bandDetail.performerPrizes)
+
     for( let i:number =0;i<bandDetail.performerPrizes.length;i++){
       for( let j:number =0;j<prizes.length;j++){
-        if(bandDetail.performerPrizes[i].id===prizes[j].id){
+
+        if( bandDetail.performerPrizes[i].id===prizes[j].id-3){
           this.prizes.push(prizes[j]);
-         console.log(this.prizes)
+
         }
 
       }
 
     }
-
   });
 
   }
   addMusician(bandDetail){
     this.router.navigate(['create-musician/band/', bandDetail.id]  );
+  }
+  addPrize(bandDetail){
+    this.router.navigate(['create-prize/band/', bandDetail.id]  );
   }
 }
