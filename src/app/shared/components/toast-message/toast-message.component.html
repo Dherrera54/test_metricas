@@ -1,0 +1,13 @@
+<div class="container-toast"  [ngStyle]="{'background': toast.background}" *ngIf="toast.visible">
+   <div class="logo" *ngIf="toast.image !== ''">
+     <img src="assets/img/{{toast.image}}" alt="imagen de estado">
+   </div>
+   <div class="content-information">
+       <div class="title-toast">
+         <span>{{toast.title}}</span>
+       </div>
+       <div class="message-toast">
+         <span>{{toast.description}}</span>
+       </div>
+   </div>
+</div>

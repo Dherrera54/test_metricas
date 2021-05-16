@@ -1,121 +1,167 @@
 <testExecutions version="1">
-  <file path="src/app/http-erros/services/manager-error.service.spec.ts">
-    <testCase name="ManagerErrorService should be created" duration="27"/>
-    <testCase name="ManagerErrorService should trigger click option internet" duration="6"/>
-  </file>
-  <file path="src/app/components/musician-detail/musician-detail.component.spec.ts">
-    <testCase name="MusicianDetailComponent Should have an element musician description" duration="273"/>
-    <testCase name="MusicianDetailComponent Should have an element musician name" duration="16"/>
-    <testCase name="MusicianDetailComponent should create" duration="11"/>
-  </file>
-  <file path="src/app/services/albumes.service.spec.ts">
-    <testCase name="AlbumsService should be created" duration="8"/>
-    <testCase name="AlbumsService check the success services" duration="5"/>
-    <testCase name="AlbumsService check the services when is having error" duration="9"/>
-    <testCase name="AlbumsService check set and get " duration="5"/>
-  </file>
-  <file path="src/app/components/detail-album/detail-album.component.spec.ts">
-    <testCase name="DetailAlbumComponent check the navigation" duration="42"/>
-    <testCase name="DetailAlbumComponent check the getDetailAlbum" duration="14"/>
-    <testCase name="DetailAlbumComponent should create" duration="14"/>
-    <testCase name="DetailAlbumComponent check the collection in data" duration="13"/>
-  </file>
-  <file path="src/app/services/band.service.spec.ts">
-    <testCase name="Service: Band Method getBands() should return 10 records" duration="11"/>
+  <file path="src/app/shared/components/search/search.component.spec.ts">
+    <testCase name="SearchComponent should create" duration="44"/>
   </file>
   <file path="src/app/components/comment/comment.component.spec.ts">
-    <testCase name="CommentComponent check the navigation" duration="59"/>
-    <testCase name="CommentComponent check the getDetailAlbum" duration="14"/>
-    <testCase name="CommentComponent should create" duration="13"/>
-    <testCase name="CommentComponent check the collection in data" duration="19"/>
+    <testCase name="CommentComponent check the collection in data" duration="75"/>
+    <testCase name="CommentComponent should create" duration="14"/>
+    <testCase name="CommentComponent check the getDetailAlbum" duration="11"/>
+    <testCase name="CommentComponent check the navigation" duration="11"/>
   </file>
-  <file path="src/app/shared/components/cards/cards.component.spec.ts">
-    <testCase name="CardAlbumesComponent should create" duration="29"/>
-    <testCase name="CardAlbumesComponent check the view when it has data" duration="11"/>
-    <testCase name="CardAlbumesComponent check the view when is the data is not empty" duration="30"/>
-    <testCase name="CardAlbumesComponent should emit index event clickItem" duration="15"/>
-    <testCase name="CardAlbumesComponent check the view when is the data is empty" duration="8"/>
+  <file path="src/app/shared/components/input-text/input-text.component.spec.ts">
+    <testCase name="InputTextComponent should check the paste" duration="24"/>
+    <testCase name="InputTextComponent should check the keyup" duration="8"/>
+    <testCase name="InputTextComponent should create" duration="8"/>
   </file>
-  <file path="src/app/services/collector.service.spec.ts">
-    <testCase name="Service: Collector Should have a collector telephone" duration="7"/>
-    <testCase name="Service: Collector should create service" duration="2"/>
-    <testCase name="Service: Collector Should have a collector name" duration="2"/>
-    <testCase name="Service: Collector Should have a collector email" duration="3"/>
-    <testCase name="Service: Collector getCollectors() should return 10 records" duration="3"/>
-  </file>
-  <file path="src/app/shared/components/header/header.component.spec.ts">
-    <testCase name="HeaderComponent should emit index event clickItem" duration="21"/>
-    <testCase name="HeaderComponent should create" duration="12"/>
-    <testCase name="HeaderComponent Checking the view in header" duration="9"/>
+  <file path="src/app/http-erros/services/manager-error.service.spec.ts">
+    <testCase name="ManagerErrorService should be created" duration="5"/>
+    <testCase name="ManagerErrorService should trigger click option internet" duration="2"/>
   </file>
   <file path="src/app/services/collector.service.spec.ts">
-    <testCase name="Service: Collector should create service" duration="3"/>
-    <testCase name="Service: Collector getCollectors() should return 10 records" duration="4"/>
+    <testCase name="Service: Collector should create service" duration="4"/>
+    <testCase name="Service: Collector getCollectors() should return 10 records" duration="6"/>
+    <testCase name="Service: Collector Should have a collector email" duration="4"/>
+    <testCase name="Service: Collector Should have a collector telephone" duration="5"/>
+    <testCase name="Service: Collector Should have a collector name" duration="3"/>
   </file>
-  <file path="src/app/services/musician.service.spec.ts">
-    <testCase name="Service: Musician Method getMusicians() should return 10 records" duration="4"/>
+  <file path="src/app/components/add-album/add-album.component.spec.ts">
+    <testCase name="AddAlbumComponent services has an error should create" duration="66"/>
+    <testCase name="AddAlbumComponent services has an error check the addedAlbum method when all fields is correct and service respond with error " duration="19"/>
   </file>
-  <file path="src/app/shared/components/search/search.component.spec.ts">
-    <testCase name="SearchComponent should create" duration="16"/>
+  <file path="src/app/services/albumes.service.spec.ts">
+    <testCase name="AlbumsService check the success services" duration="4"/>
+    <testCase name="AlbumsService check the services when is having error" duration="2"/>
+    <testCase name="AlbumsService check set and get " duration="1"/>
+    <testCase name="AlbumsService should be created" duration="3"/>
   </file>
-  <file path="src/app/components/collector-detail/collector-detail.component.spec.ts">
-    <testCase name="CollectorDetailComponent check the navigation" duration="43"/>
-    <testCase name="CollectorDetailComponent check the email in data" duration="11"/>
-    <testCase name="CollectorDetailComponent check the getDetailCollector" duration="27"/>
-    <testCase name="CollectorDetailComponent should create" duration="20"/>
-    <testCase name="CollectorDetailComponent check the getCommentsAlbums" duration="14"/>
-    <testCase name="CollectorDetailComponent check the getCollectorAlbums" duration="18"/>
+  <file path="src/app/shared/components/toast-message/toast-message.component.spec.ts">
+    <testCase name="ToastMessageComponent should check the input" duration="5"/>
+    <testCase name="ToastMessageComponent should create" duration="7"/>
   </file>
-  <file path="src/app/components/performer-list/performer-list.component.spec.ts">
-    <testCase name="PerformerListComponent Should have an  element band name" duration="55"/>
-    <testCase name="PerformerListComponent should create" duration="20"/>
-    <testCase name="PerformerListComponent Should have an element musician name" duration="21"/>
+  <file path="src/app/shared/components/title-table/title-table.component.spec.ts">
+    <testCase name="TitleTableComponent check the input-text" duration="6"/>
+    <testCase name="TitleTableComponent should create" duration="5"/>
   </file>
-  <file path="src/app/components/albumes/albumes.component.spec.ts">
-    <testCase name="AlbumesComponent check the first album is Salsa" duration="32"/>
-    <testCase name="AlbumesComponent should show all data when the text is not empty" duration="24"/>
-    <testCase name="AlbumesComponent check the albumes is not empty" duration="21"/>
-    <testCase name="AlbumesComponent should trigger click option performer" duration="14"/>
-    <testCase name="AlbumesComponent Checking the albums first name is Buscando América" duration="13"/>
-    <testCase name="AlbumesComponent should get headers when is not existe" duration="14"/>
-    <testCase name="AlbumesComponent should show all data when the text is empty" duration="19"/>
-    <testCase name="AlbumesComponent should create" duration="16"/>
-  </file>
-  <file path="src/app/components/band-detail/band-detail.component.spec.ts">
-    <testCase name="BandDetailComponent Should have an element band description" duration="35"/>
-    <testCase name="BandDetailComponent should create" duration="10"/>
-    <testCase name="BandDetailComponent Should have an element band name" duration="26"/>
-  </file>
-  <file path="src/app/shared/services/header.service.spec.ts">
-    <testCase name="HeaderService check the data when the user has menu" duration="3"/>
-    <testCase name="HeaderService check the method was been called" duration="2"/>
-    <testCase name="HeaderService should be created" duration="4"/>
-  </file>
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should trigger click option collector" duration="16"/>
-    <testCase name="AppComponent should trigger click option albumes" duration="12"/>
-    <testCase name="AppComponent check the first fourth in header  " duration="14"/>
-    <testCase name="AppComponent check the first third in header  " duration="11"/>
-    <testCase name="AppComponent check the first second in header  " duration="11"/>
-    <testCase name="AppComponent check the first item in header  " duration="10"/>
-    <testCase name="AppComponent check the header size " duration="15"/>
-    <testCase name="AppComponent should create the app" duration="10"/>
-    <testCase name="AppComponent should check the header is the same" duration="14"/>
-    <testCase name="AppComponent should trigger click option performer" duration="12"/>
+  <file path="src/app/components/add-album/add-album.component.spec.ts">
+    <testCase name="AddAlbumComponent check the onChangeSelectRecord method " duration="15"/>
+    <testCase name="AddAlbumComponent check the validURL method " duration="17"/>
+    <testCase name="AddAlbumComponent check the showAlert method when the releaseDate has a length major of 5 but it has only year" duration="15"/>
+    <testCase name="AddAlbumComponent should create" duration="14"/>
+    <testCase name="AddAlbumComponent check the showAlert method when the releaseDate has a length major of 5 but it has an invalid date" duration="13"/>
+    <testCase name="AddAlbumComponent check the showAlert method when the name has a length minor of 3" duration="17"/>
+    <testCase name="AddAlbumComponent check the showAlert method when the comment has a length minor of 5" duration="15"/>
+    <testCase name="AddAlbumComponent check the addedAlbum method when all fields is correct " duration="15"/>
+    <testCase name="AddAlbumComponent check the keyup method " duration="15"/>
+    <testCase name="AddAlbumComponent check the showAlert method when the releaseDate has a length minor of 5" duration="16"/>
+    <testCase name="AddAlbumComponent check the date format " duration="15"/>
+    <testCase name="AddAlbumComponent check the addedAlbum method when the recordLabel has an error " duration="15"/>
+    <testCase name="AddAlbumComponent check the setValue method with comments" duration="15"/>
+    <testCase name="AddAlbumComponent check the setValue method " duration="16"/>
+    <testCase name="AddAlbumComponent check the addedAlbum method when the comment has an error " duration="13"/>
+    <testCase name="AddAlbumComponent check the showAlert method when the comment has a length major of 3" duration="13"/>
+    <testCase name="AddAlbumComponent check the addedAlbum method when the name has an error " duration="13"/>
+    <testCase name="AddAlbumComponent check the addedAlbum method when the releaseDate has an error " duration="13"/>
+    <testCase name="AddAlbumComponent check the showAlert method when the name has a length major of 3" duration="14"/>
+    <testCase name="AddAlbumComponent check the showAlert method when the releaseDate has a length major of 5a and  the format is correct" duration="13"/>
+    <testCase name="AddAlbumComponent check the showAlert method when the cover has a length major of 3" duration="13"/>
+    <testCase name="AddAlbumComponent check the addedAlbum method when the cover has an error " duration="13"/>
+    <testCase name="AddAlbumComponent check the addedAlbum method when the genre has an error " duration="17"/>
+    <testCase name="AddAlbumComponent check the showAlert method when the cover has a length minor of 5" duration="15"/>
+    <testCase name="AddAlbumComponent check the onChangeGenre method " duration="17"/>
   </file>
   <file path="src/app/http-erros/components/internet/internet.component.spec.ts">
-    <testCase name="InternetComponent should create" duration="11"/>
+    <testCase name="InternetComponent should create" duration="8"/>
+  </file>
+  <file path="src/app/components/musician-detail/musician-detail.component.spec.ts">
+    <testCase name="MusicianDetailComponent Should have an element musician description" duration="37"/>
+    <testCase name="MusicianDetailComponent Should have an element musician name" duration="14"/>
+    <testCase name="MusicianDetailComponent should create" duration="7"/>
+  </file>
+  <file path="src/app/http-erros/interceptors/error.interceptor.service.spec.ts">
+    <testCase name="Error.InterceptorService should catch -1" duration="7"/>
+    <testCase name="Error.InterceptorService should be created" duration="3"/>
+  </file>
+  <file path="src/app/shared/services/header.service.spec.ts">
+    <testCase name="HeaderService check the method was been called" duration="4"/>
+    <testCase name="HeaderService should be created" duration="1"/>
+    <testCase name="HeaderService check the data when the user has menu" duration="1"/>
+  </file>
+  <file path="src/app/components/performer-list/performer-list.component.spec.ts">
+    <testCase name="PerformerListComponent should create" duration="19"/>
+    <testCase name="PerformerListComponent Should have an element musician name" duration="11"/>
+    <testCase name="PerformerListComponent Should have an  element band name" duration="11"/>
+  </file>
+  <file path="src/app/services/create-album.service.spec.ts">
+    <testCase name="CreateAlbumService should be created" duration="2"/>
+    <testCase name="CreateAlbumService check the success services" duration="2"/>
+    <testCase name="CreateAlbumService check the services when is having error" duration="5"/>
+  </file>
+  <file path="src/app/components/collector-detail/collector-detail.component.spec.ts">
+    <testCase name="CollectorDetailComponent check the getCollectorAlbums" duration="23"/>
+    <testCase name="CollectorDetailComponent should create" duration="6"/>
+    <testCase name="CollectorDetailComponent check the getDetailCollector" duration="7"/>
+    <testCase name="CollectorDetailComponent check the getCommentsAlbums" duration="6"/>
+    <testCase name="CollectorDetailComponent check the email in data" duration="6"/>
+    <testCase name="CollectorDetailComponent check the navigation" duration="5"/>
+  </file>
+  <file path="src/app/components/detail-album/detail-album.component.spec.ts">
+    <testCase name="DetailAlbumComponent should create" duration="8"/>
+    <testCase name="DetailAlbumComponent check the getDetailAlbum" duration="14"/>
+    <testCase name="DetailAlbumComponent check the navigation" duration="10"/>
+    <testCase name="DetailAlbumComponent check the collection in data" duration="8"/>
+  </file>
+  <file path="src/app/components/band-detail/band-detail.component.spec.ts">
+    <testCase name="BandDetailComponent Should have an element band description" duration="23"/>
+    <testCase name="BandDetailComponent should create" duration="8"/>
+    <testCase name="BandDetailComponent Should have an element band name" duration="9"/>
+  </file>
+  <file path="src/app/services/band.service.spec.ts">
+    <testCase name="Service: Band Method getBands() should return 10 records" duration="2"/>
+  </file>
+  <file path="src/app/services/collector.service.spec.ts">
+    <testCase name="Service: Collector should create service" duration="4"/>
+    <testCase name="Service: Collector getCollectors() should return 10 records" duration="3"/>
+  </file>
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should trigger click option collector" duration="12"/>
+    <testCase name="AppComponent should trigger click option performer" duration="6"/>
+    <testCase name="AppComponent should trigger click option albumes" duration="6"/>
+    <testCase name="AppComponent check the header size " duration="8"/>
+    <testCase name="AppComponent should check the header is the same" duration="7"/>
+    <testCase name="AppComponent should create the app" duration="7"/>
+    <testCase name="AppComponent check the first third in header  " duration="9"/>
+    <testCase name="AppComponent check the first fourth in header  " duration="9"/>
+    <testCase name="AppComponent check the first item in header  " duration="6"/>
+    <testCase name="AppComponent check the first second in header  " duration="6"/>
   </file>
   <file path="src/app/components/albumes/albumes.component.spec.ts">
     <testCase name="AlbumesComponent check the header exists should create" duration="17"/>
-    <testCase name="AlbumesComponent check the header exists should get headers when it exists" duration="34"/>
+    <testCase name="AlbumesComponent check the header exists should get headers when it exists" duration="11"/>
   </file>
-  <file path="src/app/shared/components/title-table/title-table.component.spec.ts">
-    <testCase name="TitleTableComponent should create" duration="9"/>
-    <testCase name="TitleTableComponent check the input" duration="11"/>
+  <file path="src/app/services/musician.service.spec.ts">
+    <testCase name="Service: Musician Method getMusicians() should return 10 records" duration="2"/>
   </file>
-  <file path="src/app/http-erros/interceptors/error.interceptor.service.spec.ts">
-    <testCase name="Error.InterceptorService should be created" duration="6"/>
-    <testCase name="Error.InterceptorService should catch -1" duration="13"/>
+  <file path="src/app/components/albumes/albumes.component.spec.ts">
+    <testCase name="AlbumesComponent should trigger click option addAlbum" duration="9"/>
+    <testCase name="AlbumesComponent check the first album is Salsa" duration="10"/>
+    <testCase name="AlbumesComponent should show all data when the text is empty" duration="8"/>
+    <testCase name="AlbumesComponent check the albumes is not empty" duration="10"/>
+    <testCase name="AlbumesComponent should trigger click option performer" duration="9"/>
+    <testCase name="AlbumesComponent should get headers when is not existe" duration="9"/>
+    <testCase name="AlbumesComponent Checking the albums first name is Buscando América" duration="11"/>
+    <testCase name="AlbumesComponent should create" duration="8"/>
+    <testCase name="AlbumesComponent should show all data when the text is not empty" duration="12"/>
+  </file>
+  <file path="src/app/shared/components/header/header.component.spec.ts">
+    <testCase name="HeaderComponent should create" duration="5"/>
+    <testCase name="HeaderComponent Checking the view in header" duration="8"/>
+    <testCase name="HeaderComponent should emit index event clickItem" duration="5"/>
+  </file>
+  <file path="src/app/shared/components/cards/cards.component.spec.ts">
+    <testCase name="CardAlbumesComponent should emit index event clickItem" duration="5"/>
+    <testCase name="CardAlbumesComponent should create" duration="4"/>
+    <testCase name="CardAlbumesComponent check the view when is the data is not empty" duration="4"/>
+    <testCase name="CardAlbumesComponent check the view when is the data is empty" duration="4"/>
+    <testCase name="CardAlbumesComponent check the view when it has data" duration="5"/>
   </file>
 </testExecutions>

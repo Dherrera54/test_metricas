@@ -1,0 +1,24 @@
+<div class="container-input">
+
+  <div class="title-header">
+    <h1>{{element.title}}</h1>
+  </div>
+  <input
+    #input
+    type="{{element.type}}"
+    (paste)="onPaste($event.clipboardData.getData('text/plain'),input)"
+    attr.maxlength="{{element.maxlength}}"
+    attr.minlength="{{element.minlength}}"
+    [ngStyle]="{'background': element.background, 'border': element.border,
+    'border-radius': element.borderRadius, 'height': element.height}"
+    [value]="element.value"
+    id="{{element.id}}"
+    autocomplete="off"
+    (keyup)="keyup(input.value, input)"
+    placeholder="{{element.placeHolder}}"
+    class="text"/>
+  <div class="error">
+    <app-toast-message   [toast]="element.error"></app-toast-message>
+  </div>
+</div>
+

@@ -15,6 +15,9 @@ import {SearchComponent} from '../../shared/components/search/search.component';
 import {HeaderService} from '../../shared/services/header.service';
 import {Header} from '../../shared/models/header';
 import {CommunicatorService} from '../../services/communicator.service';
+import {AddAlbumComponent} from '../add-album/add-album.component';
+import {InputTextComponent} from '../../shared/components/input-text/input-text.component';
+import {ToastMessageComponent} from '../../shared/components/toast-message/toast-message.component';
 
 describe('AlbumesComponent', () => {
   let component: AlbumesComponent;
@@ -29,6 +32,9 @@ describe('AlbumesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
+        InputTextComponent,
+        ToastMessageComponent,
+        AddAlbumComponent,
         AlbumesComponent,
         CardsComponent,
         DetailAlbumComponent,
@@ -95,6 +101,12 @@ describe('AlbumesComponent', () => {
 
   it('Checking the albums first name is Buscando América', () => {
     expect(component.albums[0].titleAlbum).toEqual('Buscando América');
+  });
+
+  it('should trigger click option addAlbum', () => {
+    const router = TestBed.get(Router);
+    component.addAlbum();
+    expect(router.navigate).toHaveBeenCalledWith(['add-album']);
   });
 
   it('should trigger click option performer', () => {

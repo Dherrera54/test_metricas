@@ -9,10 +9,12 @@ import { BandDetailComponent } from './components/band-detail/band-detail.compon
 import { CollectorDetailComponent } from './components/collector-detail/collector-detail.component';
 import {CommentComponent} from './components/comment/comment.component';
 import {AppComponent} from './app.component';
+import {AddAlbumComponent} from './components/add-album/add-album.component';
 
 const routes: any = [
   { path: '', component: AppComponent },
   { path: 'albumes', component: AlbumesComponent },
+  { path: 'add-album', component: AddAlbumComponent },
   { path: 'performer', component: PerformerListComponent },
   { path: 'collector', component: CollectorListarComponent },
   { path: 'detail-album/:id', component: DetailAlbumComponent },
