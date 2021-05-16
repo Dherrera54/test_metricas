@@ -167,6 +167,10 @@ export class AddAlbumComponent implements OnInit {
     this.setValue(value, 'genre');
   }
 
+  cancel(): void {
+    window.history.back();
+  }
+
   ngOnInit(): void {
   }
 }

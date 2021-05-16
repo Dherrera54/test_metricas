@@ -264,6 +264,12 @@ describe('AddAlbumComponent', () => {
     expect(component.form.get('comment').value ).toEqual('PRUEBA');
   });
 
+  it('check the navigation', () => {
+    spyOn(window.history, 'back');
+    component.cancel();
+    expect(window.history.back).toHaveBeenCalled();
+  });
+
 });
 
 
