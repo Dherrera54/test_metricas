@@ -53,7 +53,7 @@ export class BandDetailComponent implements OnInit {
     for( let i:number =0;i<bandDetail.performerPrizes.length;i++){
       for( let j:number =0;j<prizes.length;j++){
 
-        if( bandDetail.performerPrizes[i].id===prizes[j].id-3){
+        if( bandDetail.performerPrizes[i].id===prizes[j].id){
           this.prizes.push(prizes[j]);
 
         }

@@ -22,7 +22,6 @@ export class BandService {
     return this.http.get<Band>(`${this.apiUrl}/${bandID}`)
   }
   addMusicianToBand(newMusician:Musician, musicianID:number, bandID:number):Observable<Musician>{
-    console.warn("el musico fue agregado a banda", newMusician);
     return this.http.post<Musician>(`${this.apiUrl}/${bandID}/musicians/${musicianID}`,newMusician);
 
   }

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Prize, PerformerPrizes } from '../../model/prize';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PrizesService } from '../../services/prizes.service';
+import { ToastrService } from 'ngx-toastr';;
 
 
 @Component({
@@ -23,7 +24,8 @@ export class PrizeCreateComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private route:ActivatedRoute,
               private router: Router,
-              private prizesServices:PrizesService) { }
+              private prizesServices:PrizesService,
+              private toastr:ToastrService) { }
 
   ngOnInit() {
     this.prizesServices.getPrizes().subscribe(result => {
@@ -43,17 +45,31 @@ export class PrizeCreateComponent implements OnInit {
       this.prizes.push(prize);
       this.prizeName=prize.name;
       console.warn("el premio fue creado", newPrize);
+      this.showSuccessCreatePrize(prize);
+      this.prizesForm.reset()
     });
   }
   addPrizeToBand(newperformerprize:PerformerPrizes){
     this.prizesServices.getPrizes().subscribe(result => {
       this.prizes = result;})
-      console.log(this.prizes,this.prizeName, newperformerprize)
+
       var prizeDetail = this.prizes.find(item => item.name == this.prizeName);
-      console.log(prizeDetail)
+
       this.prizesServices.addPriceToMusician(newperformerprize,prizeDetail.id,this.id).subscribe(prize => {
       this.performerPrize=prize;})
+      this.prizesBandForm.reset()
+      this.showSuccessAddPrizeToBand(prizeDetail);
   }
+  showSuccessCreatePrize(prize:Prize) {
+    this.toastr.success(`¡Premio ${prize.name} creado con exito!`,'Creación premio');
+
+  }
+  showSuccessAddPrizeToBand(prize:Prize) {
+
+    this.toastr.success(`¡Premio ${prize.name} añadido con exito a banda!`,'Añadir premio a banda');
+  }
+
+
   cancelCreation(){
     this.prizesForm.reset();
     window.history.back();

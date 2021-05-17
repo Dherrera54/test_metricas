@@ -23,7 +23,7 @@ import {CommunicatorService} from './services/communicator.service';
 import {ErrorInterceptorService} from './http-erros/interceptors/error.interceptor.service';
 import { MusicianCreateComponent } from './components/musician-create/musician-create.component';
 import { PrizeCreateComponent } from './components/prize-create/prize-create.component';
-
+import { ToastrModule }  from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +50,11 @@ import { PrizeCreateComponent } from './components/prize-create/prize-create.com
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpErrosModule
+    HttpErrosModule,
+    ToastrModule.forRoot({
+      timeOut:3000,
+      progressBar: true,
+      progressAnimation: 'increasing'})
 
   ],
   exports:[
