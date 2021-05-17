@@ -10,6 +10,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { BandService } from '../../services/band.service';
 import { Band, Musician } from '../../model/performer';
 import {Observable, of} from 'rxjs';
+import { FormBuilder } from '@angular/forms';
+import { ToastrService, ToastrModule } from 'ngx-toastr';
+
 
 describe('MusicianCreateComponent', () => {
   let component: MusicianCreateComponent;
@@ -18,8 +21,11 @@ describe('MusicianCreateComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ MusicianCreateComponent ],
-      imports: [HttpClientTestingModule, RouterTestingModule],
+      imports: [HttpClientTestingModule, RouterTestingModule, ToastrModule.forRoot()],
       providers: [
+
+          {provide: FormBuilder},
+          {provide: ToastrService},
         {
           provide: Router,
           useValue: {

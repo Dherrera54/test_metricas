@@ -2,8 +2,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import {RouterTestingModule} from '@angular/router/testing';
+import { Router, ActivatedRoute } from '@angular/router';
 import { PrizeCreateComponent } from './prize-create.component';
+import { FormBuilder } from '@angular/forms';
+import { ToastrService, ToastrModule } from 'ngx-toastr';
 
 describe('PrizeCreateComponent', () => {
   let component: PrizeCreateComponent;
@@ -11,7 +15,25 @@ describe('PrizeCreateComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PrizeCreateComponent ]
+      declarations: [ PrizeCreateComponent ],
+      imports: [HttpClientTestingModule, RouterTestingModule, ToastrModule.forRoot()],
+      providers: [
+
+          {provide: FormBuilder},
+          {provide: ToastrService},
+        {
+          provide: Router,
+          useValue: {
+            navigate: jasmine.createSpy('navigate'),
+          }},
+          {
+            provide: ActivatedRoute,
+            useValue: {
+              snapshot: {params: {id: 100}}
+            }
+          },
+
+      ]
     })
     .compileComponents();
   }));
