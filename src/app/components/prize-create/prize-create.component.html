@@ -1,106 +1,108 @@
-<form
-[formGroup]="prizesForm"
-(ngSubmit)="!prizesForm.invalid && createPrize(prizesForm.value)">
+<div class="main-container">
+ <form
+  [formGroup]="prizesForm"
+  (ngSubmit)="!prizesForm.invalid && createPrize(prizesForm.value)">
 
-  <div class="form-group mx-sm-3 mb-2">
-    <label for="name">
-        Nombre
-    </label>
-    <input novalidate id="name"
-           class="form-control"
-           formControlName="name"
-           placeholder="Nombre del premio">
-
-    <div class="alert alert-danger alert-dismissible fade show"
-         *ngIf="prizesForm.get('name').hasError('required') &&
-         prizesForm.get('name').touched">
-         Nombre requerido
-    </div>
-    <div class="alert alert-danger alert-dismissible fade show"
-         *ngIf="prizesForm.get('name').hasError('minlength')">
-         Nombre muy corto
-    </div>
- </div>
-  <div class="form-group mx-sm-3 mb-2">
-      <label for="organization">
-          Organización
+    <div class="form-group mx-sm-3 mb-2">
+      <label class="form-label" for="name">
+          Nombre
       </label>
-      <input novalidate id="organization"
-             class="form-control"
-             formControlName="organization"
-             placeholder="Organización que otorga el premio">
+      <input novalidate id="name"
+            class="form-control"
+            formControlName="name"
+            placeholder="Nombre del premio">
+
       <div class="alert alert-danger alert-dismissible fade show"
-           *ngIf="prizesForm.get('organization').hasError('required') &&
-           prizesForm.get('organization').touched">
-           Nombre de organización requerido
+          *ngIf="prizesForm.get('name').hasError('required') &&
+          prizesForm.get('name').touched">
+          Nombre requerido
       </div>
       <div class="alert alert-danger alert-dismissible fade show"
-      *ngIf="prizesForm.get('organization').hasError('minlength')">
-      Nombre de organización muy corto
- </div>
+          *ngIf="prizesForm.get('name').hasError('minlength')">
+          Nombre muy corto
+      </div>
   </div>
-  <div class="form-group mx-sm-3 mb-2">
-    <label for="description">
-        Descripción
-    </label>
-    <input novalidate id="description"
-           class="form-control"
-           formControlName="description"
-           placeholder="Descripcion del premio">
-    <div class="alert alert-danger alert-dismissible fade show"
-         *ngIf="prizesForm.get('description').hasError('required') &&
-         prizesForm.get('description').touched">
-         Descripción requerida
+    <div class="form-group mx-sm-3 mb-2">
+        <label class="form-label" for="organization">
+            Organización
+        </label>
+        <input novalidate id="organization"
+              class="form-control"
+              formControlName="organization"
+              placeholder="Organización que otorga el premio">
+        <div class="alert alert-danger alert-dismissible fade show"
+            *ngIf="prizesForm.get('organization').hasError('required') &&
+            prizesForm.get('organization').touched">
+            Nombre de organización requerido
+        </div>
+        <div class="alert alert-danger alert-dismissible fade show"
+        *ngIf="prizesForm.get('organization').hasError('minlength')">
+        Nombre de organización muy corto
+  </div>
     </div>
-    <div class="alert alert-danger alert-dismissible fade show"
-         *ngIf="prizesForm.get('description').hasError('minlength')">
-         Descripcion muy corta
+    <div class="form-group mx-sm-3 mb-2">
+      <label class="form-label" for="description">
+          Descripción
+      </label>
+      <input novalidate id="description"
+            class="form-control"
+            formControlName="description"
+            placeholder="Descripcion del premio">
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="prizesForm.get('description').hasError('required') &&
+          prizesForm.get('description').touched">
+          Descripción requerida
+      </div>
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="prizesForm.get('description').hasError('minlength')">
+          Descripcion muy corta
+      </div>
     </div>
-  </div>
 
 
-  <div class="form-group mx-sm-3 mb-2">
-    <button type="submit"
-            class="btn btn-primary"
-            [disabled]="!prizesForm.valid">
-            Create
-    </button>
-    <button type="button"
-            class="btn btn-danger ml-3"
-            (click)="cancelCreation()">Cancel</button>
-  </div>
-</form>
-<form
-[formGroup]="prizesBandForm"
-(ngSubmit)="!prizesBandForm.invalid && addPrizeToBand(prizesBandForm.value)">
+    <div class="form-group mx-sm-3 mb-2 btn-group">
+      <button type="submit"
+              class="btn btn-primary submit-btn"
+              [disabled]="!prizesForm.valid">
+              Create
+      </button>
+      <button type="button"
+              class="btn btn-danger ml-3 cancel-btn"
+              (click)="cancelCreation()">Cancel</button>
+    </div>
+  </form>
+  <form
+  [formGroup]="prizesBandForm"
+  (ngSubmit)="!prizesBandForm.invalid && addPrizeToBand(prizesBandForm.value)">
 
 
-  <div class="form-group mx-sm-3 mb-2">
-    <label for="premiationDate">
-        Fecha de premiación
-    </label>
-    <input novalidate id="premiationDate"
-           class="form-control"
-           formControlName="premiationDate"
-           placeholder="Fecha de premiacion del artista">
-    <div class="alert alert-danger alert-dismissible fade show"
-         *ngIf="prizesBandForm.get('premiationDate').hasError('required') &&
-         prizesBandForm.get('premiationDate').touched">
-         Fecha de premiación requerida
-     </div>
+    <div class="form-group mx-sm-3 mb-2">
+      <label class="form-label" for="premiationDate">
+          Fecha de premiación
+      </label>
+      <input novalidate id="premiationDate"
+            class="form-control"
+            formControlName="premiationDate"
+            placeholder="Fecha de premiacion del artista">
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="prizesBandForm.get('premiationDate').hasError('required') &&
+          prizesBandForm.get('premiationDate').touched">
+          Fecha de premiación requerida
+      </div>
 
-    </div>-
+      </div>-
 
 
 
-  <div class="form-group mx-sm-3 mb-2">
-    <button type="submit"
-            class="btn btn-primary"
-            [disabled]="!prizesBandForm.valid">
-            Add to Band
-    </button>
-    <button type="button"
-            class="btn btn-danger ml-3"
-            (click)="cancelCreation()">Cancel</button>
-  </div>
-</form>
+    <div class="form-group mx-sm-3 mb-2 btn-group">
+      <button type="submit"
+              class="btn btn-primary submit-btn"
+              [disabled]="!prizesBandForm.valid">
+              Add to Band
+      </button>
+      <button type="button"
+              class="btn btn-danger ml-3 cancel-btn"
+              (click)="cancelCreation()">Cancel</button>
+    </div>
+  </form>
+</div>
