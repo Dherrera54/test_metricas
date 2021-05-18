@@ -7,13 +7,17 @@ import {TitleTableComponent} from './components/title-table/title-table.componen
 import {SearchComponent} from './components/search/search.component';
 import {CardsComponent} from './components/cards/cards.component';
 import {NgModule} from '@angular/core';
+import {ToastMessageComponent} from './components/toast-message/toast-message.component';
+import {InputTextComponent} from './components/input-text/input-text.component';
 
 @NgModule({
   declarations: [
+    ToastMessageComponent,
     CardsComponent,
     HeaderComponent,
     TitleTableComponent,
-    SearchComponent
+    SearchComponent,
+    InputTextComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,9 @@ import {NgModule} from '@angular/core';
     CardsComponent,
     HeaderComponent,
     TitleTableComponent,
-    SearchComponent
+    SearchComponent,
+    ToastMessageComponent,
+    InputTextComponent
   ],
 })
 export class SharedModule { }

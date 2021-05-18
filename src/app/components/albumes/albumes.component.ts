@@ -38,6 +38,10 @@ export class AlbumesComponent implements OnInit {
     this.router.navigate(['detail-album', index],  );
   }
 
+  addAlbum(): void {
+    this.router.navigate(['add-album']);
+  }
+
   searchText(text: string): void{
     if (text === ''){
       this.albums = Object.assign([], this.albumsMemory);

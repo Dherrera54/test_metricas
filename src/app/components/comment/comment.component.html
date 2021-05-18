@@ -1,4 +1,7 @@
 <div class="container-comment">
+  <div class="toast-style-warning">
+    <app-toast-message   [toast]="warning"></app-toast-message>
+  </div>
   <div class="container-comment-detail">
     <div class="img-log">
       <div class="genre">
@@ -7,15 +10,24 @@
     </div>
     <div class="container-comment-text">
       <div>
-        <textarea class="input-comment" id="comment" placeholder="Diligencie un comentario">{{textInput}}</textarea>
+        <textarea class="input-comment" id="comment" placeholder="Diligencie un comentario" #comment_text
+                  (paste)="saveText($event.clipboardData.getData('text/plain'), 'comment')"  (keyup)="saveText(comment_text.value, 'comment')"></textarea>
+        <div class="toast-style">
+          <app-toast-message   [toast]="comment"></app-toast-message>
+        </div>
+
       </div>
       <div class="container-options">
-        <select class="item" aria-label="Default select example">
-          <option selected>Calificacion</option>
-          <option value="1">Bueno</option>
-          <option value="2">Regular</option>
-          <option value="3">Pesimo</option>
+        <select class="item" aria-label="Default select example" [ngModel]="reviewLabelSelect" (ngModelChange)="onChangeReview($event)">
+          <option [value]="i" *ngFor="let i of review">{{i}}</option>
         </select>
+        <div class="toast-style">
+          <app-toast-message   [toast]="reviewWarning"></app-toast-message>
+        </div>
+      </div>
+
+      <div class="comment-event" (click)="addComment()">
+           <span >Añadir comentario</span>
       </div>
     </div>
     <div class="container-button">

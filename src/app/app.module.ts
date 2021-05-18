@@ -22,6 +22,7 @@ import { BandDetailComponent } from './components/band-detail/band-detail.compon
 import {HttpErrosModule} from './http-erros/http-erros.module';
 import {CommunicatorService} from './services/communicator.service';
 import {ErrorInterceptorService} from './http-erros/interceptors/error.interceptor.service';
+import {AddAlbumComponent} from './components/add-album/add-album.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import {ErrorInterceptorService} from './http-erros/interceptors/error.intercept
     BandDetailComponent,
     CollectorDetailComponent,
     CommentComponent,
+    AddAlbumComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,66 @@
+<div class="container-added-album">
+  <div class="toast-style">
+    <app-toast-message   [toast]="warning"></app-toast-message>
+  </div>
+  <div>
+    <app-input-text [element]="name" (text)="setValue($event, 'name')"></app-input-text>
+  </div>
+
+  <div>
+    <app-input-text [element]="cover" (text)="setValue($event, 'cover')"></app-input-text>
+  </div>
+
+  <div>
+    <app-input-text [element]="releaseDate" (text)="setValue($event, 'releaseDate')"></app-input-text>
+  </div>
+
+  <div class="comment">
+    <div class="title">
+      <span>Descripcion</span>
+    </div>
+    <textarea class="input-comment" id="comment" placeholder="Diligencie un comentario"   #comment_text
+              (paste)="keyup($event.clipboardData.getData('text/plain'))"  (keyup)="keyup(comment_text.value)">
+    </textarea>
+    <div class="toast-style">
+      <app-toast-message   [toast]="comment"></app-toast-message>
+    </div>
+  </div>
+
+  <div class="records">
+    <div class="title">
+      <span>Genero</span>
+    </div>
+    <div class="container-options">
+      <select class="item" aria-label="Default select example"  [ngModel]="genreLabelSelect" (ngModelChange)="onChangeGenre($event)">
+        <option [value]="i" *ngFor="let i of genreLabel">{{i}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="records">
+    <div class="title">
+      <span>Record</span>
+    </div>
+    <div class="container-options">
+      <select class="item" aria-label="Default select example"  [ngModel]="recordLabelSelect" (ngModelChange)="onChangeSelectRecord($event)">
+        <option [value]="i" *ngFor="let i of recordsLabel">{{i}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="container-button">
+    <div class="show-comment">
+      <button  [disabled]="!form.valid" (click)="addedAlbum()"  [ngClass]="!form.valid ? 'button-disabled': 'button-enabled'">Aceptar</button>
+    </div>
+    <div class="show-comment">
+      <button class="button-enabled"  (click)="cancel()">Cancelar</button>
+    </div>
+  </div>
+
+  <div class="container-error">
+    <div class=styl-error>
+      <app-toast-message   [toast]="error"></app-toast-message>
+    </div>
+  </div>
+
+</div>
