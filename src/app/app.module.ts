@@ -25,6 +25,7 @@ import {ErrorInterceptorService} from './http-erros/interceptors/error.intercept
 import {AddAlbumComponent} from './components/add-album/add-album.component';
 import {AddAlbumToPerformerComponent} from './components/addAlbumToPerformer/addAlbumToPerformer.component';
 import { ToastrModule } from 'ngx-toastr';
+import {AddToFavoriteComponent} from './components/addToFavorite/addToFavorite.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ToastrModule } from 'ngx-toastr';
     CollectorDetailComponent,
     CommentComponent,
     AddAlbumComponent,
-    AddAlbumToPerformerComponent
+    AddAlbumToPerformerComponent,
+    AddToFavoriteComponent
 
   ],
   imports: [

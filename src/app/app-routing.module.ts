@@ -11,6 +11,7 @@ import {CommentComponent} from './components/comment/comment.component';
 import {AppComponent} from './app.component';
 import {AddAlbumComponent} from './components/add-album/add-album.component';
 import { AddAlbumToPerformerComponent } from './components/addAlbumToPerformer/addAlbumToPerformer.component';
+import { AddToFavoriteComponent } from './components/addToFavorite/addToFavorite.component';
 
 const routes: any = [
   { path: '', component: AppComponent },
@@ -23,7 +24,8 @@ const routes: any = [
   { path: 'detail-band/:id', component: BandDetailComponent},
   { path: 'collector-detail/:id', component: CollectorDetailComponent},
   { path: 'comment', component: CommentComponent },
-  { path: 'addAlbumToPerformer/:id', component: AddAlbumToPerformerComponent}
+  { path: 'addAlbumToPerformer/:id', component: AddAlbumToPerformerComponent},
+  { path: 'addToFavorite/:id', component: AddToFavoriteComponent}
 ];
 
 @NgModule({

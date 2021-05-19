@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Performer, Musician, Band } from '../../model/performer';
 import { BandService } from '../../services/band.service';
 import { MusicianService } from '../../services/musician.service';
@@ -14,7 +14,7 @@ export class PerformerListComponent implements OnInit {
 
   constructor(private bandService: BandService, private musicianService:MusicianService, private router: Router) { }
 
-  selectedMusician: Musician;
+  @Input() selectedMusician: Musician;
   selectedBand : Band;
   selected: boolean = false;
 
@@ -49,5 +49,9 @@ export class PerformerListComponent implements OnInit {
     this.selectedBand=band;
     this.router.navigate(['detail-band', band.id],  );
 
+  }
+
+  addMusicianToFavorite(selectedMusician): void {
+    this.router.navigate(['addToFavorite/', selectedMusician.id]);
   }
 }

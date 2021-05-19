@@ -7,6 +7,7 @@ import { CollectorDetail } from '../model/collectorDetail';
 import { AlbumToPerformer } from '../model/addAlbumToPerf';
 import { CommentDetail } from '../model/commentDetail';
 import {AlbumsOfCollector} from '../model/albumsOfCollector';
+import {FavoriteMusician} from '../model/favoriteMusician';
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +43,10 @@ export class CollectorService {
 
   getAlbumsOfCollector(collectorId):Observable<Array<AlbumsOfCollector>>{
     return this.http.get<Array<AlbumsOfCollector>>(`${this.apiUrl}/${collectorId}/albums`)
+  }
+
+  addFavoriteMusician(collectorID:number, musicianId:number):Observable<FavoriteMusician>{
+    return this.http.post<FavoriteMusician>(`${this.apiUrl}/${collectorID}/musicians/${musicianId}`, null)
   }
 
 }
