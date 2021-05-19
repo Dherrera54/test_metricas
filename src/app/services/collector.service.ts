@@ -4,6 +4,9 @@ import { Observable } from 'rxjs';
 import {Collector} from '../model/collector';
 import { environment } from '../../environments/environment';
 import { CollectorDetail } from '../model/collectorDetail';
+import { AlbumToPerformer } from '../model/addAlbumToPerf';
+import { CommentDetail } from '../model/commentDetail';
+import {AlbumsOfCollector} from '../model/albumsOfCollector';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +30,18 @@ export class CollectorService {
 
   setCollectors(collectors: Array<CollectorDetail>): void {
     this.listCollectors = collectors;
+  }
+
+  addAlbumToCollector(newAlbum: AlbumToPerformer, albumId:number, collectorId:number):Observable<AlbumToPerformer>{
+    return this.http.post<AlbumToPerformer>(`${this.apiUrl}/${collectorId}/albums/${albumId}`,newAlbum)
+  }
+
+  getCollectorDetail(collectorId):Observable<CollectorDetail>{
+    return this.http.get<CollectorDetail>(`${this.apiUrl}/${collectorId}`)
+  }
+
+  getAlbumsOfCollector(collectorId):Observable<Array<AlbumsOfCollector>>{
+    return this.http.get<Array<AlbumsOfCollector>>(`${this.apiUrl}/${collectorId}/albums`)
   }
 
 }

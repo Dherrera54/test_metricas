@@ -8,10 +8,16 @@
       </div>
     </div>
     <div class="container-button">
-      <div>
+      <div class="button">
         <button  class="button-style" (click)="goBack()" name="Regresar a lista de albumes">Regresar</button>
       </div>
+      <div class="button">
+        <button  class="button-style" (click)="addAlbumToPerformer(collectorDetail)" name="Add album to performer">Add new Album</button>
+      </div>
     </div>
+
+
+
   </div>
 <div class="container-fluid2">
   <h1> Comentarios hechos por {{collectorDetail.name}}</h1>
@@ -88,7 +94,7 @@
   <thead>
     <tr>
       <th class="h4" width="27%" id="columna-nombre-Album">Nombre</th>
-      <th class="h4" width="25%" id="columna-foto">Foto</th>
+      <th class="h4" width="25%" id="columna-foto">Cover</th>
       <th class="h4" width="24%" id="columna-precio">Precio</th>
       <th class="h4" width="25%" id="columna-estado">Estado</th>
     </tr>
@@ -96,16 +102,16 @@
   <tbody>
     <tr *ngFor="let a of albumsCollector" class="contenido">
       <td>
-        <span>{{a.name}}</span>
+        <span>{{a.album.name}}</span>
       </td>
       <td>
-        <img src="{{a.cover}}" alt="foto del album {{a.name}}">
+        <img src="{{a.album.cover}}" alt="imagen del album{{a.name}}" >
       </td>
-      <td *ngFor="let alb of collectorDetail.collectorAlbums">
-        <span>{{alb.price}}</span>
+      <td >
+        <span>{{a.price}}</span>
       </td>
-      <td *ngFor="let alb of collectorDetail.collectorAlbums">
-        <span>{{alb.status}}</span>
+      <td >
+        <span>{{a.status}}</span>
       </td>
   </tr>
   </tbody>
