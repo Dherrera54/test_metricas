@@ -5,67 +5,67 @@
 
     <div class="form-group mx-sm-3 mb-2">
       <label class="form-label" for="name">
-          Nombre
+          Name
       </label>
       <input novalidate id="name"
             class="form-control"
             formControlName="name"
-            placeholder="Nombre del musico">
+            placeholder="Musician name">
 
       <div class="alert alert-danger alert-dismissible fade show"
           *ngIf="musicianForm.get('name').hasError('required') &&
           musicianForm.get('name').touched">
-          Nombre requerido
+          Required name
       </div>
       <div class="alert alert-danger alert-dismissible fade show"
           *ngIf="musicianForm.get('name').hasError('minlength')">
-          Nombre muy corto
+          Name too short
       </div>
   </div>
     <div class="form-group mx-sm-3 mb-2">
         <label class="form-label" for="image">
-            Imagen
+            Image
         </label>
         <input novalidate id="image"
               class="form-control"
               formControlName="image"
-              placeholder="Imagen del musico">
+              placeholder="Musician Image">
         <div class="alert alert-danger alert-dismissible fade show"
             *ngIf="musicianForm.get('image').hasError('required') &&
             musicianForm.get('image').touched">
-            Imagen requerida
+            Image required
         </div>
     </div>
     <div class="form-group mx-sm-3 mb-2">
       <label class="form-label"  for="description">
-          Descripción
+          Description
       </label>
       <input novalidate id="description"
             class="form-control"
             formControlName="description"
-            placeholder="Nombre del musico">
+            placeholder="Musician description">
       <div class="alert alert-danger alert-dismissible fade show"
           *ngIf="musicianForm.get('description').hasError('required') &&
           musicianForm.get('description').touched">
-          Descripción requerida
+          Description required
       </div>
       <div class="alert alert-danger alert-dismissible fade show"
           *ngIf="musicianForm.get('description').hasError('minlength')">
-          Descripcion muy corta
+          Description too short
       </div>
     </div>
     <div class="form-group mx-sm-3 mb-2">
       <label class="form-label"  for="birthDate">
-          Fecha de nacimiento
+          Birth date
       </label>
       <input novalidate id="birthDate"
             class="form-control"
             formControlName="birthDate"
-            placeholder="Fecha de nacimiento del musico (YYYY-MM-DD)">
+            placeholder="Musician birthdate (YYYY-MM-DD)">
       <div class="alert alert-danger alert-dismissible fade show"
           *ngIf="musicianForm.get('birthDate').hasError('required') &&
           musicianForm.get('birthDate').touched">
-          Fecha de nacimiento requerida
+          Birth date required
       </div>
 
       </div>
