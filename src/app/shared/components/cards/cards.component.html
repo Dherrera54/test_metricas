@@ -4,16 +4,16 @@
         <img src="{{item.image}}" alt="">
       </div>
       <div class="album-title" *ngIf="item.titleAlbum !== '' ">
-        <h1 id="title {{i}}">{{item.titleAlbum}}</h1>
+        <h1 id="title {{i}}" i18n>{{item.titleAlbum}}</h1>
       </div>
       <div class="album-group" *ngIf="item.groupAlbum !== '' ">
-        <span>{{item.groupAlbum}}</span>
+        <span i18n>{{item.groupAlbum}}</span>
       </div>
       <div class="album-gender" *ngIf="item.genderAlbum !== '' ">
-         <span>{{item.genderAlbum}}</span>
+         <span i18n>{{item.genderAlbum}}</span>
       </div>
       <div class="album-state" *ngIf="item.stateAlbum !== '' ">
-        <span>{{item.stateAlbum}}</span>
+        <span i18n>{{item.stateAlbum}}</span>
       </div>
   </div>
 </div>

@@ -21,7 +21,7 @@ export class AlbumesComponent implements OnInit {
     this.albumesService.getAlbumesServices().subscribe((result: Array<Albumes>) => {
       this.albumesService.setAlbumes(result);
       result.forEach( (it: Albumes) => {
-        this.albums.push(new Card(it.id, it.name,  it.recordLabel, it.genre, 'Vendido', it.cover));
+        this.albums.push(new Card(it.id, it.name,  it.recordLabel, it.genre, 'Sold', it.cover));
       });
       this.albumsMemory = Object.assign([], this.albums);
     });
@@ -30,7 +30,7 @@ export class AlbumesComponent implements OnInit {
 
   getHeader(): boolean {
     const headers = this.headerService.getHeadersOptions();
-    const header = headers.find(t => t.title === 'Buscador');
+    const header = headers.find(t => t.title === 'Searcher');
     return header === undefined ? false :  header.enabled;
   }
 

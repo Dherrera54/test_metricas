@@ -26,16 +26,15 @@ export class CommentComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private albumesService: AlbumesService, private build: FormBuilder,
               private addCommentService: AddCommentService) {
     this.titlesTable = new Array<TitlesTables>();
-    this.titlesTable.push(new TitlesTables('Contenido'));
-    this.titlesTable.push(new TitlesTables('Calificacion'));
+    this.titlesTable.push(new TitlesTables('Content'));
+    this.titlesTable.push(new TitlesTables('Score'));
     this.form = this.build.group({
       comment: [undefined,
         [Validators.required]],
       review: [undefined, [Validators.required]],
       id: [undefined, [Validators.required ]],
     });
-    this.warning = new Toast('warning.svg', 'Advertencia', 'Debe diligenciar todos los campos ' +
-      'el button', '#0d3300', false);
+    this.warning = new Toast('warning.svg', 'Warning', 'You must fill out all fields', '#0d3300', false);
     this.comment = new Toast('', '', '', '#711B23', false);
     this.reviewWarning = new Toast('', '', '', '#711B23', false);
   }
@@ -68,7 +67,7 @@ export class CommentComponent implements OnInit {
       case 'comment':
         if (this.form.get('comment').value === null || this.form.get('comment').value.length < 3 ){
           this.comment.image = 'warning.svg';
-          this.comment.description = 'El comentario debe ser minimo de 3 letras';
+          this.comment.description = 'The comment should have the next: It must have with at least three letters and not get over 100 letters';
           this.comment.visible = true;
         } else {
           this.comment.visible = false;
@@ -77,7 +76,7 @@ export class CommentComponent implements OnInit {
       case 'review':
         if (this.form.get('review').value === null  || this.form.get('review').value.length < 1 ){
           this.reviewWarning.image = 'warning.svg';
-          this.reviewWarning.description = 'Debe selecionar alguna calificacion';
+          this.reviewWarning.description = 'You should select a score';
           this.reviewWarning.visible = true;
         } else {
           this.reviewWarning.visible = false;
@@ -93,20 +92,20 @@ export class CommentComponent implements OnInit {
       const body = {
         description: 'It is an amazing album',
         rating: 5,
-        collector: {id: ' {{' + this.form.get('id').value + '}}'}
+        collector: {id: this.form.get('id').value }
       };
       this.addCommentService.addComment(body, this.form.get('id').value).subscribe(() => {
-        this.warning.title = 'Exitoso';
+        this.warning.title = 'Success';
         this.warning.image = 'check.svg';
         this.warning.background = '#a5dc86';
-        this.warning.description = 'Se creo exitosamente el album';
+        this.warning.description = 'You process was success';
         this.warning.visible = true;
         window.scrollTo(0, 0);
       }, () => {
         this.warning.title = 'Error';
         this.warning.image = 'error.svg';
         this.warning.background = '#711B23';
-        this.warning.description = 'Se presentaron problemas tecnicos por favor intente nuevamente, mensaje de error';
+        this.warning.description = 'Your process was wrong, you should try again please';
         this.warning.visible = true;
         window.scrollTo(0, 0);
       });
