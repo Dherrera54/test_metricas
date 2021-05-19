@@ -15,7 +15,7 @@ export class PerformerListComponent implements OnInit {
   constructor(private bandService: BandService, private musicianService:MusicianService, private router: Router) { }
 
   @Input() selectedMusician: Musician;
-  selectedBand : Band;
+  @Input() selectedBand : Band;
   selected: boolean = false;
 
   public musicians: Array<Musician>;

@@ -54,13 +54,6 @@ export class AddToFavoriteBandComponent implements OnInit {
     this.toastr.success('Asociado Exitosamente!', `Coleccionista ${c.name}`, { "progressBar": true, timeOut: 4000 });
   }
 
-  showAlbumNOtexist(a: Albumes) {
-    this.toastr.error('No existe!', `Album ${a.name}`, { "progressBar": true, timeOut: 4000 });
-  }
-
-  showStatusError(a: Albumes) {
-    this.toastr.error('Status debe ser Active o Inactive! ', `Estado no permitido`, { "progressBar": true, timeOut: 4000 });
-  }
 
   cancelAdding() {
     console.log("Cancelando ...");
