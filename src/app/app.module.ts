@@ -26,6 +26,7 @@ import {AddAlbumComponent} from './components/add-album/add-album.component';
 import {AddAlbumToPerformerComponent} from './components/addAlbumToPerformer/addAlbumToPerformer.component';
 import { ToastrModule } from 'ngx-toastr';
 import {AddToFavoriteComponent} from './components/addToFavorite/addToFavorite.component';
+import { AddToFavoriteBandComponent } from './components/addToFavoriteBand/addToFavoriteBand.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {AddToFavoriteComponent} from './components/addToFavorite/addToFavorite.c
     CommentComponent,
     AddAlbumComponent,
     AddAlbumToPerformerComponent,
-    AddToFavoriteComponent
+    AddToFavoriteComponent,
+    AddToFavoriteBandComponent
 
   ],
   imports: [

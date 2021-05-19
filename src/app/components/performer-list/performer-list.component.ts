@@ -54,4 +54,8 @@ export class PerformerListComponent implements OnInit {
   addMusicianToFavorite(selectedMusician): void {
     this.router.navigate(['addToFavorite/', selectedMusician.id]);
   }
+
+  addBandToFavorite(selectedBand): void {
+    this.router.navigate(['addToFavoriteBand/', selectedBand.id]);
+  }
 }

@@ -49,4 +49,8 @@ export class CollectorService {
     return this.http.post<FavoriteMusician>(`${this.apiUrl}/${collectorID}/musicians/${musicianId}`, null)
   }
 
+  addFavoriteBand(collectorID:number, bandId:number):Observable<FavoriteMusician>{
+    return this.http.post<FavoriteMusician>(`${this.apiUrl}/${collectorID}/bands/${bandId}`, null)
+  }
+
 }
