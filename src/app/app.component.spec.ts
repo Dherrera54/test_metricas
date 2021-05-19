@@ -68,19 +68,19 @@ describe('AppComponent', () => {
   });
 
   it('check the first second in header  ', () => {
-    expect(component.getHeader()[1].title).toEqual('Coleccionistas');
+    expect(component.getHeader()[1].title).toEqual('Collectors');
     expect(component.getHeader()[1].enabled).toEqual(false);
     expect(component.getHeader()[1].index).toEqual(1);
   });
 
   it('check the first third in header  ', () => {
-    expect(component.getHeader()[2].title).toEqual('Artistas');
+    expect(component.getHeader()[2].title).toEqual('Artists');
     expect(component.getHeader()[2].enabled).toEqual(false);
     expect(component.getHeader()[2].index).toEqual(2);
   });
 
   it('check the first fourth in header  ', () => {
-    expect(component.getHeader()[3].title).toEqual('Buscador');
+    expect(component.getHeader()[3].title).toEqual('Searcher');
     expect(component.getHeader()[3].enabled).toEqual(false);
     expect(component.getHeader()[3].index).toEqual(3);
   });
@@ -106,7 +106,7 @@ describe('AppComponent', () => {
 
   it('should check the header is the same', () => {
     component.initHeaders();
-    expect(component.getHeader()[3].title).toEqual('Buscador');
+    expect(component.getHeader()[3].title).toEqual('Searcher');
     expect(component.getHeader().length).toEqual(4);
   });
 
