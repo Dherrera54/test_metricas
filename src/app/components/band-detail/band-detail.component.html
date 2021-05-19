@@ -12,7 +12,7 @@
         <span id="band-description">{{bandDetail.description}} </span>
       </div>
       <div class="detail">
-        <span>Creación: {{bandDetail.creationDate | date: 'yyyy-MM-dd' }} </span>
+        <span>Creation date: {{bandDetail.creationDate | date: 'yyyy-MM-dd' }} </span>
       </div>
       <div class="detail">
         <span>Artist Type: Band </span>
@@ -20,10 +20,10 @@
     </div>
     <div class="container-button">
       <div>
-        <button type="button" class="design-button" (click)="addPrize(bandDetail)">Añadir premio</button>
+        <button type="button" class="design-button" (click)="addPrize(bandDetail)">Add prize</button>
       </div>
       <div class="show-comment">
-        <button type="button" class="design-button" (click)="addMusician(bandDetail)">Añadir músico</button>
+        <button type="button" class="design-button" (click)="addMusician(bandDetail)">Add musician</button>
       </div>
     </div>
   </div>
