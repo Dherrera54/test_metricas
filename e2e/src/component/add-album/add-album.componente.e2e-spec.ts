@@ -1,6 +1,6 @@
 import {AddAlbumComponentPo} from './add-album.component.po';
 
-describe('Check the component album with integration services', () => {
+describe('Check the component comment with integration services', () => {
   let page: AddAlbumComponentPo;
 
   beforeEach(() => {
@@ -120,6 +120,5 @@ describe('Check the component album with integration services', () => {
     page.wait(3000);
     expect(page.searchTextById('span-toast-message'))
       .toEqual('Your process was successful');
-
   });
 });

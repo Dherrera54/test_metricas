@@ -59,6 +59,7 @@ export class CommentComponent implements OnInit {
   }
 
   onChangeReview(value: string): void{
+    console.log(value);
     this.saveText(value, 'review');
   }
 
@@ -86,7 +87,7 @@ export class CommentComponent implements OnInit {
   }
 
   addComment(): void  {
-    if ((this.form.get('review').value !== null  && this.form.get('review').value.length >= 3)
+    if ((this.form.get('review').value !== null  && this.form.get('review').value.length >= 1)
       && (this.form.get('comment').value !== null && this.form.get('comment').value.length >= 1 )) {
       this.warning.visible = false;
       const body = {
