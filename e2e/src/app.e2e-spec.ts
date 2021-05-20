@@ -1,5 +1,5 @@
 import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import { browser, by, element, logging } from 'protractor';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display home on navbar', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('front app is running!');
+    expect(element(by.id('header-0')).getAttribute("innerText")).toBe("Home");
   });
 
   afterEach(async () => {
