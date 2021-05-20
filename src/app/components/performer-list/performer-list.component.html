@@ -3,17 +3,17 @@
       <div class="container-performers  col-12 col-md-6 col-lg-4">
         <div class="col" *ngFor="let musician of musicians;let i=index" class="detail-performer" (click)="onSelectedMusician(musician)" >
             <div class="img-driver">
-              <img src="{{musician.image}}" alt="imagen del musico{{musician.name}}">
+              <img id='musician-image-{{i}}' src="{{musician.image}}" alt="imagen del musico{{musician.name}}">
             </div>
             <div class="performer-name">
-              <h1><span class="performer-name" id="musician-name-{{i}}">{{musician.name}}</span></h1>
+              <h1><span id='musician-name-{{i}}'class="performer-name" id="musician-name-{{i}}">{{musician.name}}</span></h1>
             </div>
             <div class="artist-type">
 
               <span i18n>Musician</span>
             </div>
             <div class="fav-btn">
-              <a href="#" class="btn btn-outline-dark" i18n>Favorite</a>
+              <a href="#" id='musician-fav-btn-{{i}}'class="btn btn-outline-dark" i18n>Favorite</a>
             </div>
         </div>
       </div>
@@ -22,7 +22,7 @@
       <div class="container-performers col-12 col-md-6 col-lg-4 ">
       <div class="col" *ngFor="let band of bands, let i= index" class="detail-performer" (click)="onSelectedBand(band)">
           <div class="img-driver">
-            <img src="{{band.image}}" alt="imagen de la banda {{band.name}}">
+            <img id='band-image-{{i}}' src="{{band.image}}" alt="imagen de la banda {{band.name}}">
           </div>
           <div class="performer-name">
             <h1 class="performer-name" id="band-name-{{i}}"><span id="band-name">{{band.name}}</span></h1>
@@ -31,7 +31,7 @@
             <span i18n>Band</span>
           </div>
           <div class="fav-btn">
-            <a href="#" class="btn btn-outline-dark" i18n>Favorite</a>
+            <a id='band-fav-btn-{{i}}'href="#" class="btn btn-outline-dark" i18n>Favorite</a>
           </div>
       </div>
     </div>
