@@ -6,6 +6,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AlbumesService} from '../../services/albumes..service';
 import {Toast} from '../../shared/models/toast';
 import {AddCommentService} from '../../services/add-comment.service';
+import {Card} from '../../shared/models/card';
 
 @Component({
   selector: 'app-comment',
@@ -45,7 +46,7 @@ export class CommentComponent implements OnInit {
   }
 
   getComments(): void {
-    const item: Array<Albumes> =  this.albumesService.getAlbumes();
+    const item: Array<Albumes> = this.albumesService.getAlbumes();
     this.album =  item.find(t => t.id == this.form.get('id').value);
   }
 
@@ -59,7 +60,6 @@ export class CommentComponent implements OnInit {
   }
 
   onChangeReview(value: string): void{
-    console.log(value);
     this.saveText(value, 'review');
   }
 
@@ -91,11 +91,12 @@ export class CommentComponent implements OnInit {
       && (this.form.get('comment').value !== null && this.form.get('comment').value.length >= 1 )) {
       this.warning.visible = false;
       const body = {
-        description: 'It is an amazing album',
+        description: this.form.get('comment').value,
         rating: 5,
-        collector: {id: this.form.get('id').value }
+        collector: {id: Number(this.form.get('id').value) }
       };
       this.addCommentService.addComment(body, this.form.get('id').value).subscribe(() => {
+        this.updateAlbums();
         this.warning.title = 'Success';
         this.warning.image = 'check.svg';
         this.warning.background = '#a5dc86';
@@ -115,6 +116,14 @@ export class CommentComponent implements OnInit {
       this.showAlert('review');
       this.showAlert('comment');
     }
+  }
+
+  updateAlbums(): void {
+    this.albumesService.getAlbumesServices().subscribe((result: Array<Albumes>) => {
+      console.log(result);
+      this.albumesService.setAlbumes(result);
+      this.getComments();
+    });
   }
 }
 
