@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display home on navbar', () => {
     page.navigateTo();
-    expect(element(by.id('header-0')).getAttribute("innerText")).toBe("Home");
+    expect(element(by.id('Home')).getAttribute("innerText")).toBe("Home");
   });
 
   afterEach(async () => {
