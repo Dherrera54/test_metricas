@@ -16,19 +16,19 @@
 
   <div class="comment">
     <div class="title">
-      <span i18n>Description</span>
+      <span id="title-description-content" i18n>Description</span>
     </div>
     <textarea class="input-comment" id="comment" placeholder="Fill out a comment"   #comment_text
               (paste)="keyup($event.clipboardData.getData('text/plain'))"  (keyup)="keyup(comment_text.value)">
     </textarea>
-    <div class="toast-style">
-      <app-toast-message   [toast]="comment"></app-toast-message>
+    <div class="toast-style" id="comment-div-text">
+      <app-toast-message [toast]="comment"></app-toast-message>
     </div>
   </div>
 
   <div class="records">
     <div class="title">
-      <span i18n>Gender</span>
+      <span id="title-description-gender" i18n>Gender</span>
     </div>
     <div class="container-options">
       <select class="item" aria-label="Default select example"  [ngModel]="genreLabelSelect" (ngModelChange)="onChangeGenre($event)">
@@ -39,7 +39,7 @@
 
   <div class="records">
     <div class="title">
-      <span i18n>Record</span>
+      <span id="title-description-record"  i18n>Record</span>
     </div>
     <div class="container-options">
       <select class="item" aria-label="Default select example"  [ngModel]="recordLabelSelect" (ngModelChange)="onChangeSelectRecord($event)">
@@ -50,10 +50,10 @@
 
   <div class="container-button">
     <div class="show-comment">
-      <button  [disabled]="!form.valid" (click)="addedAlbum()"  [ngClass]="!form.valid ? 'button-disabled': 'button-enabled'" i18n>Accept</button>
+      <button  [disabled]="!form.valid" (click)="addedAlbum()"  id="btn-accept"  [ngClass]="!form.valid ? 'button-disabled': 'button-enabled'" i18n>Accept</button>
     </div>
     <div class="show-comment">
-      <button class="button-enabled"  (click)="cancel()" i18n>Cancel</button>
+      <button class="button-enabled"  (click)="cancel()" id="btn-cancel" i18n>Cancel</button>
     </div>
   </div>
 
