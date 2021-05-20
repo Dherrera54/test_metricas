@@ -20,10 +20,10 @@
     </div>
     <div class="container-button">
       <div>
-        <button type="button" class="design-button" (click)="addPrize(bandDetail)" i18n>Add prize</button>
+        <button type="button" class="design-button" (click)="addPrize(bandDetail)" id='add-prize-btn'i18n>Add prize</button>
       </div>
       <div class="show-comment">
-        <button type="button" class="design-button" (click)="addMusician(bandDetail)"i18n>Add musician</button>
+        <button type="button" class="design-button" (click)="addMusician(bandDetail)" id='add-musician-btn'i18n>Add musician</button>
       </div>
     </div>
   </div>
@@ -82,13 +82,13 @@
  <div class="row-information" *ngFor="let musician of bandDetail.musicians; let i = index">
     <div class="table-body">
       <div class="container-div">
-        <img class="musician-image-{{i}}" src="{{musician.image}}" alt="Imagen de musico {{musician.name}} de la banda {{bandDetail.name}}" width="50px" height="50px"/>
+        <img class="musician-image-{{musician.name}}" src="{{musician.image}}" alt="Imagen de musico {{musician.name}} de la banda {{bandDetail.name}}" width="50px" height="50px"/>
       </div>
       <div class="container-div">
-        <span id ='musician-name-{{i}}'>{{musician.name}}</span>
+        <span id ='musician-name-{{musician.name}}'>{{musician.name}}</span>
       </div>
       <div class="container-div">
-        <span id ='musician-birth-date-{{i}}'>{{ musician.birthDate | date: 'yyyy-MM-dd' }}</span>
+        <span id ='musician-birth-date-{{musician.name}}'>{{ musician.birthDate | date: 'yyyy-MM-dd' }}</span>
       </div>
     </div>
   </div>
@@ -111,13 +111,13 @@
  <div class="row-information" *ngFor="let premio of prizes; let i = index">
     <div class="table-body">
       <div class="container-div">
-        <span id ='prize-name-{{i}}'>{{premio.name}}</span>
+        <span id ='prize-name-{{premio.name}}'>{{premio.name}}</span>
       </div>
       <div class="container-div">
-        <span id ='prize-organization-{{i}}'>{{premio.organization}}</span>
+        <span id ='prize-organization-{{premio.name}}'>{{premio.organization}}</span>
       </div>
       <div class="container-div">
-        <span id ='band-premiation-date-{{i}}'>{{ bandDetail.performerPrizes[i].premiationDate | date: 'yyyy-MM-dd' }}</span>
+        <span id ='band-premiation-date-{{premio.name}}'>{{ bandDetail.performerPrizes[i].premiationDate | date: 'yyyy-MM-dd' }}</span>
       </div>
     </div>
   </div>
