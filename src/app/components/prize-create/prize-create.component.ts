@@ -61,12 +61,12 @@ export class PrizeCreateComponent implements OnInit {
       this.showSuccessAddPrizeToBand(prizeDetail);
   }
   showSuccessCreatePrize(prize:Prize) {
-    this.toastr.success(`¡Premio ${prize.name} creado con exito!`,'Creación premio');
+    this.toastr.success(`Prize ${prize.name} created!`,'Success prize creation');
 
   }
   showSuccessAddPrizeToBand(prize:Prize) {
 
-    this.toastr.success(`¡Premio ${prize.name} añadido con exito a banda!`,'Añadir premio a banda');
+    this.toastr.success(`Prize ${prize.name} added to band!`,'Add prize to band');
   }
 
 

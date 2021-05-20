@@ -12,18 +12,18 @@
         <span id="band-description">{{bandDetail.description}} </span>
       </div>
       <div class="detail">
-        <span>Creation date: {{bandDetail.creationDate | date: 'yyyy-MM-dd' }} </span>
+        <span i18n>Creation date: {{bandDetail.creationDate | date: 'yyyy-MM-dd' }} </span>
       </div>
       <div class="detail">
-        <span>Artist Type: Band </span>
+        <span i18n>Artist Type: Band </span>
       </div>
     </div>
     <div class="container-button">
       <div>
-        <button type="button" class="design-button" (click)="addPrize(bandDetail)">Add prize</button>
+        <button type="button" class="design-button" (click)="addPrize(bandDetail)" i18n>Add prize</button>
       </div>
       <div class="show-comment">
-        <button type="button" class="design-button" (click)="addMusician(bandDetail)">Add musician</button>
+        <button type="button" class="design-button" (click)="addMusician(bandDetail)"i18n>Add musician</button>
       </div>
     </div>
   </div>
@@ -32,17 +32,17 @@
     <hr/>
     <div class="table-title">
       <div class="container-div">
-        <span>Album</span>
+        <span i18n>Album</span>
       </div>
       <div class="container-div">
-        <span>Name</span>
+        <span i18n>Name</span>
       </div>
       <div class="container-div">
-        <span>Release date</span>
+        <span i18n>Release date</span>
       </div>
 
       <div class="container-div">
-        <span>Record label</span>
+        <span i18n>Record label</span>
       </div>
     </div>
     <hr/>
@@ -68,13 +68,13 @@
     <hr/>
     <div class="table-title">
       <div class="container-div">
-        <span>Musician</span>
+        <span i18n>Musician</span>
       </div>
       <div class="container-div">
-        <span>Name</span>
+        <span i18n>Name</span>
       </div>
       <div class="container-div">
-        <span>Birth date</span>
+        <span i18n>Birth date</span>
       </div>
     </div>
     <hr/>
@@ -97,13 +97,13 @@
     <hr/>
     <div class="table-title">
       <div class="container-div">
-        <span>Prize</span>
+        <span i18n>Prize</span>
       </div>
       <div class="container-div">
-        <span>Organization</span>
+        <span i18n>Organization</span>
       </div>
       <div class="container-div">
-        <span>Premiation date</span>
+        <span i18n> Premiation date</span>
       </div>
     </div>
     <hr/>

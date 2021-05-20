@@ -4,58 +4,58 @@
   (ngSubmit)="!prizesForm.invalid && createPrize(prizesForm.value)">
 
     <div class="form-group mx-sm-3 mb-2">
-      <label class="form-label" for="name">
-          Nombre
+      <label class="form-label" for="name" i18n>
+          Name
       </label>
       <input novalidate id="name"
             class="form-control"
             formControlName="name"
-            placeholder="Nombre del premio">
+            i18n-placeholder placeholder="Prize name">
 
       <div class="alert alert-danger alert-dismissible fade show"
           *ngIf="prizesForm.get('name').hasError('required') &&
-          prizesForm.get('name').touched">
-          Nombre requerido
+          prizesForm.get('name').touched" i18n>
+          Name Required
       </div>
       <div class="alert alert-danger alert-dismissible fade show"
-          *ngIf="prizesForm.get('name').hasError('minlength')">
-          Nombre muy corto
+          *ngIf="prizesForm.get('name').hasError('minlength')" i18n>
+          Name too short
       </div>
   </div>
     <div class="form-group mx-sm-3 mb-2">
-        <label class="form-label" for="organization">
-            Organización
+        <label class="form-label" for="organization" i18n>
+            Organization
         </label>
         <input novalidate id="organization"
               class="form-control"
               formControlName="organization"
-              placeholder="Organización que otorga el premio">
+              i18n-placeholder placeholder="Prize organization">
         <div class="alert alert-danger alert-dismissible fade show"
             *ngIf="prizesForm.get('organization').hasError('required') &&
-            prizesForm.get('organization').touched">
-            Nombre de organización requerido
+            prizesForm.get('organization').touched" i18n>
+            Organization name required
         </div>
         <div class="alert alert-danger alert-dismissible fade show"
-        *ngIf="prizesForm.get('organization').hasError('minlength')">
-        Nombre de organización muy corto
+        *ngIf="prizesForm.get('organization').hasError('minlength')" i18n>
+        Organization name too short
   </div>
     </div>
     <div class="form-group mx-sm-3 mb-2">
       <label class="form-label" for="description">
-          Descripción
+          Description
       </label>
       <input novalidate id="description"
             class="form-control"
             formControlName="description"
-            placeholder="Descripcion del premio">
+            i18n-placeholder placeholder="Prize description">
       <div class="alert alert-danger alert-dismissible fade show"
           *ngIf="prizesForm.get('description').hasError('required') &&
-          prizesForm.get('description').touched">
-          Descripción requerida
+          prizesForm.get('description').touched" i18n>
+          Description required
       </div>
       <div class="alert alert-danger alert-dismissible fade show"
-          *ngIf="prizesForm.get('description').hasError('minlength')">
-          Descripcion muy corta
+          *ngIf="prizesForm.get('description').hasError('minlength')" i18n>
+          Description too short
       </div>
     </div>
 
@@ -63,12 +63,12 @@
     <div class="form-group mx-sm-3 mb-2 btn-group">
       <button type="submit"
               class="btn btn-primary submit-btn"
-              [disabled]="!prizesForm.valid">
+              [disabled]="!prizesForm.valid" i18n>
               Create
       </button>
       <button type="button"
               class="btn btn-danger ml-3 cancel-btn"
-              (click)="cancelCreation()">Cancel</button>
+              (click)="cancelCreation()" i18n>Cancel</button>
     </div>
   </form>
   <form
@@ -77,32 +77,32 @@
 
 
     <div class="form-group mx-sm-3 mb-2">
-      <label class="form-label" for="premiationDate">
-          Fecha de premiación
+      <label class="form-label" for="premiationDate" i18n>
+          Premiation date
       </label>
       <input novalidate id="premiationDate"
             class="form-control"
             formControlName="premiationDate"
-            placeholder="Fecha de premiacion del artista">
+            i18n-placeholder placeholder="Band premiation date">
       <div class="alert alert-danger alert-dismissible fade show"
           *ngIf="prizesBandForm.get('premiationDate').hasError('required') &&
-          prizesBandForm.get('premiationDate').touched">
-          Fecha de premiación requerida
+          prizesBandForm.get('premiationDate').touched" i18n>
+          Premiation date required
       </div>
 
-      </div>-
+      </div>
 
 
 
     <div class="form-group mx-sm-3 mb-2 btn-group">
       <button type="submit"
               class="btn btn-primary submit-btn"
-              [disabled]="!prizesBandForm.valid">
+              [disabled]="!prizesBandForm.valid" i18n>
               Add to Band
       </button>
       <button type="button"
               class="btn btn-danger ml-3 cancel-btn"
-              (click)="cancelCreation()">Cancel</button>
+              (click)="cancelCreation()" i18n>Cancel</button>
     </div>
   </form>
 </div>

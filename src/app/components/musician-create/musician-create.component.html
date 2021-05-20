@@ -4,67 +4,67 @@
   (ngSubmit)="!musicianForm.invalid && createMusician(musicianForm.value)">
 
     <div class="form-group mx-sm-3 mb-2">
-      <label class="form-label" for="name">
+      <label class="form-label" for="name" i18n>
           Name
       </label>
       <input novalidate id="name"
             class="form-control"
             formControlName="name"
-            placeholder="Musician name">
+            i18n-placeholder placeholder="Musician name">
 
       <div class="alert alert-danger alert-dismissible fade show"
           *ngIf="musicianForm.get('name').hasError('required') &&
-          musicianForm.get('name').touched">
+          musicianForm.get('name').touched"i18n>
           Required name
       </div>
       <div class="alert alert-danger alert-dismissible fade show"
-          *ngIf="musicianForm.get('name').hasError('minlength')">
+          *ngIf="musicianForm.get('name').hasError('minlength')"i18n>
           Name too short
       </div>
   </div>
     <div class="form-group mx-sm-3 mb-2">
-        <label class="form-label" for="image">
+        <label class="form-label" for="image"i18n>
             Image
         </label>
         <input novalidate id="image"
               class="form-control"
               formControlName="image"
-              placeholder="Musician Image">
+              i18n-placeholder placeholder="Musician Image">
         <div class="alert alert-danger alert-dismissible fade show"
             *ngIf="musicianForm.get('image').hasError('required') &&
-            musicianForm.get('image').touched">
+            musicianForm.get('image').touched" i18n>
             Image required
         </div>
     </div>
     <div class="form-group mx-sm-3 mb-2">
-      <label class="form-label"  for="description">
+      <label class="form-label"  for="description"i18n>
           Description
       </label>
       <input novalidate id="description"
             class="form-control"
             formControlName="description"
-            placeholder="Musician description">
+            i18n-placeholder  placeholder="Musician description">
       <div class="alert alert-danger alert-dismissible fade show"
           *ngIf="musicianForm.get('description').hasError('required') &&
-          musicianForm.get('description').touched">
+          musicianForm.get('description').touched" i18n>
           Description required
       </div>
       <div class="alert alert-danger alert-dismissible fade show"
-          *ngIf="musicianForm.get('description').hasError('minlength')">
+          *ngIf="musicianForm.get('description').hasError('minlength')"i18n>
           Description too short
       </div>
     </div>
     <div class="form-group mx-sm-3 mb-2">
-      <label class="form-label"  for="birthDate">
+      <label class="form-label"  for="birthDate"i18n>
           Birth date
       </label>
       <input novalidate id="birthDate"
             class="form-control"
             formControlName="birthDate"
-            placeholder="Musician birthdate (YYYY-MM-DD)">
+            i18n-placeholder placeholder="Musician birthdate (YYYY-MM-DD)">
       <div class="alert alert-danger alert-dismissible fade show"
           *ngIf="musicianForm.get('birthDate').hasError('required') &&
-          musicianForm.get('birthDate').touched">
+          musicianForm.get('birthDate').touched" i18n>
           Birth date required
       </div>
 
@@ -75,12 +75,12 @@
     <div class="form-group mx-sm-3 mb-2 btn-group">
       <button type="submit"
               class="btn btn-primary submit-btn"
-              [disabled]="!musicianForm.valid">
+              [disabled]="!musicianForm.valid" i18n>
               Create
       </button>
       <button type="button"
               class="btn btn-danger ml-3 cancel-btn"
-              (click)="cancelCreation()">Cancel</button>
+              (click)="cancelCreation()" i18n>Cancel</button>
     </div>
   </form>
 </div>

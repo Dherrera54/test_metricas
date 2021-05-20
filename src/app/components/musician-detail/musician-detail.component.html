@@ -12,18 +12,18 @@
         <span id="musician-description">{{musicianDetail.description}} </span>
       </div>
       <div class="detail">
-        <span id="musician-birth-date">Birth date: {{musicianDetail.birthDate | date: 'yyyy-MM-dd' }} </span>
+        <span id="musician-birth-date" i18n>Birth date: {{musicianDetail.birthDate | date: 'yyyy-MM-dd' }} </span>
       </div>
       <div class="detail">
-        <span>Artist type: Musician </span>
+        <span i18n>Artist type: Musician </span>
       </div>
     </div>
     <div class="container-button">
       <div>
-        <button type="button" class="design-button" (click)="goBack()">Go back</button>
+        <button type="button" class="design-button" (click)="goBack()" i18n>Go back</button>
       </div>
       <div class="show-comment">
-        <button type="button" class="design-button" (click)="goBack()">See prizes</button>
+        <button type="button" class="design-button" (click)="goBack()" i18n>See prizes</button>
       </div>
     </div>
   </div>
@@ -32,17 +32,17 @@
     <hr/>
     <div class="table-title">
       <div class="container-div">
-        <span>Album</span>
+        <span i18n>Album</span>
       </div>
       <div class="container-div">
-        <span>Name</span>
+        <span i18n>Name</span>
       </div>
       <div class="container-div">
-        <span>Relase date</span>
+        <span i18n>Relase date</span>
       </div>
 
       <div class="container-div">
-        <span>Record label</span>
+        <span i18n>Record label</span>
       </div>
     </div>
     <hr/>

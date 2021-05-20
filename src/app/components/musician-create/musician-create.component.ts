@@ -80,12 +80,12 @@ export class MusicianCreateComponent implements OnInit {
 
   }
   showSuccessCreateMusician(musician:Musician) {
-    this.toastr.success(`¡Músico ${musician.name} creado con exito!`,'Creación Músico');
+    this.toastr.success(`Musician ${musician.name} created!`,'Success musician creation');
 
   }
   showSuccessAddMusicianToBand(musician:Musician, band :string) {
 
-    this.toastr.success(`¡Músico ${musician.name} añadido con exito a banda ${band}!`,'Añadir Músico a banda');
+    this.toastr.success(`Musician${musician.name} added to band ${band}!`,'Musician added to band');
   }
 
 
