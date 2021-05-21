@@ -7,10 +7,10 @@
       <label class="form-label" for="name" i18n>
           Name
       </label>
-      <input novalidate id="name"
+      <h1><input novalidate id="name"
             class="form-control"
             formControlName="name"
-            i18n-placeholder placeholder="Musician name">
+            i18n-placeholder placeholder="Musician name"></h1>
 
       <div class="alert alert-danger alert-dismissible fade show"
           *ngIf="musicianForm.get('name').hasError('required') &&

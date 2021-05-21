@@ -3,14 +3,15 @@
   [formGroup]="prizesForm"
   (ngSubmit)="!prizesForm.invalid && createPrize(prizesForm.value)">
 
+
     <div class="form-group mx-sm-3 mb-2">
       <label class="form-label" for="name" i18n>
           Name
       </label>
-      <input novalidate id="name"
+       <h1><input novalidate id="name"
             class="form-control"
             formControlName="name"
-            i18n-placeholder placeholder="Prize name">
+            i18n-placeholder placeholder="Prize name"></h1>
 
       <div class="alert alert-danger alert-dismissible fade show"
           *ngIf="prizesForm.get('name').hasError('required') &&
