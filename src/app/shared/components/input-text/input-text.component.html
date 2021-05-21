@@ -1,7 +1,7 @@
 <div class="container-input">
 
   <div class="title-header">
-    <h1>{{element.title}}</h1>
+    <h1 id="h1-input-{{element.id}}" i18n>{{element.title}}</h1>
   </div>
   <input
     #input
@@ -18,7 +18,7 @@
     placeholder="{{element.placeHolder}}"
     class="text"/>
   <div class="error">
-    <app-toast-message   [toast]="element.error"></app-toast-message>
+    <app-toast-message [toast]="element.error"></app-toast-message>
   </div>
 </div>
 

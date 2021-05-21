@@ -1,5 +1,5 @@
 <div class="container-header">
     <div *ngFor="let item of header; let i = index" [className]="item.enabled ? 'container-option-enabled' : 'container-option-disabled'" (click)="clickItem(i)">
-      <span>{{item.title}}</span>
+      <span i18n id="{{item.title}}">{{item.title}}</span>
     </div>
 </div>

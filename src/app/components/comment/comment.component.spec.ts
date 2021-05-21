@@ -128,7 +128,7 @@ describe('CommentComponent', () => {
     component.form.get('comment').setValue('1');
     fixture.detectChanges();
     component.addComment();
-    expect(component.warning.visible).toEqual(true);
+    expect(component.warning.visible).toEqual(false);
   });
 
   it('check the onChangeReview', () => {

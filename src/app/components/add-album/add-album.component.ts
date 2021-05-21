@@ -33,22 +33,22 @@ export class AddAlbumComponent implements OnInit {
       genre: [undefined, [Validators.required]],
       recordLabel: [undefined, [Validators.required]],
     });
-    this.name = new InputText('Nombre  del album', 'text', 'name',
-      'Digite el usuario', '#FFFFFF', 'none', '10px', '50px',
+    this.name = new InputText('Album Name', 'text', 'name',
+      'Fill out the user', '#FFFFFF', 'none', '10px', '50px',
       new Toast('', '', '', '#711B23', false), 50, 5
       , '', /[^a-zA-Z ]/g);
     this.cover = new InputText('Cover', 'text', 'cover',
-      'Digite la url de la imagen del cover', '#FFFFFF', 'none', '10px', '50px',
-      new Toast('', '', 'Tu solicitud fue procesada con exito', '#711B23', false), 50, 5
+      'Fill out the image url ', '#FFFFFF', 'none', '10px', '50px',
+      new Toast('', '', 'Your process was success', '#711B23', false), 50, 5
       , '');
-    this.releaseDate = new InputText('Fecha de publicacion', 'text', 'releaseDate',
-      'Digite la fecha de publicacion, el formato es yyyy-MM-dd', '#FFFFFF', 'none', '10px', '50px',
-      new Toast('', '', 'Tu solicitud fue procesada con exito', '#711B23', false), 10, 5
+    this.releaseDate = new InputText('Publication date', 'text', 'releaseDate',
+      'Fill out the Publication date, the format must be the next yyyy-MM-dd', '#FFFFFF', 'none', '10px', '50px',
+      new Toast('', '', 'Your process was success', '#711B23', false), 10, 5
       , '', /[^0-9-]/g);
-    this.warning = new Toast('warning.svg', 'Advertencia', 'Debe diligenciar todos los campos para que se habilite ' +
-      'el button', '#0d3300', false);
-    this.error = new Toast('error.svg', 'Advertencia', 'Debe diligenciar todos los campos para que se habilite ' +
-      'el button', '#711B23', false);
+    this.warning = new Toast('warning.svg', 'Warning', 'If you do not fill out all fields, the button would not be ' +
+      'enabled ', '#0d3300', false);
+    this.error = new Toast('error.svg', 'Warning', 'If you do not fill out all fields, the button would not be ' +
+      'enabled', '#711B23', false);
     this.comment = new Toast('', '', '', '#711B23', false);
   }
 
@@ -77,7 +77,7 @@ export class AddAlbumComponent implements OnInit {
          if (this.form.get('name').value.length < 3 ){
            this.name.border = '3px solid #711B23' ;
            this.name.error.image = 'warning.svg';
-           this.name.error.description = 'El nombre debe ser minimo de 3 letras y maximo 100 letras, adicional solo puede ser texto';
+           this.name.error.description = 'The name should have the next: It must have with at least three letters and not get over 100 letters, also it can have only letters';
            this.name.error.visible = true;
          } else {
            this.name.border = 'none' ;
@@ -88,7 +88,7 @@ export class AddAlbumComponent implements OnInit {
          if (this.form.get('cover').value.length < 5 || !this.validURL(this.form.get('cover').value)){
            this.cover.border = '3px solid #711B23' ;
            this.cover.error.image = 'warning.svg';
-           this.cover.error.description = 'La url ingresada no es valida, recuerde que debe ser una url adicional debe ser de una imagen ejemplo https://direct.rhapsody.com/imageserver/images/Art.14479/356x237.jpg';
+           this.cover.error.description = 'The url is not valid, you need to check it';
            this.cover.error.visible = true;
          } else {
            this.cover.border = 'none' ;
@@ -101,7 +101,7 @@ export class AddAlbumComponent implements OnInit {
            || this.checkIsValidaDate(this.form.get('releaseDate').value).length < 2 ){
            this.releaseDate.border = '3px solid #711B23' ;
            this.releaseDate.error.image = 'warning.svg';
-           this.releaseDate.error.description = 'La fecha digitada no cumple con el formato, recuerde que es yyyy-MM-dd';
+           this.releaseDate.error.description = 'The date filled out wrong, It should have the next format: yyyy-MM-dd';
            this.releaseDate.error.visible = true;
          } else {
            this.releaseDate.border = 'none' ;
@@ -111,7 +111,7 @@ export class AddAlbumComponent implements OnInit {
        case 'comment':
          if (this.form.get('comment').value.length < 3 ){
            this.comment.image = 'warning.svg';
-           this.comment.description = 'El comentario debe sr minimo de 3 letras y maximo 100 letras, adicional solo puede ser texto';
+           this.comment.description = 'The cover should have the next: It must have with at least three letters and not get over 100 letters, also it can have only letters';
            this.comment.visible = true;
          } else {
            this.comment.visible = false;
@@ -137,22 +137,22 @@ export class AddAlbumComponent implements OnInit {
           recordLabel: this.form.get('recordLabel').value
       };
       this.createAlbumService.createAlbum(body).subscribe((result) => {
-        this.warning.title = 'Exitoso';
+        this.warning.title = 'Successful';
         this.warning.image = 'check.svg';
         this.warning.background = '#a5dc86';
-        this.warning.description = 'Se creo exitosamente el album';
+        this.warning.description = 'Your process was successful';
         this.warning.visible = true;
         window.scrollTo(0, 0);
       }, (error: any) => {
         this.warning.title = 'Error';
         this.warning.image = 'error.svg';
         this.warning.background = '#711B23';
-        this.warning.description = 'Se presentaron problemas tecnicos por favor intente nuevamente, mensaje de error';
+        this.warning.description = 'Your process was wrong, you should try again please';
         this.warning.visible = true;
         window.scrollTo(0, 0);
       });
     } else  {
-      this.warning.description = 'Algunos campos aun se encuentra mal diligenciados por favor verificar que cumpla con lo solicitado.';
+      this.warning.description = 'You should fill out all fields, also you have pending fields. ';
       this.warning.visible = true;
       window.scrollTo(0, 0);
     }

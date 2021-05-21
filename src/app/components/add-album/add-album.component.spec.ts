@@ -115,14 +115,14 @@ describe('AddAlbumComponent', () => {
   it('check the addedAlbum method when the name has an error ', () => {
     component.name.error.visible = true;
     component.addedAlbum();
-    expect(component.warning.description).toEqual('Algunos campos aun se encuentra mal diligenciados por favor verificar que cumpla con lo solicitado.');
+    expect(component.warning.description).toEqual('You should fill out all fields, also you have pending fields. ');
   });
 
   it('check the addedAlbum method when the cover has an error ', () => {
     component.name.error.visible = false;
     component.cover.error.visible = true;
     component.addedAlbum();
-    expect(component.warning.description).toEqual('Algunos campos aun se encuentra mal diligenciados por favor verificar que cumpla con lo solicitado.');
+    expect(component.warning.description).toEqual('You should fill out all fields, also you have pending fields. ');
   });
 
   it('check the addedAlbum method when the releaseDate has an error ', () => {
@@ -130,7 +130,7 @@ describe('AddAlbumComponent', () => {
     component.cover.error.visible = false;
     component.releaseDate.error.visible = true;
     component.addedAlbum();
-    expect(component.warning.description).toEqual('Algunos campos aun se encuentra mal diligenciados por favor verificar que cumpla con lo solicitado.');
+    expect(component.warning.description).toEqual('You should fill out all fields, also you have pending fields. ');
   });
 
   it('check the addedAlbum method when the genre has an error ', () => {
@@ -139,7 +139,7 @@ describe('AddAlbumComponent', () => {
     component.releaseDate.error.visible = false;
     component.form.get('genre').setValue('a');
     component.addedAlbum();
-    expect(component.warning.description).toEqual('Algunos campos aun se encuentra mal diligenciados por favor verificar que cumpla con lo solicitado.');
+    expect(component.warning.description).toEqual('You should fill out all fields, also you have pending fields. ');
   });
 
   it('check the addedAlbum method when the recordLabel has an error ', () => {
@@ -149,7 +149,7 @@ describe('AddAlbumComponent', () => {
     component.form.get('genre').setValue('aaaa');
     component.form.get('recordLabel').setValue('a');
     component.addedAlbum();
-    expect(component.warning.description).toEqual('Algunos campos aun se encuentra mal diligenciados por favor verificar que cumpla con lo solicitado.');
+    expect(component.warning.description).toEqual('You should fill out all fields, also you have pending fields. ');
   });
 
   it('check the addedAlbum method when the comment has an error ', () => {
@@ -160,7 +160,7 @@ describe('AddAlbumComponent', () => {
     component.form.get('recordLabel').setValue('aaaa');
     component.comment.visible = true;
     component.addedAlbum();
-    expect(component.warning.description).toEqual('Algunos campos aun se encuentra mal diligenciados por favor verificar que cumpla con lo solicitado.');
+    expect(component.warning.description).toEqual('You should fill out all fields, also you have pending fields. ');
   });
 
 
@@ -172,7 +172,7 @@ describe('AddAlbumComponent', () => {
     component.form.get('recordLabel').setValue('aaaa');
     component.comment.visible = false;
     component.addedAlbum();
-    expect(component.warning.title).toEqual('Exitoso');
+    expect(component.warning.title).toEqual('Successful');
     expect(component.warning.image).toEqual('check.svg');
   });
 

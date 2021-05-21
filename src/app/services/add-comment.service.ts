@@ -15,6 +15,6 @@ export class AddCommentService {
     const headers = new HttpHeaders();
     headers.set('Content-Type', 'application/json; charset=utf-8');
     headers.set('Access-Control-Allow-Origin', '*');
-    return this.communicatorService.http_post(environment.baseUrl + id + '/comments', body, {headers} );
+    return this.communicatorService.http_post(environment.baseUrl + 'albums/' + id + '/comments', body, {headers} );
   }
 }
