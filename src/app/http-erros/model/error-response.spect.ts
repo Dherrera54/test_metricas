@@ -6,4 +6,3 @@ describe('Creacion del objecto ErrorBody', () => {
     expect(new ErrorResponse(new ErrorBody())).toBeTruthy();
   });
 });
-

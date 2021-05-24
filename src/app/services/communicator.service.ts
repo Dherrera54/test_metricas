@@ -31,12 +31,12 @@ export class CommunicatorService {
     );
   }
 
-  private setErrorStatus(error: any): any {
+  setErrorStatus(error: any): any {
+    console.log('Entro a eso');
     let newError: ErrorResponse;
     if (error.status === 0) {
-      newError = new ErrorResponse({codigo: error.statusCode});
+      newError = new ErrorResponse({ codigo: error.statusCode});
     }
-
     this.managerErrorService.setStatusCode(Number(error.status));
     return throwError(newError);
   }

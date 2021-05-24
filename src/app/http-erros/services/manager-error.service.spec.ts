@@ -48,4 +48,22 @@ describe('ManagerErrorService', () => {
     expect(router.navigate).toHaveBeenCalledWith([Routes.ERROR_INTERNET]);
   });
 
+  it('should trigger click option 500', () => {
+    const router = TestBed.get(Router);
+    service.setStatusCode(500);
+    expect(router.navigate).toHaveBeenCalledWith([Routes.ERROR_INTERNET]);
+  });
+
+  it('should trigger click option 404', () => {
+    const router = TestBed.get(Router);
+    service.setStatusCode(404);
+    expect(router.navigate).toHaveBeenCalledWith([Routes.ERROR_INTERNET]);
+  });
+
+  it('should trigger click option 504', () => {
+    const router = TestBed.get(Router);
+    service.setStatusCode(504);
+    expect(router.navigate).toHaveBeenCalledWith([Routes.ERROR_INTERNET]);
+  });
+
 });

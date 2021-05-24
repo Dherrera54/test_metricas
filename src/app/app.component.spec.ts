@@ -110,4 +110,11 @@ describe('AppComponent', () => {
     expect(component.getHeader().length).toEqual(4);
   });
 
+  it('should trigger click option album with search', () => {
+    const router = TestBed.get(Router);
+    component.initHeaders();
+    component.showItem(3);
+    expect(router.navigate).toHaveBeenCalledWith(['albumes']);
+  });
+
 });

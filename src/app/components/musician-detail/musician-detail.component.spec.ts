@@ -65,32 +65,32 @@ describe('MusicianDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('check the collection in data', () => {
+    expect(component.musicianDetail.name).toEqual(musician[0].name);
+  });
+
+
   it('Should have an element musician name', () => {
-    component.musicianDetail = new Musician(
-      faker.datatype.number(),
-      faker.lorem.sentence(),
-      faker.image.imageUrl(),
-      faker.lorem.sentence(),
-      [],
-      faker.date.past()
-      );
     fixture.detectChanges();
     expect(debug.query(By.css('#musician-name')).nativeElement.innerText).toContain(
       component.musicianDetail.name
     );
   });
   it('Should have an element musician description', () => {
-    component.musicianDetail = new Musician(
-      faker.datatype.number(),
-      faker.lorem.sentence(),
-      faker.image.imageUrl(),
-      faker.lorem.sentence(),
-      [],
-      faker.date.past()
-      );
-    fixture.detectChanges();
     expect(debug.query(By.css('#musician-description')).nativeElement.innerText).toContain(
       component.musicianDetail.description
+    );
+
+  });
+  it('Should have an element album name', () => {
+    expect(debug.query(By.css('#album-name-0')).nativeElement.innerText).toContain(
+      component.musicianDetail.albums[0].name
+    );
+
+  });
+  it('Should have an element album record label', () => {
+    expect(debug.query(By.css('#album-record-label-0')).nativeElement.innerText).toContain(
+      component.musicianDetail.albums[0].recordLabel
     );
 
   });
