@@ -1,10 +1,11 @@
 <div class="main-container">
+  <div class="form-container col-6 center">
   <form
   [formGroup]="musicianForm"
   (ngSubmit)="!musicianForm.invalid && createMusician(musicianForm.value)">
 
     <div class="form-group mx-sm-3 mb-2">
-      <label class="form-label" for="name" i18n>
+      <label class="form-label name-label" for="name" i18n>
           Name
       </label>
       <h1><input novalidate id="name"
@@ -40,10 +41,10 @@
       <label class="form-label"  for="description"i18n>
           Description
       </label>
-      <input novalidate id="description"
+      <textarea novalidate id="description"
             class="form-control"
             formControlName="description"
-            i18n-placeholder  placeholder="Musician description">
+            i18n-placeholder  placeholder="Musician description"></textarea>
       <div class="alert alert-danger alert-dismissible fade show"
           *ngIf="musicianForm.get('description').hasError('required') &&
           musicianForm.get('description').touched" i18n>
@@ -83,4 +84,5 @@
               (click)="cancelCreation()" i18n>Cancel</button>
     </div>
   </form>
+ </div>
 </div>
