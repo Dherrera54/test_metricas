@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {Collector} from '../../model/collector';
 import {EventEmitter, Input, Output} from '@angular/core';
 import { CollectorDetail } from 'src/app/model/collectorDetail';
@@ -9,7 +9,8 @@ import { AlbumesService } from 'src/app/services/albumes..service';
 import { CommentDetail } from 'src/app/model/commentDetail';
 import { TitlesTables } from 'src/app/shared/models/titlesTables';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
-import { CollectorAlbums } from 'src/app/model/collectorAlbums';
+import {Router} from '@angular/router';
+import { AlbumsOfCollector } from 'src/app/model/albumsOfCollector';
 
 @Component({
   selector: 'app-collector-detail',
@@ -18,14 +19,14 @@ import { CollectorAlbums } from 'src/app/model/collectorAlbums';
 })
 export class CollectorDetailComponent implements OnInit {
 
-  collectorDetail: CollectorDetail;
+  @Input() collectorDetail: CollectorDetail;
   id:number;
-  albumsCollector: Array<Albumes>;
+  albumsCollector: Array<AlbumsOfCollector>;
   albumesOfComments: Array<Albumes>;
   titlesTable: Array<TitlesTables>;
 
 
-  constructor(private activatedRoute: ActivatedRoute, private collectorService: CollectorService, private albumesService:AlbumesService) {
+  constructor(private activatedRoute: ActivatedRoute, private collectorService: CollectorService, private albumesService:AlbumesService, private router: Router) {
     this.albumesOfComments = new  Array<Albumes>();
   }
 
@@ -34,6 +35,11 @@ export class CollectorDetailComponent implements OnInit {
     this.getDetailCollector();
     this.getCollectorAlbums();
     this.getCommentsAlbum(this.collectorDetail);
+    this.albumsCollector = new Array<AlbumsOfCollector>()
+  }
+
+  addAlbumToPerformer(collectorDetail): void {
+    this.router.navigate(['addAlbumToPerformer/', collectorDetail.id]);
   }
 
 
@@ -47,9 +53,7 @@ export class CollectorDetailComponent implements OnInit {
 
   getCollectorAlbums():void{
 
-    const items: Array<CollectorAlbums> = this.collectorDetail.collectorAlbums;
-    const listaAlbumes: Array<Albumes> = this.albumesService.getAlbumes();
-    this.albumsCollector =listaAlbumes.filter(a => items.find(b => a.id === b.id));
+    this.collectorService.getAlbumsOfCollector(this.id).subscribe(albums=>{this.albumsCollector = albums})
 
   }
 

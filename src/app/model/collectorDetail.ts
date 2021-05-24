@@ -1,11 +1,11 @@
-import { Albumes } from "./albumes";
+
+import { AlbumsOfCollector } from "./albumsOfCollector";
 import { Collector } from "./collector";
 import { CommentDetail } from "./commentDetail";
 import { Performer } from "./performer";
-import{CollectorAlbums} from "./collectorAlbums"
 
 export class CollectorDetail extends Collector{
-  collectorAlbums:Array<CollectorAlbums>;
+  collectorAlbums:Array<AlbumsOfCollector>;
   favoritePerformers:Array<Performer>;
   comments:Array<CommentDetail>
 }

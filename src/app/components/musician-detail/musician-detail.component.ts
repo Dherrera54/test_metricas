@@ -36,4 +36,5 @@ export class MusicianDetailComponent implements OnInit {
     .subscribe(musicianDetail =>{this.musicianDetail=musicianDetail;
     });
   }
+
 }

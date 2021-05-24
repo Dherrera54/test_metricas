@@ -23,6 +23,10 @@ import {HttpErrosModule} from './http-erros/http-erros.module';
 import {CommunicatorService} from './services/communicator.service';
 import {ErrorInterceptorService} from './http-erros/interceptors/error.interceptor.service';
 import {AddAlbumComponent} from './components/add-album/add-album.component';
+import {AddAlbumToPerformerComponent} from './components/addAlbumToPerformer/addAlbumToPerformer.component';
+import { ToastrModule } from 'ngx-toastr';
+import {AddToFavoriteComponent} from './components/addToFavorite/addToFavorite.component';
+import { AddToFavoriteBandComponent } from './components/addToFavoriteBand/addToFavoriteBand.component';
 
 @NgModule({
   declarations: [
@@ -36,11 +40,16 @@ import {AddAlbumComponent} from './components/add-album/add-album.component';
     CollectorDetailComponent,
     CommentComponent,
     AddAlbumComponent,
+    AddAlbumToPerformerComponent,
+    AddToFavoriteComponent,
+    AddToFavoriteBandComponent
+
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     FormsModule,
     BrowserModule,
     AppRoutingModule,
@@ -49,7 +58,13 @@ import {AddAlbumComponent} from './components/add-album/add-album.component';
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpErrosModule
+    HttpErrosModule,
+    ToastrModule.forRoot({
+      timeOut:3000,
+      progressBar: true,
+      progressAnimation: 'increasing',
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,})
   ],
   providers: [
     CommunicatorService,
@@ -59,6 +74,7 @@ import {AddAlbumComponent} from './components/add-album/add-album.component';
       multi: true,
     },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[AddAlbumToPerformerComponent]
 })
 export class AppModule { }
