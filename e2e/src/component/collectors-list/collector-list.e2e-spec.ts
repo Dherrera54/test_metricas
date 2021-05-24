@@ -10,21 +10,21 @@ describe('workspace-project App', () => {
 
   it('should display collector list', () => {
     page.navigateTo();
-    element(by.id('Artistas')).click().then(function () {
-      expect(element(by.id('musician-name-0')).getAttribute("innerText")).toBe("Rubén Blades Bellido de Luna");
-      expect(element(by.id('band-name-0')).getAttribute("innerText")).toBe("Queen");
+    element(by.id('Collectors')).click().then(function () {
+      expect(element(by.id('title 0')).getAttribute("innerText")).toBe("Manolo Bellon");
+      expect(element(by.id('title 1')).getAttribute("innerText")).toBe("Jaime Monsalve");
 
     });
   });
-  it('should see detail of band and musician', () => {
+  it('should open detail of a collector', () => {
     page.navigateTo();
-    element(by.id('Artistas')).click().then(function () {
-      expect(element(by.id('musician-name-0')).click().then(function () {
-       expect(element(by.id('musician-birth-date')).getAttribute("innerText")).toBe("Birth date: 1948-07-15");
+    element(by.id('Collectors')).click().then(function () {
+      expect(element(by.id('title 0')).click().then(function () {
+       expect(element(by.id('comment-title')).getAttribute("innerText")).toBe("Comments made by Manolo Bellon");
       }));
       browser.navigate().back();
-      expect(element(by.id('band-name-0')).click().then(function () {
-      expect(element(by.id('band-creation-date')).getAttribute("innerText")).toBe("Creation date: 1969-12-31");
+      expect(element(by.id('title 1')).click().then(function () {
+      expect(element(by.id('comment-title')).getAttribute("innerText")).toBe("Comments made by Jaime Monsalve");
     }));
 
     });
