@@ -11,10 +11,12 @@ import {CommentComponent} from './components/comment/comment.component';
 import {AppComponent} from './app.component';
 import { MusicianCreateComponent } from './components/musician-create/musician-create.component';
 import { PrizeCreateComponent } from './components/prize-create/prize-create.component';
+import {AddAlbumComponent} from './components/add-album/add-album.component';
 
 const routes: any = [
   { path: '', component: AppComponent },
   { path: 'albumes', component: AlbumesComponent },
+  { path: 'add-album', component: AddAlbumComponent },
   { path: 'performer', component: PerformerListComponent },
   { path: 'collector', component: CollectorListarComponent },
   { path: 'detail-album/:id', component: DetailAlbumComponent },

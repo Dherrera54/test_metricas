@@ -24,7 +24,7 @@ describe('TitleTableComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('check the input', () => {
+  it('check the input-text', () => {
     const titlesTable = new Array<TitlesTables>();
     titlesTable.push(new TitlesTables('Contenido'));
     titlesTable.push(new TitlesTables('Calificacion'));

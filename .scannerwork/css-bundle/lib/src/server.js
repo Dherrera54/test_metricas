@@ -57,7 +57,7 @@ function toIssues(results, filePath) {
     const analysisResponse = [];
     // we should have only one element in 'results' as we are analyzing only 1 file
     results.forEach(result => {
-        // to avoid reporting on "fake" source like <input ccs 1>
+        // to avoid reporting on "fake" source like <input-text ccs 1>
         if (result.source !== filePath) {
             log(`DEBUG For file [${filePath}] received issues with [${result.source}] as a source. They will not be reported.`);
             return;

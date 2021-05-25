@@ -3,11 +3,22 @@
   width: 100%;
   height: 100vh;
 
+  .toast-style-warning {
+    padding-left: 140px;
+    padding-top: 32px;
+    padding-right: 85px;
+  }
+
   .container-comment-detail {
     width: 100%;
     display: flex;
     flex-direction: row;
     padding-left: 141px;
+
+    .toast-style {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
 
     .img-log {
       padding-top: 32px;
@@ -64,7 +75,20 @@
         width: calc(100% - 10%);
         height: 214px;
       }
+
+      .comment-event {
+        padding-top: 24px;
+        width: 100%;
+        text-align: center;
+        span{
+          font-size: 24px;
+          font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+          border-bottom: 2px solid #2b85cd80;
+        }
+      }
     }
+
+
 
     .container-button {
       padding-left: 129px;

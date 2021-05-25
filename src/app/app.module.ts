@@ -24,6 +24,8 @@ import {ErrorInterceptorService} from './http-erros/interceptors/error.intercept
 import { MusicianCreateComponent } from './components/musician-create/musician-create.component';
 import { PrizeCreateComponent } from './components/prize-create/prize-create.component';
 import { ToastrModule }  from 'ngx-toastr';
+import {AddAlbumComponent} from './components/add-album/add-album.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,8 @@ import { ToastrModule }  from 'ngx-toastr';
     CollectorDetailComponent,
     CommentComponent,
     MusicianCreateComponent,
-    PrizeCreateComponent
+    PrizeCreateComponent,
+    AddAlbumComponent,
   ],
   imports: [
     CommonModule,
