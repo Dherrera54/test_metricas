@@ -65,10 +65,8 @@ export class CollectorDetailComponent implements OnInit {
       for(let i of todosAlbumes){
         for(let c of i.comments){
           if(c.id == e.id) {
-            if(this.albumesOfComments.length <= p) {
               this.albumesOfComments[p]=i;
-            }
-            p++;
+              p++;
           }
         }
       }

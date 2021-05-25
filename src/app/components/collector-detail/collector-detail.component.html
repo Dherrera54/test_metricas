@@ -20,7 +20,7 @@
 
   </div>
 <div class="container-fluid2">
-  <h1 i18n> Comments made by {{collectorDetail.name}}</h1>
+  <h1 id ="comment-title" i18n> Comments made by {{collectorDetail.name}}</h1>
 </div>
 
 <div class="container-fluid">
@@ -34,17 +34,17 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let c of collectorDetail.comments" class="contenido">
-      <td *ngFor="let alb of albumesOfComments">
-        <span>{{alb.name}}</span>
+    <tr *ngFor="let c of collectorDetail.comments; let i=index" class="contenido" >
+      <td>
+        <span id="comment_{{i}}">{{albumesOfComments[i].name}}</span>
       </td>
       <td>
-        <span>{{c.description}}</span>
+        <span id="description_{{i}}">{{c.description}}</span>
       </td>
       <td>
-        <span>{{c.rating}}</span>
+        <span id="rating_{{i}}">{{c.rating}}</span>
       </td>
-  </tr>
+    </tr>
   </tbody>
 </table>
 </div>
@@ -68,12 +68,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let p of collectorDetail.favoritePerformers" class="contenido">
+    <tr *ngFor="let p of collectorDetail.favoritePerformers; let i=index" class="contenido">
       <td>
-        <span>{{p.name}}</span>
+        <span id="performer_name_{{i}}">{{p.name}}</span>
       </td>
       <td>
-        <img src="{{p.image}}" alt="Foto de {{p.name}}">
+        <img src="{{p.image}}" id="performer_imageb _{{i}}" alt="Foto de {{p.name}}">
       </td>
   </tr>
   </tbody>
@@ -100,18 +100,18 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let a of albumsCollector" class="contenido">
+    <tr *ngFor="let a of albumsCollector; let i=index" class="contenido">
       <td>
-        <span>{{a.album.name}}</span>
+        <span id="album_name_{{i}}">{{a.album.name}}</span>
       </td>
       <td>
-        <img src="{{a.album.cover}}" alt="imagen del album{{a.name}}" >
+        <img src="{{a.album.cover}}" id="album_cover_{{i}}" alt="imagen del album{{a.name}}" >
       </td>
       <td >
-        <span>{{a.price}}</span>
+        <span id="album_price_{{i}}">{{a.price}}</span>
       </td>
       <td >
-        <span>{{a.status}}</span>
+        <span id="album_status_{{i}}">{{a.status}}</span>
       </td>
   </tr>
   </tbody>
