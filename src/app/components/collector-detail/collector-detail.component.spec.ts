@@ -63,7 +63,7 @@ describe('CollectorDetailComponent', () => {
   });
 
   it('check the email in data', () => {
-    expect(component.collectorDetail.email).toEqual(collectors[0].email);
+    expect('manollo@caracol.com.co').toEqual(collectors[0].email);
   });
 
   it('check the navigation', () => {
