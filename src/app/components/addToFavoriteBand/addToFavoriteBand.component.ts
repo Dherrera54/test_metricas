@@ -34,7 +34,9 @@ export class AddToFavoriteBandComponent implements OnInit {
 
     this.id = this.route.snapshot.params.id;
     console.log(`el id es ${this.id}`);
-    this.collectors = this.collectorService.getCollectorsDatos();
+    this.collectorService.getCollectors()
+    .subscribe(collectors => {
+      this.collectors = collectors;})
     //this.addToFavorite();
   }
 
