@@ -33,7 +33,7 @@
 
 
     .container-button {
-      padding-left: 500px;
+      padding-left: 300px;
       padding-right: 80px;
       padding-top: 32px;
       .button-style {
@@ -42,9 +42,12 @@
         background: black;
         color: #FFFFFF;
       }
+
+      .button{
+        padding-bottom: 20px;
+      }
     }
   }
-
   .h4{
     color:white;
     font-size: 24px;

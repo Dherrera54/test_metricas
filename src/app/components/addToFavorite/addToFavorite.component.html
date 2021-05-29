@@ -1,0 +1,45 @@
+<div class = "container-fluid">
+  <div class = "col-12 p-3">
+    <div class = "h4" i18n>Add Album to Collector</div>
+    <form
+      [formGroup]="nameCollectorForm"
+      (ngSubmit)="!nameCollectorForm.invalid && fillForm(nameCollectorForm.value)">
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="name" i18n> Collector Name* </label>
+        <input
+          novalidate
+          id="name"
+          class="form-control"
+          formControlName="name"
+          placeholder="Collector Name"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            nameCollectorForm.get('name').hasError('required') &&
+            nameCollectorForm.get('name').touched
+          "
+        i18n>
+          Collector Name required
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            nameCollectorForm.get('name').hasError('minlength') &&
+            nameCollectorForm.get('name').touched
+          "
+        i18n>
+          Collector Name too short. It should be at least 2 characters
+        </div>
+      </div>
+
+
+
+      <div class="buttons">
+        <button type="submit" class="btn btn-primary" [disabled]="!nameCollectorForm.valid" id="submit" i18n>Add</button>
+        <button type="button" class="btn btn-danger ml-3" (click)="cancelAdding()" id="cancel" i18n>Cancel</button>
+      </div>
+
+    </form>
+  </div>
+</div>

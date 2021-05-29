@@ -139,7 +139,7 @@ describe('AlbumesComponent check the header exists', () => {
   headers.push(new Header(0, 'A', false));
   headers.push(new Header(1, 'B', false));
   headers.push(new Header(2, 'C', false));
-  headers.push(new Header(3, 'Buscador', true));
+  headers.push(new Header(3, 'Searcher', true));
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

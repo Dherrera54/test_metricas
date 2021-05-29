@@ -1,4 +1,4 @@
-import { AppPage } from './app.po';
+import { AppPage } from './add_performer-to-favorite.po';
 import { browser, by, element, logging } from 'protractor';
 
 describe('workspace-project App', () => {
@@ -8,10 +8,22 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display home on navbar', () => {
+
+  it('should add musician to favorite', () => {
     page.navigateTo();
-    expect(element(by.id('Home')).getAttribute("innerText")).toBe("Home");
-  });
+    element(by.id('Artists')).click().then(function () {
+        page.clickButtonByID('favorite-musician-0');
+        page.wait(300);
+        page.setInputText('name','Manolo Bellon');
+        page.wait(300);
+        page.clickButtonByID('submit');
+        page.wait(3000);
+        expect(page.searchTextById('toast-container')).toContain("Asociado Exitosamente!");
+
+
+    })
+  })
+
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser

@@ -8,116 +8,122 @@
       </div>
     </div>
     <div class="container-button">
-      <div>
-        <button  class="button-style" (click)="goBack()" name="Regresar a lista de albumes">Regresar</button>
+      <div class="button">
+        <button  class="button-style" (click)="goBack()" id="return" name="Regresar a lista de albumes" i18n>Return</button>
+      </div>
+      <div class="button">
+        <button  class="button-style" (click)="addAlbumToPerformer(collectorDetail)" id="add-album" name="Add album to performer" i18n>Add new Album</button>
       </div>
     </div>
-  </div>
-<div class="container-fluid2">
-  <h1> Comentarios hechos por {{collectorDetail.name}}</h1>
-</div>
 
-<div class="container-fluid">
-<table class="table">
-  <caption>Comentarios</caption>
-  <thead>
-    <tr>
-      <th class="h4" width="35%" id="columna-album">Album</th>
-      <th class="h4" width="40%" id="columna-comentario">Comentario</th>
-      <th class="h4" id="columna-rating">Rating</th>
+
+
+  </div>
+  <div class="container-fluid2">
+    <h1 id ="comment-title" i18n> Comments made by {{collectorDetail.name}}</h1>
+  </div>
+
+  <div class="container-fluid">
+  <table class="table">
+    <caption i18n>Comments</caption>
+    <thead>
+      <tr>
+        <th class="h4" width="35%" id="columna-album" i18n>Album</th>
+        <th class="h4" width="40%" id="columna-comentario" i18n>Comment</th>
+        <th class="h4" id="columna-rating">Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of collectorDetail.comments; let i=index" class="contenido" >
+        <td>
+          <span id="comment_{{i}}">{{albumesOfComments[i].name}}</span>
+        </td>
+        <td>
+          <span id="description_{{i}}">{{c.description}}</span>
+        </td>
+        <td>
+          <span id="rating_{{i}}">{{c.rating}}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <hr>
+    </div>
+  </div>
+
+  <div class="container-fluid2">
+  <h1 i18n> Favorite performers of {{collectorDetail.name}}</h1>
+  </div>
+  <div class="container-fluid">
+  <table class="table">
+    <caption i18n>Favorite performers</caption>
+    <thead>
+      <tr>
+        <th class="h4" width="75%" id="columna-nombre" i18n>Name</th>
+        <th class="h4" width="25%" id="columna-foto" i18n>Photo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of collectorDetail.favoritePerformers; let i=index" class="contenido">
+        <td>
+          <span id="performer_name_{{i}}">{{p.name}}</span>
+        </td>
+        <td>
+          <img src="{{p.image}}" id="performer_imageb _{{i}}" alt="Foto de {{p.name}}">
+        </td>
     </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let c of collectorDetail.comments" class="contenido">
-      <td *ngFor="let alb of albumesOfComments">
-        <span>{{alb.name}}</span>
-      </td>
-      <td>
-        <span>{{c.description}}</span>
-      </td>
-      <td>
-        <span>{{c.rating}}</span>
-      </td>
-  </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="row">
-  <div class="col-12">
-    <hr>
+    </tbody>
+  </table>
   </div>
-</div>
 
-<div class="container-fluid2">
-<h1> Artistas favoritos de {{collectorDetail.name}}</h1>
-</div>
-<div class="container-fluid">
-<table class="table">
-  <caption>Artistas Favoritos</caption>
-  <thead>
-    <tr>
-      <th class="h4" width="75%" id="columna-nombre">Nombre</th>
-      <th class="h4" width="25%" id="columna-foto">Foto</th>
+  <div class="row">
+    <div class="col-12">
+      <hr>
+    </div>
+  </div>
+  <div class="container-fluid2">
+  <h1 i18n> Albumes of {{collectorDetail.name}}</h1>
+  </div>
+  <div class="container-fluid">
+  <table class="table" >
+    <caption i18n>Albumes</caption>
+    <thead>
+      <tr>
+        <th class="h4" width="27%" id="columna-nombre-Album" i18n>Name</th>
+        <th class="h4" width="25%" id="columna-foto" i18n>Cover</th>
+        <th class="h4" width="24%" id="columna-precio" i18n>Price</th>
+        <th class="h4" width="25%" id="columna-estado" i18n>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of albumsCollector; let i=index" class="contenido">
+        <td>
+          <span id="album_name_{{i}}">{{a.album.name}}</span>
+        </td>
+        <td>
+          <img src="{{a.album.cover}}" id="album_cover_{{i}}" alt="imagen del album{{a.name}}" >
+        </td>
+        <td >
+          <span id="album_price_{{i}}">{{a.price}}</span>
+        </td>
+        <td >
+          <span id="album_status_{{i}}">{{a.status}}</span>
+        </td>
     </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let p of collectorDetail.favoritePerformers" class="contenido">
-      <td>
-        <span>{{p.name}}</span>
-      </td>
-      <td>
-        <img src="{{p.image}}" alt="Foto de {{p.name}}">
-      </td>
-  </tr>
-  </tbody>
-</table>
-</div>
+    </tbody>
+  </table>
+  </div>
 
-<div class="row">
-  <div class="col-12">
-    <hr>
+  <div class="row">
+    <div class="col-12">
+      <hr>
+    </div>
   </div>
 </div>
-<div class="container-fluid2">
-<h1> Albumes de {{collectorDetail.name}}</h1>
-</div>
-<div class="container-fluid">
-<table class="table" >
-  <caption>Albumes</caption>
-  <thead>
-    <tr>
-      <th class="h4" width="27%" id="columna-nombre-Album">Nombre</th>
-      <th class="h4" width="25%" id="columna-foto-Album">Foto</th>
-      <th class="h4" width="24%" id="columna-precio">Precio</th>
-      <th class="h4" width="25%" id="columna-estado">Estado</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let a of albumsCollector" class="contenido">
-      <td>
-        <span>{{a.name}}</span>
-      </td>
-      <td>
-        <img src="{{a.cover}}" alt="foto del album {{a.name}}">
-      </td>
-      <td *ngFor="let alb of collectorDetail.collectorAlbums">
-        <span>{{alb.price}}</span>
-      </td>
-      <td *ngFor="let alb of collectorDetail.collectorAlbums">
-        <span>{{alb.status}}</span>
-      </td>
-  </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="row">
-  <div class="col-12">
-    <hr>
-  </div>
-</div>
-
 
 
 

@@ -1,0 +1,93 @@
+<div class = "container-fluid">
+  <div class = "col-12 p-3">
+    <div class = "h4" i18n>Add Album to Collector</div>
+    <form
+      [formGroup]="albumForm"
+      (ngSubmit)="!albumForm.invalid && addAlbum(albumForm.value)">
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="name" i18n> Album Name* </label>
+        <input
+          novalidate
+          id="name"
+          class="form-control"
+          formControlName="name"
+          placeholder="Album Name"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            albumForm.get('name').hasError('required') &&
+            albumForm.get('name').touched
+          "
+        i18n>
+          Album Name required
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            albumForm.get('name').hasError('minlength') &&
+            albumForm.get('name').touched
+          "
+        i18n>
+          Album Name too short. It should be at least 2 characters
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="status" i18n> Status* </label>
+        <input
+          novalidate
+          id="status"
+          class="form-control"
+          formControlName="status"
+          placeholder="Album Status"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            albumForm.get('status').hasError('required') &&
+            albumForm.get('status').touched
+          "
+        i18n>
+          Album Status required
+        </div>
+      </div>
+
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="price" i18n> Price* </label>
+        <input
+          novalidate
+          id="price"
+          class="form-control"
+          formControlName="price"
+          placeholder="Album Price"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            albumForm.get('price').hasError('required') &&
+            albumForm.get('price').touched
+          "
+        i18n>
+          Album Price required
+        </div>
+        <div
+        class="alert alert-danger alert-dismissible fade show"
+        *ngIf="
+          albumForm.get('price').hasError('min') &&
+          albumForm.get('price').touched
+        "
+        i18n>
+        Album Price should be greater than 0
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button type="submit" class="btn btn-primary" [disabled]="!albumForm.valid" id="submit" i18n>Add</button>
+        <button type="button" class="btn btn-danger ml-3" (click)="cancelAdding()" id="cancel" i18n>Cancel</button>
+      </div>
+
+    </form>
+  </div>
+</div>

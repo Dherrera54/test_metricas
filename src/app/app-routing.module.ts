@@ -12,6 +12,9 @@ import {AppComponent} from './app.component';
 import { MusicianCreateComponent } from './components/musician-create/musician-create.component';
 import { PrizeCreateComponent } from './components/prize-create/prize-create.component';
 import {AddAlbumComponent} from './components/add-album/add-album.component';
+import { AddAlbumToPerformerComponent } from './components/addAlbumToPerformer/addAlbumToPerformer.component';
+import { AddToFavoriteComponent } from './components/addToFavorite/addToFavorite.component';
+import { AddToFavoriteBandComponent } from './components/addToFavoriteBand/addToFavoriteBand.component';
 
 const routes: any = [
   { path: '', component: AppComponent },
@@ -26,7 +29,9 @@ const routes: any = [
   { path: 'create-musician/band/:id', component: MusicianCreateComponent },
   { path: 'create-prize/band/:id', component: PrizeCreateComponent },
   { path: 'comment', component: CommentComponent },
-
+  { path: 'addAlbumToPerformer/:id', component: AddAlbumToPerformerComponent},
+  { path: 'addToFavorite/:id', component: AddToFavoriteComponent},
+  { path: 'addToFavoriteBand/:id', component: AddToFavoriteBandComponent}
 ];
 
 @NgModule({

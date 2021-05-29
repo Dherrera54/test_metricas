@@ -13,7 +13,9 @@
               <span i18n>Musician</span>
             </div>
             <div class="fav-btn">
-              <a href="#" id='musician-fav-btn-{{i}}'class="btn btn-outline-dark" i18n>Favorite</a>
+              <div class="button">
+                <button  class="button-style btn btn-outline-dark" (click)="addMusicianToFavorite(musician)" id="favorite-musician-{{i}}" name="Add collect to performer">Favorite</button>
+              </div>
             </div>
         </div>
       </div>
@@ -31,7 +33,9 @@
             <span i18n>Band</span>
           </div>
           <div class="fav-btn">
-            <a id='band-fav-btn-{{i}}'href="#" class="btn btn-outline-dark" i18n>Favorite</a>
+            <div class="button">
+              <button  class="button-style btn btn-outline-dark" (click)="addBandToFavorite(band)" id="favorite-band-{{i}}"name="Add collect to performer">Favorite</button>
+            </div>
           </div>
       </div>
     </div>

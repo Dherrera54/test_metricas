@@ -25,6 +25,9 @@ import { MusicianCreateComponent } from './components/musician-create/musician-c
 import { PrizeCreateComponent } from './components/prize-create/prize-create.component';
 import { ToastrModule }  from 'ngx-toastr';
 import {AddAlbumComponent} from './components/add-album/add-album.component';
+import {AddAlbumToPerformerComponent} from './components/addAlbumToPerformer/addAlbumToPerformer.component';
+import {AddToFavoriteComponent} from './components/addToFavorite/addToFavorite.component';
+import { AddToFavoriteBandComponent } from './components/addToFavoriteBand/addToFavoriteBand.component';
 
 @NgModule({
   declarations: [
@@ -40,11 +43,17 @@ import {AddAlbumComponent} from './components/add-album/add-album.component';
     MusicianCreateComponent,
     PrizeCreateComponent,
     AddAlbumComponent,
+    AddAlbumComponent,
+    AddAlbumToPerformerComponent,
+    AddToFavoriteComponent,
+    AddToFavoriteBandComponent
+
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     FormsModule,
     BrowserModule,
     AppRoutingModule,
@@ -57,11 +66,14 @@ import {AddAlbumComponent} from './components/add-album/add-album.component';
     ToastrModule.forRoot({
       timeOut:3000,
       progressBar: true,
-      progressAnimation: 'increasing'})
+      progressAnimation: 'increasing',
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,})
 
   ],
   exports:[
-    MusicianCreateComponent
+    MusicianCreateComponent,
+    AddAlbumToPerformerComponent
   ],
   providers: [
     CommunicatorService,
@@ -71,6 +83,7 @@ import {AddAlbumComponent} from './components/add-album/add-album.component';
       multi: true,
     },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }
