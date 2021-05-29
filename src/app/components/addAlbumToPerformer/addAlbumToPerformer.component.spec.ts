@@ -9,6 +9,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CommunicatorService } from 'src/app/services/communicator.service';
 
 describe('AddAlbumToPerformerComponent', () => {
   let component: AddAlbumToPerformerComponent;
@@ -19,7 +20,7 @@ describe('AddAlbumToPerformerComponent', () => {
       declarations: [ AddAlbumToPerformerComponent ],
       imports: [HttpClientTestingModule, RouterTestingModule, ToastrModule.forRoot()],
       providers: [
-
+        CommunicatorService,
           {provide: FormBuilder},
           {provide: ToastrService},
         {

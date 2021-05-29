@@ -9,6 +9,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CommunicatorService } from 'src/app/services/communicator.service';
 
 describe('AddToFavoriteComponent', () => {
   let component: AddToFavoriteComponent;
@@ -19,7 +20,6 @@ describe('AddToFavoriteComponent', () => {
       declarations: [ AddToFavoriteComponent ],
       imports: [HttpClientTestingModule, RouterTestingModule, ToastrModule.forRoot()],
       providers: [
-
           {provide: FormBuilder},
           {provide: ToastrService},
         {
