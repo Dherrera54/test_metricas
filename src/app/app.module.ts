@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common';
 import { PerformerListComponent } from './components/performer-list/performer-list.component';
 import { DetailAlbumComponent } from './components/detail-album/detail-album.component';
 import { MusicianDetailComponent } from './components/musician-detail/musician-detail.component';
-
 import { CollectorDetailComponent } from './components/collector-detail/collector-detail.component';
 import { CommentComponent } from './components/comment/comment.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -22,9 +21,11 @@ import { BandDetailComponent } from './components/band-detail/band-detail.compon
 import {HttpErrosModule} from './http-erros/http-erros.module';
 import {CommunicatorService} from './services/communicator.service';
 import {ErrorInterceptorService} from './http-erros/interceptors/error.interceptor.service';
+import { MusicianCreateComponent } from './components/musician-create/musician-create.component';
+import { PrizeCreateComponent } from './components/prize-create/prize-create.component';
+import { ToastrModule }  from 'ngx-toastr';
 import {AddAlbumComponent} from './components/add-album/add-album.component';
 import {AddAlbumToPerformerComponent} from './components/addAlbumToPerformer/addAlbumToPerformer.component';
-import { ToastrModule } from 'ngx-toastr';
 import {AddToFavoriteComponent} from './components/addToFavorite/addToFavorite.component';
 import { AddToFavoriteBandComponent } from './components/addToFavoriteBand/addToFavoriteBand.component';
 
@@ -39,6 +40,9 @@ import { AddToFavoriteBandComponent } from './components/addToFavoriteBand/addTo
     BandDetailComponent,
     CollectorDetailComponent,
     CommentComponent,
+    MusicianCreateComponent,
+    PrizeCreateComponent,
+    AddAlbumComponent,
     AddAlbumComponent,
     AddAlbumToPerformerComponent,
     AddToFavoriteComponent,
@@ -65,6 +69,11 @@ import { AddToFavoriteBandComponent } from './components/addToFavoriteBand/addTo
       progressAnimation: 'increasing',
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,})
+
+  ],
+  exports:[
+    MusicianCreateComponent,
+    AddAlbumToPerformerComponent
   ],
   providers: [
     CommunicatorService,
@@ -75,6 +84,6 @@ import { AddToFavoriteBandComponent } from './components/addToFavoriteBand/addTo
     },
   ],
   bootstrap: [AppComponent],
-  exports:[AddAlbumToPerformerComponent]
+
 })
 export class AppModule { }

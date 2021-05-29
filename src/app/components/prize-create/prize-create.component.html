@@ -1,0 +1,113 @@
+<div class="main-container">
+  <div class="form-container col-6 center">
+  <form
+  [formGroup]="prizesForm"
+  (ngSubmit)="!prizesForm.invalid && createPrize(prizesForm.value)">
+
+
+    <div class="form-group mx-sm-3 mb-2">
+      <label class="form-label name-label" for="name" i18n>
+          Name
+      </label>
+       <h1><input novalidate id="name"
+            class="form-control"
+            formControlName="name"
+            i18n-placeholder placeholder="Prize name"></h1>
+
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="prizesForm.get('name').hasError('required') &&
+          prizesForm.get('name').touched" i18n>
+          Name Required
+      </div>
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="prizesForm.get('name').hasError('minlength')" i18n>
+          Name too short
+      </div>
+  </div>
+    <div class="form-group mx-sm-3 mb-2">
+        <label class="form-label" for="organization" i18n>
+            Organization
+        </label>
+        <input novalidate id="organization"
+              class="form-control"
+              formControlName="organization"
+              i18n-placeholder placeholder="Prize organization">
+        <div class="alert alert-danger alert-dismissible fade show"
+            *ngIf="prizesForm.get('organization').hasError('required') &&
+            prizesForm.get('organization').touched" i18n>
+            Organization name required
+        </div>
+        <div class="alert alert-danger alert-dismissible fade show"
+        *ngIf="prizesForm.get('organization').hasError('minlength')" i18n>
+        Organization name too short
+  </div>
+    </div>
+    <div class="form-group mx-sm-3 mb-2">
+      <label class="form-label" for="description">
+          Description
+      </label>
+      <textarea novalidate id="description"
+            class="form-control"
+            formControlName="description"
+            i18n-placeholder placeholder="Prize description"></textarea>
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="prizesForm.get('description').hasError('required') &&
+          prizesForm.get('description').touched" i18n>
+          Description required
+      </div>
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="prizesForm.get('description').hasError('minlength')" i18n>
+          Description too short
+      </div>
+    </div>
+
+
+    <div class="form-group mx-sm-3 mb-2 btn-group">
+      <button type="submit"
+              id="create-prize-submit"
+              class="btn btn-primary submit-btn"
+              [disabled]="!prizesForm.valid" i18n>
+              Create
+      </button>
+      <button type="button"
+              class="btn btn-danger ml-3 cancel-btn"
+              (click)="cancelCreation()" i18n>Cancel</button>
+    </div>
+  </form>
+  <form
+  [formGroup]="prizesBandForm"
+  (ngSubmit)="!prizesBandForm.invalid && addPrizeToBand(prizesBandForm.value)">
+
+
+    <div class="form-group mx-sm-3 mb-2">
+      <label class="form-label" for="premiationDate" i18n>
+          Premiation date
+      </label>
+      <input novalidate id="premiationDate"
+            class="form-control"
+            formControlName="premiationDate"
+            i18n-placeholder placeholder="Band premiation date">
+      <div class="alert alert-danger alert-dismissible fade show"
+          *ngIf="prizesBandForm.get('premiationDate').hasError('required') &&
+          prizesBandForm.get('premiationDate').touched" i18n>
+          Premiation date required
+      </div>
+
+      </div>
+
+
+
+    <div class="form-group mx-sm-3 mb-2 btn-group">
+      <button type="submit"
+              id="add-to-band-submit"
+              class="btn btn-primary submit-btn"
+              [disabled]="!prizesBandForm.valid" i18n>
+              Add to Band
+      </button>
+      <button type="button"
+              class="btn btn-danger ml-3 cancel-btn"
+              (click)="cancelCreation()" i18n>Cancel</button>
+    </div>
+  </form>
+ </div>
+</div>

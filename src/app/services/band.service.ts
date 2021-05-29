@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Band} from '../model/performer';
+import {Band, Musician} from '../model/performer';
 import {environment} from '../../environments/environment';
 
 
@@ -10,7 +10,6 @@ import {environment} from '../../environments/environment';
 })
 export class BandService {
   private apiUrl = environment.baseUrl + 'bands';
-  selected: boolean = false;
 
   constructor(private http: HttpClient) {
   }
@@ -22,6 +21,11 @@ export class BandService {
   getBandDetail(bandID):Observable<Band>{
     return this.http.get<Band>(`${this.apiUrl}/${bandID}`)
   }
+  addMusicianToBand(newMusician:Musician, musicianID:number, bandID:number):Observable<Musician>{
+    return this.http.post<Musician>(`${this.apiUrl}/${bandID}/musicians/${musicianID}`,newMusician);
+
+  }
+
 
 
 }

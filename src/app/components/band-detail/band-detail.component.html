@@ -12,37 +12,37 @@
         <span id="band-description">{{bandDetail.description}} </span>
       </div>
       <div class="detail">
-        <span>Creación: {{bandDetail.creationDate | date: 'yyyy-MM-dd' }} </span>
+        <span id='band-creation-date' i18n>Creation date: {{bandDetail.creationDate | date: 'yyyy-MM-dd' }} </span>
       </div>
       <div class="detail">
-        <span>Tipo de artista: Banda </span>
+        <span i18n>Artist Type: Band </span>
       </div>
     </div>
     <div class="container-button">
       <div>
-        <button type="button" class="design-button" (click)="goBack()">Regresar</button>
+        <button type="button" class="design-button" (click)="addPrize(bandDetail)" id='add-prize-btn'i18n>Add prize</button>
       </div>
       <div class="show-comment">
-        <button type="button" class="design-button" (click)="goBack()">Ver premios</button>
+        <button type="button" class="design-button" (click)="addMusician(bandDetail)" id='add-musician-btn'i18n>Add musician</button>
       </div>
     </div>
   </div>
-
+   <!--Tabla albums-->
   <div class="list-information">
     <hr/>
     <div class="table-title">
       <div class="container-div">
-        <span>Álbum</span>
+        <span i18n>Album</span>
       </div>
       <div class="container-div">
-        <span>Nombre</span>
+        <span i18n>Name</span>
       </div>
       <div class="container-div">
-        <span>Fecha Publicación</span>
+        <span i18n>Release date</span>
       </div>
 
       <div class="container-div">
-        <span>Casa Discografica</span>
+        <span i18n>Record label</span>
       </div>
     </div>
     <hr/>
@@ -60,6 +60,64 @@
       </div>
       <div class="container-div">
         <span id ='album-record-label-{{i}}'>{{album.recordLabel}}</span>
+      </div>
+    </div>
+  </div>
+   <!--Tabla musicos-->
+  <div class="list-information">
+    <hr/>
+    <div class="table-title">
+      <div class="container-div">
+        <span i18n>Musician</span>
+      </div>
+      <div class="container-div">
+        <span i18n>Name</span>
+      </div>
+      <div class="container-div">
+        <span i18n>Birth date</span>
+      </div>
+    </div>
+    <hr/>
+  </div>
+ <div class="row-information" *ngFor="let musician of bandDetail.musicians; let i = index">
+    <div class="table-body">
+      <div class="container-div">
+        <img class="musician-image-{{musician.name}}" src="{{musician.image}}" alt="Imagen de musico {{musician.name}} de la banda {{bandDetail.name}}" width="50px" height="50px"/>
+      </div>
+      <div class="container-div">
+        <span id ='musician-name-{{musician.name}}'>{{musician.name}}</span>
+      </div>
+      <div class="container-div">
+        <span id ='musician-birth-date-{{musician.name}}'>{{ musician.birthDate | date: 'yyyy-MM-dd' }}</span>
+      </div>
+    </div>
+  </div>
+  <!--Tabla premios-->
+  <div class="list-information">
+    <hr/>
+    <div class="table-title">
+      <div class="container-div">
+        <span i18n>Prize</span>
+      </div>
+      <div class="container-div">
+        <span i18n>Organization</span>
+      </div>
+      <div class="container-div">
+        <span i18n> Premiation date</span>
+      </div>
+    </div>
+    <hr/>
+  </div>
+ <div class="row-information" *ngFor="let premio of prizes; let i = index">
+    <div class="table-body">
+      <div class="container-div">
+        <span id ='prize-name-{{premio.name}}'>{{premio.name}}</span>
+      </div>
+      <div class="container-div">
+        <span id ='prize-organization-{{premio.name}}'>{{premio.organization}}</span>
+      </div>
+      <div class="container-div">
+        <span id ='band-premiation-date-{{premio.name}}'>{{ bandDetail.performerPrizes[i].premiationDate | date: 'yyyy-MM-dd' }}</span>
       </div>
     </div>
   </div>

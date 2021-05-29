@@ -1,40 +1,40 @@
 <div class="main-container container-fluid">
   <div class="row">
-      <div class="container-musicians  col-12 col-md-6 col-lg-4">
-        <div class="col" *ngFor="let musician of musicians;let i=index" class="detail-musician" (click)="onSelectedMusician(musician)" >
+      <div class="container-performers  col-12 col-md-6 col-lg-4">
+        <div class="col" *ngFor="let musician of musicians;let i=index" class="detail-performer" (click)="onSelectedMusician(musician)" >
             <div class="img-driver">
-              <img src="{{musician.image}}" alt="imagen del musico{{musician.name}}">
+              <img id='musician-image-{{i}}' src="{{musician.image}}" alt="imagen del musico{{musician.name}}">
             </div>
-            <div class="musician-name">
-              <h1><span class="musician-name" id="musician-name-{{i}}">{{musician.name}}</span></h1>
+            <div class="performer-name">
+              <h1><span id='musician-name-{{i}}'class="performer-name" id="musician-name-{{i}}">{{musician.name}}</span></h1>
             </div>
             <div class="artist-type">
 
-              <span>Músico</span>
+              <span i18n>Musician</span>
             </div>
             <div class="fav-btn">
               <div class="button">
-                <button  class="button-style" (click)="addMusicianToFavorite(musician)" id="favorite-musician-{{i}}" name="Add collect to performer">Favorite</button>
+                <button  class="button-style btn btn-outline-dark" (click)="addMusicianToFavorite(musician)" id="favorite-musician-{{i}}" name="Add collect to performer">Favorite</button>
               </div>
             </div>
         </div>
       </div>
 
 
-      <div class="container-bands col-12 col-md-6 col-lg-4 ">
-      <div class="col" *ngFor="let band of bands, let i= index" class="detail-band" (click)="onSelectedBand(band)">
+      <div class="container-performers col-12 col-md-6 col-lg-4 ">
+      <div class="col" *ngFor="let band of bands, let i= index" class="detail-performer" (click)="onSelectedBand(band)">
           <div class="img-driver">
-            <img src="{{band.image}}" alt="imagen de la banda {{band.name}}">
+            <img id='band-image-{{i}}' src="{{band.image}}" alt="imagen de la banda {{band.name}}">
           </div>
-          <div class="band-name">
-            <h1 class="band-name" id="band-name-{{i}}"><span id="band-name">{{band.name}}</span></h1>
+          <div class="performer-name">
+            <h1 class="performer-name" id="band-name-{{i}}"><span id="band-name">{{band.name}}</span></h1>
           </div>
           <div class="artist-type">
-            <span>Banda</span>
+            <span i18n>Band</span>
           </div>
           <div class="fav-btn">
             <div class="button">
-              <button  class="button-style" (click)="addBandToFavorite(band)" id="favorite-band-{{i}}"name="Add collect to performer">Favorite</button>
+              <button  class="button-style btn btn-outline-dark" (click)="addBandToFavorite(band)" id="favorite-band-{{i}}"name="Add collect to performer">Favorite</button>
             </div>
           </div>
       </div>

@@ -6,3 +6,10 @@ describe('Creacion del objecto ErrorBody', () => {
   });
 });
 
+
+describe('Creacion del objecto ErrorBody with constructor', () => {
+  it('should create an instance', () => {
+    expect(new ErrorBody()).toBeTruthy();
+  });
+});
+

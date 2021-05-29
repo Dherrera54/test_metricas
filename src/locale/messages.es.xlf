@@ -2,6 +2,469 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="830cc4484835a9746f7f487d13931c67f0b6f587" datatype="html">
+        <source>Musician</source>
+        <target>Músico</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/performer-list/performer-list.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/band-detail/band-detail.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="11a0771f88158a540a54e0e4ec5d25733d65fc0e" datatype="html">
+        <source>Favorite</source>
+        <target>Favorito</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/performer-list/performer-list.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/performer-list/performer-list.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d30863c05d5230dcd03ebd69a838dd17c4f0539e" datatype="html">
+        <source>Band</source>
+        <target>Banda</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/performer-list/performer-list.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="38f5e3831a8e7d8394b36532eee961e68b1d1522" datatype="html">
+        <source>Birth date: <x id="INTERPOLATION" equiv-text="{{musicianDetail.birthDate | date: &apos;yyyy-MM-dd&apos; }}"/> </source>
+        <target>Fecha de nacimiento: <x id="INTERPOLATION" equiv-text="{{musicianDetail.birthDate | date: &apos;yyyy-MM-dd&apos; }}"/> </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-detail/musician-detail.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="464e8841a33b36c75e7f53f9cfaae11be2297d7e" datatype="html">
+        <source>Artist type: Musician </source>
+        <target>Tipo de artista: músico</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-detail/musician-detail.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a67aec1c4d47cdf3a4442a19e616def78fd77388" datatype="html">
+        <source>Go back</source>
+        <target>Regresar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-detail/musician-detail.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8da310124df4aea384497db45a7eee97863f8df0" datatype="html">
+        <source>See prizes</source>
+        <target>Ver premios</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-detail/musician-detail.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="842a4fcf548e0c52ebab1cb5362f47ab2ca83e12" datatype="html">
+        <source>Album</source>
+        <target>Álbum</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-detail/musician-detail.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/band-detail/band-detail.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
+        <source>Name</source>
+        <target>Nombre</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-detail/musician-detail.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/band-detail/band-detail.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/band-detail/band-detail.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7ab7f2aec4feea6f1aed875b7e7b988e63bcfc46" datatype="html">
+        <source>Relase date</source>
+        <target>Fecha de lanzamiento</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-detail/musician-detail.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b2ba72160031fedcdd4892ca4b2f893826e9631d" datatype="html">
+        <source>Record label</source>
+         <target>Casa discografica</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-detail/musician-detail.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/band-detail/band-detail.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4fc393949654f3befa911ea51fb45d4ce5466ed4" datatype="html">
+        <source>Creation date: <x id="INTERPOLATION" equiv-text="{{bandDetail.creationDate | date: &apos;yyyy-MM-dd&apos; }}"/> </source>
+         <target>Fecha de creacion: <x id="INTERPOLATION" equiv-text="{{bandDetail.creationDate | date: &apos;yyyy-MM-dd&apos; }}"/> </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/band-detail/band-detail.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1d5fe01606bc272330ca4701f284a8496d5d3437" datatype="html">
+        <source>Artist Type: Band </source>
+        <target>Tipo de artista: banda</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/band-detail/band-detail.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4ffd27f829dc9bdcb007cb61f585429ca9898efe" datatype="html">
+        <source>Add prize</source>
+        <target>Añadir premio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/band-detail/band-detail.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f9470dfa7d005f0a7ca0660eb778ecac9dcb59e9" datatype="html">
+        <source>Add musician</source>
+        <target>Añadir músico</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/band-detail/band-detail.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ae63b0d25bc49e815cbdc7dfcd9879a764f61f23" datatype="html">
+        <source>Release date</source>
+        <target>Fecha de lanzamiento</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/band-detail/band-detail.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ef0fe56e840a2b5964a6c49d0199420b20db20c1" datatype="html">
+        <source>Birth date</source>
+        <target>Fecha de nacimiento</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/band-detail/band-detail.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fcb13f73ae556b7de8a2ed1b85486dd26838b8b4" datatype="html">
+        <source>Prize</source>
+        <target>Premio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/band-detail/band-detail.component.html</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f3a58c8a81b9ffda26a154eae25a422c9f7de37b" datatype="html">
+        <source>Organization</source>
+        <target>Organización</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/band-detail/band-detail.component.html</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="541ae3b3ac4b88c09b038a89ad346d9e18c48246" datatype="html">
+        <source> Premiation date</source>
+         <target>Fecha de premiación</target>
+
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/band-detail/band-detail.component.html</context>
+          <context context-type="linenumber">106</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="df7e34ede3cdb5257a6fcd91ab64b9880f53cba4" datatype="html">
+        <source>
+          Name
+      </source>
+       <target>Nombre</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-create/musician-create.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6d7b8066b06f4e53a107846a9cfd5ed70570f60d" datatype="html">
+        <source>Musician name</source>
+        <target>Nombre del músico</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-create/musician-create.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dd35349ccc4af3442a9ec601a62f79c978def132" datatype="html">
+        <source>
+          Required name
+      </source>
+      <target>Nombre requerido</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-create/musician-create.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b3aa36f4696fe7f6727afc1a06d74caea5fc65be" datatype="html">
+        <source>
+          Name too short
+      </source>
+      <target>Nombre muy corto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-create/musician-create.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c94e19752ca6cb3adf2c9ca920f4a131fb2e1dcc" datatype="html">
+        <source>
+            Image
+        </source>
+        <target>Imagen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-create/musician-create.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b79224fedca14ac096b53d6d7edc708be6245813" datatype="html">
+        <source>Musician Image</source>
+        <target>Imagen del músico</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-create/musician-create.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bd1d7c509dbdd5893175de0201762bacaf52c569" datatype="html">
+        <source>
+            Image required
+        </source>
+        <target>Imagen requerida</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-create/musician-create.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ed1d332e5dc5885d4f4253ab41cc40564bf41275" datatype="html">
+        <source>
+          Description
+      </source>
+      <target>Descripción</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-create/musician-create.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f8b0fca9e3403f4505549951cd12700514847e09" datatype="html">
+        <source>Musician description</source>
+        <target>Descripción del músico</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-create/musician-create.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="20e4466479ee3edd62e5df8794783aad8550ea4a" datatype="html">
+        <source>
+          Description required
+      </source>
+      <target>Descripción requerida</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-create/musician-create.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="95b059a541d0fe6e87ee290e07a349a0a2ac0590" datatype="html">
+        <source>
+          Description too short
+      </source>
+      <target>Descripción muy corta</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-create/musician-create.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="26951e718d40ac5c64adb9c6651ac81662b47b13" datatype="html">
+        <source>
+          Birth date
+      </source>
+      <target>Fecha de nacimiento</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-create/musician-create.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="81ec0c3d021202091c86d424bfb96504bec2388a" datatype="html">
+        <source>Musician birthdate (YYYY-MM-DD)</source>
+         <target>Fecha de nacimiento (AAAA-MM-DD)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-create/musician-create.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="37352b1a3ec6826e0daa3ac087d18662aa11b703" datatype="html">
+        <source>
+          Birth date required
+      </source>
+      <target>Fecha de nacimiento requerida</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-create/musician-create.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b69a221bb730bb08b3c2c6667ffed5fcf9b11ec0" datatype="html">
+        <source>
+              Create
+      </source>
+      <target>Crear</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-create/musician-create.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
+        <source>Cancel</source>
+        <target>Cancelar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/musician-create/musician-create.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f1060b0ba51f724c437aa7e2205c300b464b8cf2" datatype="html">
+        <source>Prize name</source>
+        <target>Nombre del premio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="541d0cc125eff90f1b5b7f215794e24339061bcf" datatype="html">
+        <source>
+          Name Required
+      </source>
+      <target>Nombre requerido</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0cbfe73e3144ca6a19c1eb8ba1a94c63e7b8fde3" datatype="html">
+        <source>
+            Organization
+        </source>
+        <target>Organización</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="14c681b7cee9eae71b87db670b1c88a85ffb9711" datatype="html">
+        <source>Prize organization</source>
+         <target>Organización que otorga el premio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c901c07b0941f1a9b591c2d23e49e0ab7054bce3" datatype="html">
+        <source>
+            Organization name required
+        </source>
+         <target>Nombre de organización requerido</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d8f060d2df6663dafe0305ef274e1f54f0b67d6b" datatype="html">
+        <source>
+        Organization name too short
+  </source>
+  <target>Nombre de organización muy corto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f6fd0fa411eb60ccbe5b210c0b95b603334069a8" datatype="html">
+        <source>Prize description</source>
+        <target>Descripción del premio</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bf1cd03cf579744d4d32056c8dffd5935d1ee5ac" datatype="html">
+        <source>
+          Premiation date
+      </source>
+      <target>Fecha de premiación</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9b9707043a96708650b5da5661dfe78fd0eb9143" datatype="html">
+        <source>Band premiation date</source>
+        <target>Fecha de premiación de banda</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="35c466649227723e0682d8dc6f41d611147ec0b3" datatype="html">
+        <source>
+          Premiation date required
+      </source>
+      <target>Fecha de premiación requerida</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="146ceb5db6a241f5eef777c1c8088e7d61273c60" datatype="html">
+        <source>
+              Add to Band
+      </source>
+      <target>Añadir a banda</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
+          <context context-type="linenumber">100</context>
       <trans-unit id="7e90922b6fc76e2aa9c39b8861b8af9f84f9e91a" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{item.titleAlbum}}"/></source>
         <target><x id="INTERPOLATION" equiv-text="{{item.titleAlbum}}"/></target>
