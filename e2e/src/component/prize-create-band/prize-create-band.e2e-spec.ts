@@ -18,7 +18,7 @@ describe('workspace-project App', () => {
 
     ;
 
-    element(by.id('Artistas')).click().then(function () {
+    element(by.id('Artists')).click().then(function () {
       expect(element(by.id('band-name-0')).click().then(function () {
         page.clickButtonByID('add-prize-btn');
         page.setInputText('name',prizeName);

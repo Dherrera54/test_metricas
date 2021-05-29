@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should see detail of band with two first albums', () => {
     page.navigateTo();
-    element(by.id('Artistas')).click().then(function () {
+    element(by.id('Artists')).click().then(function () {
       expect(element(by.id('band-name-0')).click().then(function () {
        expect(element(by.id('band-name')).getAttribute("innerText")).toBe("Queen");
        expect(element(by.id('band-creation-date')).getAttribute("innerText")).toBe("Creation date: 1969-12-31");

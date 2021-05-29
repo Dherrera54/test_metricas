@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should see detail of musician with two first albums', () => {
     page.navigateTo();
-    element(by.id('Artistas')).click().then(function () {
+    element(by.id('Artists')).click().then(function () {
       expect(element(by.id('musician-name-0')).click().then(function () {
        expect(element(by.id('musician-birth-date')).getAttribute("innerText")).toBe("Birth date: 1948-07-15");
        expect(element(by.id('album-name-0')).getAttribute("innerText")).toBe("Buscando América");

@@ -15,7 +15,7 @@ describe('workspace-project App', () => {
     page.navigateTo();
     let musicianName:string= faker.name.findName();
 
-    element(by.id('Artistas')).click().then(function () {
+    element(by.id('Artists')).click().then(function () {
       expect(element(by.id('band-name-0')).click().then(function () {
         page.clickButtonByID('add-musician-btn');
         page.setInputText('name',musicianName);

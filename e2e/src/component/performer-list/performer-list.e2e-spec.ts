@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display artist list with base band and musician names', () => {
     page.navigateTo();
-    element(by.id('Artistas')).click().then(function () {
+    element(by.id('Artists')).click().then(function () {
       expect(element(by.id('musician-name-0')).getAttribute("innerText")).toBe("Rubén Blades Bellido de Luna");
       expect(element(by.id('band-name-0')).getAttribute("innerText")).toBe("Queen");
 
@@ -18,7 +18,7 @@ describe('workspace-project App', () => {
   });
   it('should see detail of band and musician', () => {
     page.navigateTo();
-    element(by.id('Artistas')).click().then(function () {
+    element(by.id('Artists')).click().then(function () {
       expect(element(by.id('musician-name-0')).click().then(function () {
        expect(element(by.id('musician-birth-date')).getAttribute("innerText")).toBe("Birth date: 1948-07-15");
       }));
