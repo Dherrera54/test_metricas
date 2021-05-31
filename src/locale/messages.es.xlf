@@ -465,6 +465,8 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/prize-create/prize-create.component.html</context>
           <context context-type="linenumber">100</context>
+          </context-group>
+      </trans-unit>
       <trans-unit id="7e90922b6fc76e2aa9c39b8861b8af9f84f9e91a" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{item.titleAlbum}}"/></source>
         <target><x id="INTERPOLATION" equiv-text="{{item.titleAlbum}}"/></target>
@@ -663,6 +665,9 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/add-album/add-album.component.html</context>
           <context context-type="linenumber">53</context>
+       </context-group>
+      </trans-unit>
+
       <trans-unit id="4d1d4f8c3875d65fd8c775d6ee617c1b2f41f6df" datatype="html">
         <source>Return</source>
         <target>Regresar</target>
@@ -671,6 +676,7 @@
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
+
       <trans-unit id="47213227c53499c234bcab8f092ddf9b4ee7f801" datatype="html">
         <source>Add new Album</source>
         <target>Añadir nuevo Album</target>
@@ -679,6 +685,7 @@
           <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
+
       <trans-unit id="241f6264aaa75724438a5f5f301b8773ec99671c" datatype="html">
         <source> Comments made by <x id="INTERPOLATION" equiv-text="{{collectorDetail.name}}"/></source>
         <target>Comentarios hechos por</target>
@@ -687,6 +694,7 @@
           <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
+
       <trans-unit id="c5bb9f8936cb33db2ca351a1b87a984fdf11917c" datatype="html">
         <source>Comments</source>
         <target>Comentarios</target>
@@ -695,6 +703,7 @@
           <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
+
       <trans-unit id="842a4fcf548e0c52ebab1cb5362f47ab2ca83e12" datatype="html">
         <source>Album</source>
         <target>Album</target>
