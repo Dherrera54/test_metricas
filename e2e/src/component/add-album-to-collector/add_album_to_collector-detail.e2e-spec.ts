@@ -22,7 +22,7 @@ describe('workspace-project App', () => {
         page.wait(300);
         page.clickButtonByID('submit');
         page.wait(300);
-        expect(page.searchTextById('toast-container')).toContain("Agregado exitosamente!");
+        expect(page.searchTextById('toast-message')).toContain("Agregado exitosamente!");
 
 
     })

@@ -98,27 +98,4 @@ describe('Check the component comment with integration services', () => {
       .toEqual('The cover should have the next: It must have with at least three letters and not get over 100 letters, also it can have only letters');
   });
 
-  it('When the user open the page, he clicks on the add comment button, he  filled out  all fields,  then the button accept should be enabled', () => {
-    page.navigateTo();
-    expect(page.searchTextById('Home')).toEqual('Home');
-    page.wait(3000);
-    page.clickButtonByClassName('btn-added');
-    expect(page.searchTextById('h1-input-name')).toEqual('Album Name');
-    expect(page.searchTextById('h1-input-cover')).toEqual('Cover');
-    expect(page.searchTextById('h1-input-releaseDate')).toEqual('Publication date');
-    expect(page.searchTextById('title-description-gender')).toEqual('Gender');
-    expect(page.searchTextById('title-description-record')).toEqual('Record');
-    page.sendText('name', 'Preubas de concepto');
-    page.sendText('cover', 'https://i.ytimg.com/vi/CFFeAa0fJ0Y/maxresdefault.jpg');
-    page.sendText('releaseDate', '2014-02-22');
-    page.sendText('comment', 'RPRUEBA');
-    page.clickComBox('option', 'Classical');
-    page.clickComBox('option', 'Sony Music');
-    page.scrollView(0, 1200);
-    page.wait(3000);
-    page.clickButtonByClassName('button-enabled');
-    page.wait(3000);
-    expect(page.searchTextById('span-toast-message'))
-      .toEqual('Your process was successful');
-  });
 });

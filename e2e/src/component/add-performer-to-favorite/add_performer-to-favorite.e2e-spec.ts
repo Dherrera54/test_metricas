@@ -18,7 +18,7 @@ describe('workspace-project App', () => {
         page.wait(300);
         page.clickButtonByID('submit');
         page.wait(3000);
-        expect(page.searchTextById('toast-container')).toContain("Asociado Exitosamente!");
+        expect(page.searchTextById('toast-message')).toContain("Asociado Exitosamente!");
 
 
     })

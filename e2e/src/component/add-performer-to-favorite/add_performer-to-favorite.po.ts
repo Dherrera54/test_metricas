@@ -9,7 +9,7 @@ export class AppPage {
     return element(by.css('app-root .content span')).getText() as Promise<string>;
   }
   searchTextById(id): Promise<string> {
-    return element(by.id(id)).getText() as Promise<string>;
+    return element(by.className(id)).getText() as Promise<string>;
   }
   clickButtonByID(buttonID): Promise<void> {
     return element(by.id(buttonID)).click() as Promise<void>;
