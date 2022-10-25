@@ -5,7 +5,7 @@ import { CollectorDetail } from 'src/app/model/collectorDetail';
 import { ActivatedRoute } from '@angular/router';
 import { CollectorService } from 'src/app/services/collector.service';
 import { Albumes } from 'src/app/model/albumes';
-import { AlbumesService } from 'src/app/services/albumes..service';
+import { AlbumesService } from 'src/app/services/albumes.service';
 import { CommentDetail } from 'src/app/model/commentDetail';
 import { TitlesTables } from 'src/app/shared/models/titlesTables';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';

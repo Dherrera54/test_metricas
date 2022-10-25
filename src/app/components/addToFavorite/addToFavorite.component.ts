@@ -5,7 +5,7 @@ import {AlbumToPerformer} from '../../model/addAlbumToPerf';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CollectorService } from 'src/app/services/collector.service';
 import { Albumes } from 'src/app/model/albumes';
-import { AlbumesService } from 'src/app/services/albumes..service';
+import { AlbumesService } from 'src/app/services/albumes.service';
 import { CollectorDetail } from 'src/app/model/collectorDetail';
 import { Collector } from 'src/app/model/collector';
 import { FavoriteMusician } from 'src/app/model/favoriteMusician';

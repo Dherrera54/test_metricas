@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import {AlbumesComponent} from './albumes.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {AlbumesService} from '../../services/albumes..service';
+import {AlbumesService} from '../../services/albumes.service';
 import {observable, Observable, of, Subject, throwError} from 'rxjs';
 import {AlbumsMock} from '../../shared/mocks/albums.mock';
 import {CardsComponent} from '../../shared/components/cards/cards.component';

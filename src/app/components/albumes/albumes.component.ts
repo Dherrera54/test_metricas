@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from '../../shared/models/card';
-import {AlbumesService} from '../../services/albumes..service';
+import {AlbumesService} from '../../services/albumes.service';
 import {Albumes} from '../../model/albumes';
 import {Router} from '@angular/router';
 import {HeaderService} from '../../shared/services/header.service';

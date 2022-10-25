@@ -8,7 +8,7 @@ import {CollectorDetail} from 'src/app/model/collectorDetail'
 import { RouterTestingModule } from '@angular/router/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 import {CollectorsMock} from '../../shared/mocks/collectors';
-import { AlbumesService } from 'src/app/services/albumes..service';
+import { AlbumesService } from 'src/app/services/albumes.service';
 import { Albumes } from 'src/app/model/albumes';
 import { AlbumsMock } from 'src/app/shared/mocks/albums.mock';
 import { AlbumsOfCollectorMock } from 'src/app/shared/mocks/albumsOfCollector';

@@ -23,7 +23,7 @@ jobs:
       - name: pruebas+coverage
         id: pruebas
         run: |
-          npm run test -- --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessNoSandbox
+          npm run test -- --code-coverage
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:

@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Albumes} from '../../model/albumes';
 import {TitlesTables} from '../../shared/models/titlesTables';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AlbumesService} from '../../services/albumes..service';
+import {AlbumesService} from '../../services/albumes.service';
 import {Toast} from '../../shared/models/toast';
 import {AddCommentService} from '../../services/add-comment.service';
 import {Card} from '../../shared/models/card';

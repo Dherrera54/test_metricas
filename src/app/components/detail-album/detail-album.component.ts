@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AlbumesService} from '../../services/albumes..service';
+import {AlbumesService} from '../../services/albumes.service';
 import {Albumes} from '../../model/albumes';
 import {TitlesTables} from '../../shared/models/titlesTables';
 

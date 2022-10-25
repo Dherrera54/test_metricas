@@ -10,7 +10,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {CommunicatorService} from '../../services/communicator.service';
-import {AlbumesService} from '../../services/albumes..service';
+import {AlbumesService} from '../../services/albumes.service';
 import {Observable, of, Subject} from 'rxjs';
 import {Albumes} from '../../model/albumes';
 import {HeaderService} from '../../shared/services/header.service';
