@@ -20,6 +20,10 @@ jobs:
       - name: Instalación de librerías y dependencias
         run: |
           npm install --save --legacy-peer-deps
+      - name: pruebas+coverage
+        id: pruebas
+        run: |
+          npm run test -- --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessNoSandbox
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
